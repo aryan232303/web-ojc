@@ -3463,7 +3463,7 @@ body.vision-page .download-section h2 {
   }
 }
 
-/* Fix Hero and Stats Bar squishing on mobile */
+/* Fix Hero and Stats Bar squishing on mobile & Center/decrease text */
 @media (max-width: 768px) {
   body.has-hero .hero {
     display: flex !important;
@@ -3484,6 +3484,47 @@ body.vision-page .download-section h2 {
     left: auto !important;
     right: auto !important;
     margin-top: 0 !important;
+  }
+  body.has-hero .hero-content {
+    text-align: center !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 28px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  body.has-hero .hero-content > .eyebrow {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 18px !important;
+    font-size: 10px !important;
+  }
+  body.has-hero .hero-headline,
+  body .hero-headline {
+    text-align: center !important;
+    font-size: clamp(30px, 6vw, 38px) !important;
+    margin: 12px auto 16px !important;
+    line-height: 1.12 !important;
+  }
+  body.has-hero .hero-headline-odia {
+    text-align: center !important;
+    margin: 0 auto 16px !important;
+    font-size: clamp(18px, 4vw, 22px) !important;
+  }
+  body.has-hero .hero-body {
+    text-align: center !important;
+    margin: 0 auto 24px !important;
+    font-size: 14.5px !important;
+    padding: 0 8px !important;
+  }
+  body.has-hero .hero-ctas {
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
   }
 }
 
