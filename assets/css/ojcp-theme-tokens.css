@@ -1,0 +1,222 @@
+/* ============================================================
+   OJCP Central Theme Tokens
+   Purpose: keep brand, semantic, and section colours editable
+   from one controlled layer without changing layout or content.
+   ============================================================ */
+
+:root {
+  /* =====================================================
+     OJCP OFFICIAL BRAND COLOURS
+     Change these only when brand palette changes
+  ===================================================== */
+
+  --ojcp-yellow: #F2D21B;
+  --ojcp-white: #F4F4F4;
+  --ojcp-blue: #376DA8;
+  --ojcp-logo-blue: #3A5FA3;
+  --ojcp-logo-inner: #F2F2F2;
+  --ojcp-blue-dark: #2E5F93;
+
+  --ojcp-yellow-rgb: 242, 210, 27;
+  --ojcp-white-rgb: 244, 244, 244;
+  --ojcp-blue-rgb: 55, 109, 168;
+  --ojcp-logo-blue-rgb: 58, 95, 163;
+  --ojcp-blue-dark-rgb: 46, 95, 147;
+
+  /* =====================================================
+     BACKWARD-COMPATIBLE LEGACY TOKENS
+     Keep old variable names working, but map them to OJCP colours
+  ===================================================== */
+
+  --blue: var(--ojcp-logo-blue);
+  --blue-dark: var(--ojcp-blue-dark);
+  --blue-light: var(--ojcp-blue);
+  --gold: var(--ojcp-yellow);
+  --gold-light: #F7DE48;
+  --white: #FFFFFF;
+  --off-white: var(--ojcp-white);
+  --near-black: #0D1B2A;
+  --slate: #6B7A8D;
+  --light-grey: #E8E8E4;
+  --red: #C0392B;
+
+  --text-primary: var(--near-black);
+  --text-secondary: #2E3D4F;
+  --text-faint: #9BA8B5;
+
+  /* =====================================================
+     SEMANTIC WEBSITE UI TOKENS
+     Use these in actual components wherever possible
+  ===================================================== */
+
+  --color-primary: var(--ojcp-logo-blue);
+  --color-primary-strong: var(--ojcp-blue-dark);
+  --color-primary-soft: var(--ojcp-blue);
+  --color-accent: var(--ojcp-yellow);
+
+  --color-primary-rgb: var(--ojcp-logo-blue-rgb);
+  --color-primary-strong-rgb: var(--ojcp-blue-dark-rgb);
+  --color-primary-soft-rgb: var(--ojcp-blue-rgb);
+  --color-accent-rgb: var(--ojcp-yellow-rgb);
+
+  --text-main: #0D1B2A;
+  --text-blue: var(--ojcp-logo-blue);
+  --text-muted: var(--slate);
+  --text-on-dark: #FFFFFF;
+  --text-on-yellow: #0D1B2A;
+
+  --surface-white: #FFFFFF;
+  --surface-light: var(--ojcp-white);
+  --surface-paper: #F8F6EF;
+  --surface-cream: #FBFAF6;
+  --surface-blue: var(--ojcp-blue);
+  --surface-blue-dark: var(--ojcp-blue-dark);
+
+  --border-soft: rgba(var(--color-primary-rgb), 0.18);
+  --border-blue: rgba(var(--color-primary-rgb), 0.32);
+  --border-yellow: rgba(var(--color-accent-rgb), 0.45);
+
+  --shadow-blue-soft: 0 18px 48px rgba(var(--color-primary-strong-rgb), 0.14);
+  --shadow-yellow-soft: 0 12px 32px rgba(var(--color-accent-rgb), 0.22);
+
+  /* =====================================================
+     SHARED EDITORIAL TOKENS
+     Supporting digital tones used for contrast/readability.
+  ===================================================== */
+
+  --editorial-dark: var(--color-primary-strong);
+  --editorial-dark-rgb: var(--color-primary-strong-rgb);
+  --editorial-dark-2: var(--color-primary);
+  --editorial-dark-2-rgb: var(--color-primary-rgb);
+  --editorial-dark-3: var(--color-primary-soft);
+  --editorial-dark-3-rgb: var(--color-primary-soft-rgb);
+  --editorial-gold: var(--color-accent);
+  --editorial-gold-soft: #F7DE48;
+  --editorial-gold-muted: #D8BF40;
+  --editorial-paper: var(--surface-paper);
+  --editorial-paper-warm: #FFFAF1;
+  --editorial-paper-deep: #F5EFE4;
+  --editorial-muted: #586575;
+  --editorial-line: rgba(var(--color-primary-strong-rgb), 0.14);
+
+  /* =====================================================
+     SECTION-LEVEL TOKENS
+     Change these when a specific section needs recolouring
+  ===================================================== */
+
+  --header-bg: var(--surface-white);
+  --header-text: var(--color-primary-strong);
+  --header-accent: var(--color-accent);
+
+  --ticker-bg: var(--color-primary-strong);
+  --ticker-text: #FFFFFF;
+  --ticker-accent: var(--color-accent);
+
+  --hero-bg: var(--surface-light);
+  --hero-panel-bg: var(--color-primary-strong);
+  --hero-panel-rgb: var(--color-primary-strong-rgb);
+  --hero-title: var(--color-primary-strong);
+  --hero-body: var(--text-main);
+  --hero-accent: var(--color-accent);
+  --hero-stat-bg: var(--color-primary-strong);
+  --hero-stat-number: var(--color-accent);
+  --hero-stat-text: #FFFFFF;
+
+  --stats-bg: var(--surface-light);
+  --stats-dark-bg: var(--color-primary-strong);
+  --stats-card-bg: #FFFFFF;
+  --stats-title: var(--color-primary-strong);
+  --stats-number: var(--color-primary);
+  --stats-accent: var(--color-accent);
+  --stats-border: var(--border-soft);
+
+  --ideology-bg: var(--surface-light);
+  --ideology-title: var(--color-primary-strong);
+  --ideology-body: var(--text-main);
+  --ideology-accent: var(--color-accent);
+
+  --pledge-bg: var(--surface-light);
+  --pledge-card-bg: #FFFFFF;
+  --pledge-title: var(--color-primary-strong);
+  --pledge-accent: var(--color-accent);
+  --pledge-border: var(--border-soft);
+
+  --people-bg: var(--color-primary-strong);
+  --people-card-bg: rgba(255, 255, 255, 0.06);
+  --people-title: #FFFFFF;
+  --people-body: rgba(255, 255, 255, 0.78);
+  --people-accent: var(--color-accent);
+
+  --founder-bg: var(--surface-light);
+  --founder-title: var(--color-primary-strong);
+  --founder-accent: var(--color-accent);
+  --founder-card-bg: #FFFFFF;
+
+  --inclusion-bg: var(--color-primary-strong);
+  --inclusion-card-bg: rgba(255, 255, 255, 0.06);
+  --inclusion-title: #FFFFFF;
+  --inclusion-body: rgba(255, 255, 255, 0.78);
+  --inclusion-accent: var(--color-accent);
+
+  --vision-bg: var(--color-primary-strong);
+  --vision-title: #FFFFFF;
+  --vision-body: rgba(255, 255, 255, 0.82);
+  --vision-card-bg: rgba(255, 255, 255, 0.07);
+  --vision-accent: var(--color-accent);
+
+  --cta-bg: var(--color-primary-strong);
+  --cta-title: #FFFFFF;
+  --cta-body: rgba(255, 255, 255, 0.82);
+  --cta-accent: var(--color-accent);
+
+  --footer-bg: var(--color-primary-strong);
+  --footer-text: rgba(255, 255, 255, 0.82);
+  --footer-heading: #FFFFFF;
+  --footer-accent: var(--color-accent);
+
+  /* =====================================================
+     PAGE-SPECIFIC ALIASES
+     These keep final CSS files controllable without duplication.
+  ===================================================== */
+
+  --inner-hero-navy-950: var(--editorial-dark);
+  --inner-hero-navy-900: var(--editorial-dark);
+  --inner-hero-navy-850: var(--editorial-dark-2);
+  --inner-hero-navy-800: var(--editorial-dark-3);
+  --inner-hero-gold: var(--color-accent);
+  --inner-hero-gold-soft: var(--editorial-gold-soft);
+  --inner-hero-text: var(--text-on-dark);
+  --inner-hero-muted: rgba(255, 255, 255, 0.78);
+  --inner-hero-rule: rgba(var(--color-accent-rgb), 0.32);
+  --inner-hero-grid: rgba(255, 255, 255, 0.038);
+
+  --global-navy: var(--footer-bg);
+  --global-navy-2: var(--color-primary);
+  --global-gold: var(--footer-accent);
+  --global-paper: var(--surface-paper);
+  --global-line: rgba(var(--color-primary-strong-rgb), 0.12);
+  --global-line-gold: rgba(var(--color-accent-rgb), 0.3);
+  --global-shadow-soft: 0 18px 42px rgba(var(--color-primary-strong-rgb), 0.08);
+  --global-shadow-card: 0 20px 48px rgba(var(--color-primary-strong-rgb), 0.11);
+
+  --contact-navy: var(--color-primary-strong);
+  --contact-navy-2: var(--color-primary);
+  --contact-gold: var(--color-accent);
+  --contact-paper: var(--surface-paper);
+  --contact-line: rgba(var(--color-primary-strong-rgb), 0.14);
+  --contact-muted: var(--editorial-muted);
+
+  --news-navy: var(--color-primary-strong);
+  --news-navy-2: var(--color-primary);
+  --news-gold: var(--color-accent);
+  --news-paper: var(--surface-paper);
+  --news-line: rgba(var(--color-primary-strong-rgb), 0.14);
+  --news-muted: var(--editorial-muted);
+
+  --legal-navy: var(--color-primary-strong);
+  --legal-navy-2: var(--color-primary);
+  --legal-gold: var(--color-accent);
+  --legal-paper: var(--surface-paper);
+  --legal-line: rgba(var(--color-primary-strong-rgb), 0.14);
+  --legal-muted: var(--editorial-muted);
+}
