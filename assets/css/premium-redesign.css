@@ -3516,3 +3516,41 @@ body.vision-page .download-section h2 {
   }
 }
 
+/* Decrease logo size, center it, and make header more compact on mobile */
+@media (max-width: 768px) {
+  body .site-header {
+    min-height: 58px !important;
+  }
+  body .header-inner {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    min-height: 58px !important;
+    padding: 0 16px !important;
+  }
+  body .logo-link {
+    margin: 0 auto !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  body .logo-emblem {
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+  }
+  body .logo-name {
+    font-size: 12.5px !important;
+  }
+  body .logo-tagline {
+    font-size: 9px !important;
+  }
+  body .hamburger {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+  }
+}
+
+
