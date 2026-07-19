@@ -48,6 +48,14 @@
   --pr-section-pad: clamp(80px, 9vw, 128px);
 }
 
+
+/* Standard upright ampersand style */
+body .amp {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+}
+
 /* ==========================================
    2. BASE RESETS & BODY
    ========================================== */
@@ -955,33 +963,36 @@ body.has-hero .fight-block .card-reveal {
   background-position: center center !important;
   color: #ffffff !important;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08) !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transform: scale(1.025) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
   transition: opacity 260ms ease, transform 560ms cubic-bezier(.2,.8,.2,1), visibility 260ms ease !important;
   pointer-events: none !important;
 }
 
-/* Fight block card text fades out on hover */
+/* Fight block card text fades in on hover */
 body.has-hero .fight-block > :not(.card-reveal) {
   position: relative !important;
   z-index: 2 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(8px) !important;
   transition: opacity 220ms ease, transform 260ms ease, visibility 220ms ease !important;
 }
 
 body.has-hero .fight-block:hover > :not(.card-reveal),
 body.has-hero .fight-block:focus-within > :not(.card-reveal) {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transform: translateY(8px) !important;
-}
-
-/* Reveal image on hover */
-body.has-hero .fight-block:hover .card-reveal,
-body.has-hero .fight-block:focus-within .card-reveal {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: scale(1) !important;
+  transform: translateY(0) !important;
+}
+
+/* Hide image on hover */
+body.has-hero .fight-block:hover .card-reveal,
+body.has-hero .fight-block:focus-within .card-reveal {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: scale(1.025) !important;
 }
 
 /* Reveal label text styles */
@@ -1212,6 +1223,7 @@ body.has-hero .founder-portrait-img {
   overflow: hidden !important;
   box-shadow: 0 24px 64px rgba(10,79,183,0.15), 0 8px 24px rgba(10,79,183,0.08) !important;
   position: relative !important;
+  background-color: #187380 !important;
 }
 
 body.has-hero .founder-portrait-img::before {
@@ -1223,13 +1235,17 @@ body.has-hero .founder-portrait-img::before {
   z-index: -1 !important;
 }
 
-body.has-hero .founder-portrait-img img {
+body.has-hero .founder-portrait-img img,
+body.has-hero .founder-portrait-img:hover img {
   width: 100% !important;
   height: 460px !important;
   object-fit: cover !important;
-  object-position: top center !important;
+  object-position: center 8% !important;
   display: block !important;
   border-radius: var(--pr-r-xl) !important;
+  pointer-events: none !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 body.has-hero .founder-name {
@@ -1339,12 +1355,18 @@ body.has-hero .inclusion-grid {
 
 body.has-hero .inclusion-card {
   grid-column: span 2 !important;
-  background: rgba(255,255,255,0.07) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%) !important;
   border-radius: var(--pr-r-xl) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  padding: 28px 22px !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-top: 3px solid rgba(246, 194, 26, 0.4) !important;
+  padding: 32px 24px !important;
   text-align: center !important;
-  transition: transform 0.28s ease, background 0.28s ease !important;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.28s ease, border-top-color 0.28s ease, background 0.28s ease, box-shadow 0.28s ease !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  position: relative !important;
 }
 
 body.has-hero .inclusion-card:nth-child(4) {
@@ -1357,7 +1379,10 @@ body.has-hero .inclusion-card:nth-child(5) {
 
 body.has-hero .inclusion-card:hover {
   transform: translateY(-6px) !important;
-  background: rgba(255,255,255,0.11) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  border-top-color: var(--pr-yellow) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%) !important;
+  box-shadow: 0 12px 30px rgba(246, 194, 26, 0.08) !important;
 }
 
 body.has-hero .inclusion-icon {
@@ -1629,8 +1654,9 @@ body.has-hero .pledges-cta {
    19. FINAL CTA SECTION
    ========================================== */
 body.has-hero .final-cta-section {
-  background: linear-gradient(135deg, var(--pr-navy) 0%, #0D2050 50%, var(--pr-navy) 100%) !important;
+  background: var(--pr-white) !important;
   padding: clamp(80px, 9vw, 128px) 0 !important;
+  border-top: 1px solid var(--pr-border) !important;
 }
 
 body.has-hero .final-cta-section::after {
@@ -1656,14 +1682,14 @@ body.has-hero .final-cta-headline {
   font-family: var(--pr-font-display) !important;
   font-size: clamp(32px, 4vw, 52px) !important;
   font-weight: 700 !important;
-  color: #fff !important;
+  color: var(--pr-navy) !important;
   line-height: 1.08 !important;
   letter-spacing: -0.01em !important;
   margin: 20px 0 20px !important;
 }
 
 body.has-hero .final-cta-sub {
-  color: rgba(255,255,255,0.72) !important;
+  color: var(--pr-text-muted) !important;
   font-size: 16.5px !important;
   line-height: 1.7 !important;
   margin-bottom: 40px !important;
@@ -1681,13 +1707,13 @@ body.has-hero .final-cta-buttons .btn-primary {
   box-shadow: none !important;
 }
 
-body.has-hero .final-cta-buttons .btn-outline {
+body.about-page .final-cta-buttons .btn-outline {
   background: transparent !important;
-  border-color: rgba(255,255,255,0.5) !important;
+  border: 2px solid rgba(255,255,255,0.5) !important;
   color: #fff !important;
 }
 
-body.has-hero .final-cta-buttons .btn-outline:hover {
+body.about-page .final-cta-buttons .btn-outline:hover {
   background: rgba(255,255,255,0.12) !important;
   border-color: #fff !important;
   color: #fff !important;
@@ -1696,13 +1722,17 @@ body.has-hero .final-cta-buttons .btn-outline:hover {
 /* ==========================================
    20. FOOTER
    ========================================== */
-body .site-footer {
-  background: linear-gradient(180deg, var(--pr-navy) 0%, #040D1A 100%) !important;
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
+body .site-footer,
+body.has-hero .site-footer {
+  background: var(--pr-navy) !important;
+  border-top: 4px solid var(--pr-yellow) !important;
+  color: #ffffff !important;
+  position: relative !important;
 }
 
 body .site-footer::before {
-  opacity: 0.06 !important;
+  display: none !important;
+  content: none !important;
 }
 
 body .footer-main {
@@ -1716,8 +1746,8 @@ body .footer-logo-emblem {
   height: 46px !important;
   background: #ffffff url('../images/selected/ojcp-logo.png') no-repeat center center / contain !important;
   border-radius: 50% !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1729,22 +1759,22 @@ body .footer-logo-emblem {
 body .footer-logo-text {
   font-size: 15px !important;
   font-weight: 700 !important;
-  color: rgba(255,255,255,0.95) !important;
+  color: #ffffff !important;
 }
 
 body .footer-odia {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 13px !important;
 }
 
 body .footer-tagline-en {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 12px !important;
   letter-spacing: 0.06em !important;
 }
 
 body .footer-mission {
-  color: rgba(255,255,255,0.55) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 13.5px !important;
   line-height: 1.72 !important;
   margin-top: 14px !important;
@@ -1760,7 +1790,7 @@ body .footer-col h3 {
 }
 
 body .footer-col a {
-  color: rgba(255,255,255,0.6) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 14px !important;
   text-decoration: none !important;
   line-height: 1.8 !important;
@@ -1768,49 +1798,49 @@ body .footer-col a {
 }
 
 body .footer-col a:hover {
-  color: rgba(255,255,255,0.95) !important;
+  color: #ffffff !important;
 }
 
 body .footer-contact address {
-  color: rgba(255,255,255,0.6) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 14px !important;
   line-height: 1.8 !important;
 }
 
 body .footer-contact a:hover {
-  color: var(--pr-yellow) !important;
+  color: #ffffff !important;
 }
 
 body .footer-hours {
-  color: rgba(255,255,255,0.44) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
   font-size: 12px !important;
   margin-top: 8px !important;
 }
 
 body .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
   padding-top: 26px !important;
   padding-bottom: 28px !important;
   gap: 20px !important;
 }
 
 body .footer-legal-links a {
-  color: rgba(255,255,255,0.48) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 12.5px !important;
 }
 
 body .footer-legal-links a:hover {
-  color: var(--pr-yellow) !important;
+  color: #ffffff !important;
 }
 
 body .footer-disclaimer {
-  color: rgba(255,255,255,0.38) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
   font-size: 11.5px !important;
   line-height: 1.65 !important;
 }
 
 body .footer-copyright {
-  color: rgba(255,255,255,0.36) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
   font-size: 12px !important;
 }
 
@@ -1832,6 +1862,15 @@ body .mobile-nav .nav-link {
 body .mobile-nav .nav-link:hover {
   color: var(--pr-blue) !important;
   background: rgba(10,79,183,0.05) !important;
+}
+
+body .mobile-nav-close {
+  color: var(--pr-text-dark) !important;
+}
+
+body .mobile-nav-close:hover {
+  background: rgba(10, 79, 183, 0.08) !important;
+  color: var(--pr-blue) !important;
 }
 
 body .hamburger span {
@@ -1869,18 +1908,107 @@ body .wa-float svg {
 }
 
 body .cookie-banner {
-  background: rgba(8,20,35,0.97) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  border-radius: var(--pr-r-lg) !important;
-  backdrop-filter: blur(20px) !important;
-  box-shadow: 0 24px 56px rgba(0,0,0,0.32) !important;
-  color: rgba(255,255,255,0.82) !important;
-  right: 20px !important;
-  bottom: 96px !important;
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  left: auto !important;
+  width: min(420px, calc(100vw - 48px)) !important;
+  background: #ffffff !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--pr-border, #eaecf0) !important;
+  border-radius: 16px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 12px 32px rgba(8, 20, 35, 0.12) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  z-index: 9999 !important;
+  transition: all 0.3s ease !important;
+}
+
+body .cookie-banner.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  pointer-events: none !important;
+}
+
+body .cookie-banner p {
+  font-family: var(--pr-font-sans) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: var(--pr-text-dark, #1d2939) !important;
+  margin: 0 !important;
+  flex: none !important;
+  text-align: left !important;
+}
+
+body .cookie-banner p a {
+  color: var(--pr-blue, #0a4fb7) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border-bottom: 1.5px dashed rgba(10, 79, 183, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+body .cookie-banner p a:hover {
+  color: var(--pr-navy, #081423) !important;
+  border-bottom-color: var(--pr-navy, #081423) !important;
+}
+
+body .cookie-btns {
+  display: flex !important;
+  gap: 10px !important;
+  width: 100% !important;
 }
 
 body .cookie-btn {
-  border-radius: var(--pr-r-pill) !important;
+  flex: 1 !important;
+  padding: 10px 16px !important;
+  font-family: var(--pr-font-sans) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease-in-out !important;
+  border-radius: 20px !important;
+}
+
+body .cookie-btn-accept {
+  background: var(--pr-yellow, #f2d21b) !important;
+  color: var(--pr-navy, #081423) !important;
+}
+
+body .cookie-btn-accept:hover {
+  background: var(--pr-navy, #081423) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(8, 20, 35, 0.15) !important;
+}
+
+body .cookie-btn-reject {
+  background: #f5f8fc !important;
+  color: var(--pr-text-dark, #1d2939) !important;
+  border: 1px solid var(--pr-border, #eaecf0) !important;
+}
+
+body .cookie-btn-reject:hover {
+  background: #eaecf0 !important;
+  color: var(--pr-navy, #081423) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 576px) {
+  body .cookie-banner {
+    right: 16px !important;
+    bottom: 16px !important;
+    width: calc(100vw - 32px) !important;
+    padding: 16px 20px !important;
+    gap: 14px !important;
+  }
 }
 
 /* ==========================================
@@ -2069,16 +2197,65 @@ body .cookie-btn {
    25. INNER PAGE HERO (about, contact etc.)
    ========================================== */
 body:not(.has-hero) main .page-hero,
-body.legal-page main .legal-hero,
 body.newsroom-page main > .newsroom-masthead-strip {
   background: linear-gradient(135deg, var(--pr-navy) 0%, #0D2050 50%, var(--pr-navy-2) 100%) !important;
   border-bottom: 1px solid rgba(10,79,183,0.3) !important;
 }
 
 body:not(.has-hero) main .page-hero::after,
-body.legal-page main .legal-hero::after,
 body.newsroom-page main > .newsroom-masthead-strip::after {
   background: linear-gradient(180deg, transparent, rgba(248,250,253,0.92) 96%, var(--pr-bg-light) 100%) !important;
+}
+
+/* Legal Page Light Hero Redesign */
+body.legal-page main .legal-hero {
+  background: #ffffff !important;
+  color: var(--pr-text-dark) !important;
+  border-bottom: 1px solid var(--pr-border) !important;
+  min-height: auto !important;
+  padding: calc(var(--nav-h, 72px) + 56px) 0 64px !important;
+  text-align: center !important;
+}
+
+body.legal-page main .legal-hero::before,
+body.legal-page main .legal-hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.legal-page main .legal-hero h1 {
+  color: var(--pr-navy) !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  margin: 18px auto 0 !important;
+  max-width: 820px !important;
+}
+
+body.legal-page main .legal-hero h1::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.legal-page main .legal-hero .eyebrow {
+  color: var(--pr-blue) !important;
+  background: rgba(10,79,183,0.05) !important;
+  border: 1px solid rgba(10,79,183,0.12) !important;
+  border-left: 3px solid var(--pr-blue) !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-size: 13px !important;
+  display: inline-block !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+body.legal-page main .legal-hero .updated {
+  color: var(--pr-text-muted) !important;
+  font-size: 15px !important;
+  margin: 10px auto 0 !important;
+  max-width: 680px !important;
+  font-weight: 400 !important;
 }
 
 /* ==========================================
@@ -2371,33 +2548,36 @@ body.has-hero .persona-card .card-reveal {
   background-position: center center !important;
   color: #ffffff !important;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08) !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transform: scale(1.025) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
   transition: opacity 260ms ease, transform 560ms cubic-bezier(.2,.8,.2,1), visibility 260ms ease !important;
   pointer-events: none !important;
 }
 
-/* Persona card text fades out on hover */
+/* Persona card text fades in on hover */
 body.has-hero .persona-card > :not(.card-reveal) {
   position: relative !important;
   z-index: 2 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(8px) !important;
   transition: opacity 220ms ease, transform 260ms ease, visibility 220ms ease !important;
 }
 
 body.has-hero .persona-card:hover > :not(.card-reveal),
 body.has-hero .persona-card:focus-within > :not(.card-reveal) {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transform: translateY(8px) !important;
-}
-
-/* Reveal image on hover */
-body.has-hero .persona-card:hover .card-reveal,
-body.has-hero .persona-card:focus-within .card-reveal {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: scale(1) !important;
+  transform: translateY(0) !important;
+}
+
+/* Hide image on hover */
+body.has-hero .persona-card:hover .card-reveal,
+body.has-hero .persona-card:focus-within .card-reveal {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: scale(1.025) !important;
 }
 
 /* Reveal label text styles */
@@ -2635,6 +2815,12 @@ body.vision-page .vision-section {
   background: #ffffff !important;
   padding: clamp(80px, 8vw, 112px) 0 !important;
   border-top: 1px solid var(--pr-border) !important;
+  position: relative !important;
+}
+
+body .vision-section::after {
+  display: none !important;
+  content: none !important;
 }
 
 body.vision-page .vision-header .eyebrow {
@@ -2976,34 +3162,51 @@ body.join-page .form-card > h2::after {
 }
 
 /* District Grid Section on Join Page */
-body.join-page .district-grid-section {
+html body.join-page main section.district-grid-section {
   background: var(--pr-bg-light) !important;
+  color: var(--pr-navy) !important;
   padding: clamp(80px, 8vw, 112px) 0 !important;
   border-top: 1px solid var(--pr-border) !important;
+  border-bottom: 1px solid var(--pr-border) !important;
 }
 
-body.join-page .district-grid-section .eyebrow {
+html body.join-page main section.district-grid-section .eyebrow {
   color: var(--pr-blue) !important;
+  background: rgba(10,79,183,0.05) !important;
+  border: 1px solid rgba(10,79,183,0.12) !important;
+  border-left: 3px solid var(--pr-blue) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 12px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 18px !important;
+  display: inline-flex !important;
 }
 
-body.join-page .district-grid-section h2.section-title--white {
+html body.join-page main section.district-grid-section .section-title {
   color: var(--pr-navy) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
 }
 
-body.join-page .district-tag {
+html body.join-page main section.district-grid-section .district-tag {
   background: #ffffff !important;
   border: 1px solid var(--pr-border) !important;
-  color: var(--pr-text-dark) !important;
-  border-radius: var(--pr-r-sm) !important;
+  color: var(--pr-navy) !important;
+  border-radius: var(--pr-r-lg) !important;
   box-shadow: var(--pr-shadow-sm) !important;
-  transition: all 0.2s ease !important;
+  padding: 14px 20px !important;
+  font-weight: 600 !important;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease !important;
 }
 
-body.join-page .district-tag:hover {
+html body.join-page main section.district-grid-section .district-tag:hover {
+  transform: translateY(-3px) !important;
   background: var(--pr-blue) !important;
   border-color: var(--pr-blue) !important;
   color: #ffffff !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(10, 79, 183, 0.15) !important;
 }
 
 /* ==========================================
@@ -3264,16 +3467,68 @@ body.newsroom-page .dossier-policy {
 /* Media contact strip at the bottom */
 body.newsroom-page .newsroom-media-contact-section,
 body.newsroom-page main > section:nth-of-type(4) {
-  background: var(--pr-navy) !important;
-  border-top: 1px solid rgba(10, 79, 183, 0.15) !important;
+  background: #ffffff !important;
+  border-top: 1px solid var(--pr-border) !important;
+  border-bottom: 1px solid var(--pr-border) !important;
+  padding: 56px 0 !important;
+}
+
+body.newsroom-page .press-contact-strip {
+  color: var(--pr-text-muted) !important;
+}
+
+body.newsroom-page .press-contact-info {
+  color: var(--pr-text-muted) !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+}
+
+body.newsroom-page .press-contact-info strong {
+  display: block !important;
+  margin-bottom: 6px !important;
+  color: var(--pr-navy) !important;
+  font-family: var(--pr-font-display) !important;
+  font-size: clamp(24px, 3vw, 30px) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
 }
 
 body.newsroom-page .press-contact-info a {
-  color: var(--pr-yellow) !important;
+  color: var(--pr-blue) !important;
+  font-weight: 600 !important;
+}
+
+body.newsroom-page .press-contact-info a:hover {
+  text-decoration: underline !important;
 }
 
 body.newsroom-page .press-contact-strip .btn {
-  border-radius: 100px !important;
+  border-radius: var(--pr-r-pill) !important;
+  padding: 12px 24px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+body.newsroom-page .press-contact-strip .btn-outline-dark {
+  border: 1px solid var(--pr-border) !important;
+  color: var(--pr-navy) !important;
+  background: transparent !important;
+}
+
+body.newsroom-page .press-contact-strip .btn-outline-dark:hover {
+  background: rgba(8,20,35,0.05) !important;
+  border-color: var(--pr-navy) !important;
+}
+
+body.newsroom-page .press-contact-strip .btn-primary {
+  background: var(--pr-blue) !important;
+  border: 1px solid var(--pr-blue) !important;
+  color: #ffffff !important;
+}
+
+body.newsroom-page .press-contact-strip .btn-primary:hover {
+  background: #083ea2 !important;
+  border-color: #083ea2 !important;
 }
 
 /* ==========================================
@@ -3433,8 +3688,67 @@ body.contact-page .contact-main-section {
 /* ==========================================
    31. VISION PAGE DOWNLOAD SECTION OVERRIDES
    ========================================== */
+body.vision-page .download-section {
+  background: #ffffff !important;
+  border-top: 1px solid var(--pr-border) !important;
+  padding: clamp(80px, 8vw, 112px) 0 !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+body.vision-page .download-section::before,
+body.vision-page .download-section::after {
+  display: none !important;
+  content: none !important;
+}
+
 body.vision-page .download-section h2 {
+  color: var(--pr-navy) !important;
+  font-family: var(--pr-font-display) !important;
+  font-size: clamp(32px, 5vw, 48px) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+}
+
+body.vision-page .download-section p {
+  color: var(--pr-text-muted) !important;
+  font-size: 15.5px !important;
+  line-height: 1.68 !important;
+  max-width: 640px !important;
+  margin: 18px auto 36px !important;
+}
+
+body.vision-page .download-section .btn {
+  border-radius: var(--pr-r-pill) !important;
+  padding: 14px 28px !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  min-height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.vision-page .download-section .btn-primary {
+  background: var(--pr-blue) !important;
+  border: 1px solid var(--pr-blue) !important;
   color: #ffffff !important;
+}
+
+body.vision-page .download-section .btn-primary:hover {
+  background: #083ea2 !important;
+  border-color: #083ea2 !important;
+}
+
+body.vision-page .download-section .btn-outline-dark {
+  border: 1px solid var(--pr-border) !important;
+  color: var(--pr-navy) !important;
+  background: transparent !important;
+}
+
+body.vision-page .download-section .btn-outline-dark:hover {
+  background: rgba(8,20,35,0.05) !important;
+  border-color: var(--pr-navy) !important;
 }
 
 /* ==========================================
@@ -3486,43 +3800,43 @@ body.vision-page .download-section h2 {
     margin-top: 0 !important;
   }
   body.has-hero .hero-content {
-    text-align: center !important;
+    text-align: left !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
     padding-top: 28px !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
   }
   body.has-hero .hero-content > .eyebrow {
-    justify-content: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     margin-bottom: 18px !important;
     font-size: 10px !important;
   }
   body.has-hero .hero-headline,
   body .hero-headline {
-    text-align: center !important;
+    text-align: left !important;
     font-size: clamp(30px, 6vw, 38px) !important;
-    margin: 12px auto 16px !important;
+    margin: 12px 0 16px !important;
     line-height: 1.12 !important;
   }
   body.has-hero .hero-headline-odia {
-    text-align: center !important;
-    margin: 0 auto 16px !important;
+    text-align: left !important;
+    margin: 0 0 16px !important;
     font-size: clamp(18px, 4vw, 22px) !important;
   }
   body.has-hero .hero-body {
-    text-align: center !important;
-    margin: 0 auto 24px !important;
+    text-align: left !important;
+    margin: 0 0 24px !important;
     font-size: 14.5px !important;
-    padding: 0 8px !important;
+    padding: 0 !important;
   }
   body.has-hero .hero-ctas {
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
     width: 100% !important;
     gap: 12px !important;
   }
@@ -3565,13 +3879,13 @@ body.vision-page .download-section h2 {
   body .header-inner {
     position: relative !important;
     display: flex !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     min-height: 58px !important;
     padding: 0 16px !important;
   }
   body .logo-link {
-    margin: 0 auto !important;
-    justify-content: center !important;
+    margin: 0 !important;
+    justify-content: flex-start !important;
     gap: 8px !important;
   }
   body .logo-emblem {
@@ -3592,6 +3906,243 @@ body.vision-page .download-section h2 {
     transform: translateY(-50%) !important;
     margin: 0 !important;
   }
+}
+
+/* ── Premium Vision Page Manifesto Sections Redesign ──────────────── */
+
+/* Chapters Section */
+body.vision-page .chapters-section {
+  background: #ffffff !important;
+  border-top: 1px solid var(--pr-border) !important;
+  border-bottom: 1px solid var(--pr-border) !important;
+  padding: clamp(80px, 8vw, 112px) 0 !important;
+}
+
+body.vision-page .chapters-section .eyebrow {
+  color: var(--pr-blue) !important;
+  background: rgba(10,79,183,0.05) !important;
+  border: 1px solid rgba(10,79,183,0.12) !important;
+  border-left: 3px solid var(--pr-blue) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 12px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 18px !important;
+  display: inline-flex !important;
+}
+
+body.vision-page .chapters-section .section-title {
+  color: var(--pr-navy) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+}
+
+body.vision-page .chapters-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  margin-top: 48px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+body.vision-page .chapter-card {
+  background: #ffffff !important;
+  border: 1px solid var(--pr-border) !important;
+  border-radius: var(--pr-r-xl) !important;
+  box-shadow: var(--pr-shadow-card) !important;
+  padding: 32px 28px !important;
+  min-height: auto !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.vision-page .chapter-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: var(--pr-blue) !important;
+  border-radius: var(--pr-r-xl) var(--pr-r-xl) 0 0 !important;
+  display: block !important;
+  opacity: 0.8 !important;
+}
+
+body.vision-page .chapter-card::after {
+  display: none !important; /* Remove the old ugly line */
+}
+
+body.vision-page .chapter-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--pr-shadow-card-hover) !important;
+  border-color: rgba(10, 79, 183, 0.25) !important;
+  background: #ffffff !important;
+}
+
+body.vision-page .chapter-num {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  margin-bottom: 20px !important;
+  padding: 5px 12px !important;
+  color: var(--pr-blue) !important;
+  background: rgba(10, 79, 183, 0.05) !important;
+  border: 1px solid rgba(10, 79, 183, 0.15) !important;
+  border-left: 3px solid var(--pr-blue) !important;
+  border-radius: 4px !important;
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+}
+
+body.vision-page .chapter-title {
+  color: var(--pr-navy) !important;
+  font-family: var(--pr-font-display) !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  margin-bottom: 6px !important;
+}
+
+body.vision-page .chapter-odia {
+  color: var(--pr-yellow) !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+
+body.vision-page .chapter-desc {
+  color: var(--pr-text-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* Pledges Section */
+body.vision-page .pledges-register-section {
+  background: #fbfaf6 !important;
+  border-top: 1px solid var(--pr-border) !important;
+  border-bottom: 1px solid var(--pr-border) !important;
+  padding: clamp(80px, 8vw, 112px) 0 !important;
+}
+
+body.vision-page .pledges-register-eyebrow {
+  color: var(--pr-blue) !important;
+  background: rgba(10,79,183,0.05) !important;
+  border: 1px solid rgba(10,79,183,0.12) !important;
+  border-left: 3px solid var(--pr-blue) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  padding: 6px 12px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 18px !important;
+  display: inline-flex !important;
+}
+
+body.vision-page .pledges-register-lead {
+  color: var(--pr-text-muted) !important;
+  font-size: 15.5px !important;
+  line-height: 1.68 !important;
+  margin-bottom: 40px !important;
+}
+
+body.vision-page .pledge-full {
+  background: #ffffff !important;
+  border: 1px solid var(--pr-border) !important;
+  border-radius: var(--pr-r-xl) !important;
+  box-shadow: var(--pr-shadow-card) !important;
+  padding: 32px 36px !important;
+  margin-bottom: 20px !important;
+  border-left: 6px solid var(--pr-blue) !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
+}
+
+body.vision-page .pledge-full:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--pr-shadow-card-hover) !important;
+  border-color: rgba(10, 79, 183, 0.2) !important;
+  border-left-color: var(--pr-yellow) !important;
+  background: #ffffff !important;
+}
+
+body.vision-page .pledge-full-header {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  margin-bottom: 16px !important;
+}
+
+body.vision-page .pledge-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 48px !important;
+  height: 48px !important;
+  color: var(--pr-blue) !important;
+  background: rgba(10, 79, 183, 0.06) !important;
+  border: 1px solid rgba(10, 79, 183, 0.16) !important;
+  border-radius: 50% !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+body.vision-page .pledge-full-meta {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.vision-page .pledge-full-odia {
+  color: var(--pr-yellow) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+}
+
+body.vision-page .pledge-full-en {
+  color: var(--pr-navy) !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+}
+
+body.vision-page .pledge-full-meaning {
+  color: var(--pr-text-muted) !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+body.vision-page .pledge-full-body {
+  color: var(--pr-text-muted) !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 16px !important;
+}
+
+body.vision-page .pledge-numbers {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+body.vision-page .pledge-num-tag {
+  padding: 6px 14px !important;
+  color: var(--pr-blue) !important;
+  background: rgba(10, 79, 183, 0.05) !important;
+  border: 1px solid rgba(10, 79, 183, 0.15) !important;
+  border-radius: var(--pr-r-pill) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
 }
 
 

@@ -6722,7 +6722,7 @@ body.has-hero .card-reveal-title {
 
 /* Homepage founder official portrait finalization */
 body.has-hero .founder-official-image-slot.has-official-image {
-  --founder-official-image: url('../images/selected/founder-mohammad-moquim.webp');
+  --founder-official-image: url('../images/selected/founder-mohammad-moquim.jpg');
 }
 
 body.has-hero .founder-official-image-slot.has-official-image .founder-portrait-img {
