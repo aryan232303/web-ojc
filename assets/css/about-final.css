@@ -163,29 +163,39 @@ body.about-page .about-flag-card::before {
 }
 
 body.about-page .about-flag-card--gold {
-  --flag-accent: var(--ojcp-yellow, #f5a623);
+  --flag-accent: #fade25 !important;
 }
 
 body.about-page .about-flag-card--white {
-  --flag-accent: var(--ojcp-white, #d9d6cc);
+  --flag-accent: #fdfeff !important;
 }
 
 body.about-page .about-flag-card--blue {
-  --flag-accent: var(--ojcp-blue, #1b3a8c);
+  --flag-accent: #296db6 !important;
 }
 
 body.about-page .about-flag-swatch {
   width: 96px;
   min-height: 48px;
-  border-radius: 3px;
+  border-radius: 6px;
   background: var(--flag-accent);
-  border: 1px solid rgba(13, 26, 42, 0.10);
+  border: 1px solid rgba(13, 26, 42, 0.12);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
 
+body.about-page .about-flag-card--gold .about-flag-swatch {
+  background: #fade25 !important;
+  border-color: rgba(250, 222, 37, 0.5) !important;
+}
+
 body.about-page .about-flag-card--white .about-flag-swatch {
-  background: #f7f6f2;
-  border-color: #d9d6cc;
+  background: #fdfeff !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.about-page .about-flag-card--blue .about-flag-swatch {
+  background: #296db6 !important;
+  border-color: rgba(41, 109, 182, 0.5) !important;
 }
 
 body.about-page .about-flag-name {

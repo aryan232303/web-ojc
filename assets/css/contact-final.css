@@ -64,7 +64,7 @@ body.contact-page main .page-hero h1 {
   margin: 24px 0 0;
   font-size: clamp(48px, 6vw, 76px);
   line-height: 0.98;
-  text-shadow: 0 22px 46px rgba(0, 0, 0, 0.28);
+  text-shadow: none;
 }
 
 body.contact-page main .page-hero h1::after {

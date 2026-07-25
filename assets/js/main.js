@@ -1,24 +1,6 @@
 /* OJCP — Shared JavaScript */
 
 // ── Header scroll behavior ──────────────────────────────────
-// Optional official logo asset support. If the file is absent, the CSS text emblem remains.
-const logoEmblems = document.querySelectorAll('.logo-emblem, .footer-logo-emblem');
-if (logoEmblems.length) {
-  const logoProbe = new Image();
-  logoProbe.onload = () => {
-    logoEmblems.forEach(emblem => {
-      if (emblem.querySelector('.logo-asset')) return;
-      const img = document.createElement('img');
-      img.src = 'assets/images/ojcp-logo.svg';
-      img.alt = '';
-      img.setAttribute('aria-hidden', 'true');
-      img.className = 'logo-asset';
-      emblem.classList.add('logo-emblem--asset');
-      emblem.appendChild(img);
-    });
-  };
-  logoProbe.src = 'assets/images/ojcp-logo.svg';
-}
 
 document.addEventListener('click', e => {
   const disabledLink = e.target.closest('a[aria-disabled="true"]');

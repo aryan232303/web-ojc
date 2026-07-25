@@ -50,8 +50,8 @@ body .site-header {
 }
 
 body .container {
-  width: min(100% - 48px, var(--max-w, 1200px));
-  max-width: var(--max-w, 1200px);
+  width: min(100% - 48px, var(--max-w, 1360px));
+  max-width: var(--max-w, 1360px);
   padding-right: 0;
   padding-left: 0;
 }

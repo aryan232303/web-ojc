@@ -31,7 +31,7 @@
   --shadow-md:   0 8px 32px rgba(13,26,42,0.12);
   --shadow-lg:   0 24px 64px rgba(13,26,42,0.18);
 
-  --max-w:       1200px;
+  --max-w:       1360px;
   --nav-h:       72px;
   --transition:  0.25s cubic-bezier(0.4,0,0.2,1);
 
@@ -331,7 +331,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 500;
   color: rgba(255,255,255,0.9);
   letter-spacing: 0.3px;
-  padding: 0 48px;
+  padding: 0 24px;
 }
 .ticker-item .dot {
   color: var(--gold);
@@ -6874,8 +6874,8 @@ body.has-hero .pledge-en {
 
 body.has-hero .pledge-desc {
   margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(13, 26, 42, 0.1);
+  padding-top: 0;
+  border-top: none;
   color: rgba(13, 26, 42, 0.72);
   font-size: 12.2px;
   line-height: 1.62;

@@ -88,7 +88,7 @@ body.join-page .page-hero h1 {
   line-height: 1.04;
   letter-spacing: 0;
   text-wrap: balance;
-  text-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+  text-shadow: none;
 }
 
 body.join-page .page-hero-sub {
@@ -1304,7 +1304,7 @@ body.join-page #wings > div > div:nth-child(3) strong::after {
 }
 
 body.join-page #wings > div > div:nth-child(4) strong::after {
-  content: "Farmer Network";
+  content: "Farmer's Wing";
 }
 
 body.join-page #wings > div > div:nth-child(5) strong::after {
