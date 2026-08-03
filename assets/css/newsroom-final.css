@@ -187,13 +187,13 @@ body.newsroom-page .newsroom-rule-spaced {
 }
 
 body.newsroom-page main > section .newsroom-flag {
-  padding: 12px 0;
+  padding: 14px 0;
   color: #071126;
-  font-family: var(--font-body);
-  font-size: 0.73rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
-  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
 }
 
 body.newsroom-page main > section .newsroom-flag span:last-child {
@@ -431,6 +431,30 @@ body.newsroom-page .stats-dossier {
   background:
     radial-gradient(circle at 10% 12%, rgba(202, 169, 91, 0.08), transparent 28%),
     linear-gradient(180deg, #ffffff 0%, var(--news-paper) 100%);
+}
+
+body.newsroom-page .stats-dossier-flag {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #071126;
+  padding-bottom: 12px;
+}
+
+body.newsroom-page .stats-dossier-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #071126;
+  margin: 0;
+}
+
+body.newsroom-page .stats-dossier-sub {
+  font-size: 0.88rem;
+  color: var(--news-muted);
+  font-weight: 500;
 }
 
 body.newsroom-page .stats-dossier-grid {

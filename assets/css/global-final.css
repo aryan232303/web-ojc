@@ -136,8 +136,8 @@ body .header-ctas .btn {
   letter-spacing: 0.05em;
 }
 
-body main > section,
-body main > div,
+body main>section,
+body main>div,
 body .legal-content {
   scroll-margin-top: calc(var(--nav-h, 72px) + 28px);
 }
@@ -147,11 +147,11 @@ body main [id]:not(section):not(div) {
   scroll-margin-top: calc(var(--nav-h, 72px) + 42px);
 }
 
-body main > section {
+body main>section {
   position: relative;
 }
 
-body main > section:not(.hero):not(.page-hero):not(.final-cta-section):not(.download-section) {
+body main>section:not(.hero):not(.page-hero):not(.final-cta-section):not(.download-section) {
   padding-top: clamp(72px, 8vw, 112px);
   padding-bottom: clamp(72px, 8vw, 112px);
 }
@@ -173,7 +173,7 @@ body :is(.final-cta-buttons, .vision-hero-actions, .download-actions, .success-s
   gap: 12px;
 }
 
-body main > section + section::before {
+body main>section+section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -195,8 +195,7 @@ body :is(.section-lead, .final-cta-sub, .page-hero-sub, .success-body) {
 }
 
 /* Shared card finish */
-body :is(
-  .stat-card,
+body :is(.stat-card,
   .trio-card,
   .fight-block,
   .persona-card,
@@ -215,13 +214,11 @@ body :is(
   .dossier-block,
   .timeline-content,
   .founder-quote,
-  .legal-disclaimer-box
-) {
+  .legal-disclaimer-box) {
   backface-visibility: hidden;
 }
 
-body :is(
-  .contact-card,
+body :is(.contact-card,
   .reason-card,
   .pillar-card,
   .chapter-card,
@@ -234,13 +231,11 @@ body :is(
   .press-tile,
   .legal-content table,
   .legal-content > p:first-child,
-  .legal-disclaimer-box
-) {
+  .legal-disclaimer-box) {
   border-radius: 4px;
 }
 
-body :is(
-  .contact-card,
+body :is(.contact-card,
   .reason-card,
   .pillar-card,
   .chapter-card,
@@ -249,15 +244,14 @@ body :is(
   .pledge-mini,
   .pledge-full,
   .presskit-tile,
-  .press-tile
-):focus-within {
+  .press-tile):focus-within {
   outline: 2px solid rgba(202, 169, 91, 0.42);
   outline-offset: 3px;
 }
 
 @media (hover: hover) {
-  body :is(
-    .contact-card,
+
+  body :is(.contact-card,
     .reason-card,
     .pillar-card,
     .chapter-card,
@@ -265,8 +259,7 @@ body :is(
     .pledge-mini,
     .pledge-full,
     .presskit-tile,
-    .press-tile
-  ):hover {
+    .press-tile):hover {
     border-color: rgba(202, 169, 91, 0.42);
   }
 }
@@ -309,7 +302,7 @@ body :is(.btn, button, .share-button, .success-share-btn, .success-next-link) {
 /* Shared inner-page hero containment */
 body:not(.has-hero) main .page-hero,
 body.legal-page main .legal-hero,
-body.newsroom-page main > .newsroom-masthead-strip {
+body.newsroom-page main>.newsroom-masthead-strip {
   overflow: hidden;
   isolation: isolate;
   color: #ffffff;
@@ -322,7 +315,7 @@ body.newsroom-page main > .newsroom-masthead-strip {
 
 body:not(.has-hero) main .page-hero::before,
 body.legal-page main .legal-hero::before,
-body.newsroom-page main > .newsroom-masthead-strip::before {
+body.newsroom-page main>.newsroom-masthead-strip::before {
   opacity: 0.11 !important;
   background-image:
     linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
@@ -332,7 +325,7 @@ body.newsroom-page main > .newsroom-masthead-strip::before {
 
 body:not(.has-hero) main .page-hero::after,
 body.legal-page main .legal-hero::after,
-body.newsroom-page main > .newsroom-masthead-strip::after {
+body.newsroom-page main>.newsroom-masthead-strip::after {
   background:
     linear-gradient(180deg, rgba(5, 11, 24, 0), rgba(248, 246, 239, 0.88) 96%, var(--global-paper) 100%),
     linear-gradient(90deg, transparent, rgba(202, 169, 91, 0.16), transparent) !important;
@@ -397,7 +390,7 @@ body .site-footer::before {
   pointer-events: none;
 }
 
-body .site-footer > .container {
+body .site-footer>.container {
   position: relative;
   z-index: 1;
 }
@@ -527,7 +520,7 @@ body .cookie-btn {
     text-overflow: ellipsis;
   }
 
-  body main > section + section::before {
+  body main>section+section::before {
     width: calc(100% - 32px);
   }
 
@@ -580,4 +573,39 @@ body .cookie-btn {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* ============================================================
+   REMOVE ALL SECTION SEPARATOR LINES & DIVIDERS ACROSS WHOLE SITE
+   ============================================================ */
+.pledges-trio-section::before,
+.chapters-section::before,
+.hero-trust-divider,
+.contact-info::before,
+.newsroom-rule,
+.newsroom-rule-thin,
+hr,
+.divider,
+.section-divider {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+}
+
+section,
+.pledges-trio-section,
+.founder-section,
+.pledges-grid-section,
+.three-fights-section,
+.press-kit-section,
+.district-grid-section,
+.about-pillars-section,
+.timeline-section,
+.stats-section,
+.ideology-section,
+.personas-section,
+.site-footer,
+body .site-footer {
+  border-top: none !important;
+  border-bottom: none !important;
 }

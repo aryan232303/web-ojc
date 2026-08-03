@@ -14,12 +14,12 @@ body.about-page .page-hero {
   isolation: isolate;
   min-height: 430px;
   padding: calc(var(--nav-h, 80px) + 76px) 0 92px;
-  text-align: left;
+  text-align: center;
   background:
     radial-gradient(ellipse 60% 80% at 84% 16%, rgba(var(--color-accent-rgb, 245, 166, 35), 0.12), transparent 58%),
     radial-gradient(ellipse 54% 90% at 8% 96%, rgba(var(--color-primary-rgb, 27, 58, 140), 0.28), transparent 62%),
     linear-gradient(135deg, var(--inner-hero-navy-950, #050b18) 0%, var(--inner-hero-navy-900, #071126) 48%, var(--inner-hero-navy-800, #0d2461) 100%);
-  border-bottom: 1px solid rgba(var(--color-accent-rgb, 245, 166, 35), 0.18);
+  border-bottom: none;
 }
 
 body.about-page .page-hero::before {
@@ -42,7 +42,7 @@ body.about-page .page-hero::after {
   bottom: -1px;
   z-index: 1;
   height: 74px;
-  background: linear-gradient(180deg, rgba(var(--color-primary-strong-rgb, 5, 11, 24), 0), var(--surface-paper, #f8f5ee) 92%);
+  background: linear-gradient(180deg, rgba(var(--color-primary-strong-rgb, 5, 11, 24), 0), #fafaf8 92%);
   pointer-events: none;
 }
 
@@ -50,6 +50,10 @@ body.about-page .page-hero-inner {
   position: relative;
   z-index: 2;
   max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body.about-page .page-hero .eyebrow {
@@ -66,28 +70,29 @@ body.about-page .page-hero .eyebrow {
 
 body.about-page .page-hero h1 {
   max-width: 780px;
-  margin: 24px 0 22px;
+  margin: 24px auto 22px;
   color: #ffffff;
   font-size: clamp(42px, 6vw, 72px);
   line-height: 1.02;
   letter-spacing: 0;
+  text-align: center;
 }
 
 body.about-page .page-hero-sub {
-  max-width: 680px;
-  margin: 0;
+  max-width: 640px;
+  margin: 0 auto;
   color: rgba(255, 255, 255, 0.78);
   font-size: 17px;
   line-height: 1.78;
+  text-align: center;
 }
 
 /* Flag identity */
 body.about-page .about-flag-section {
   padding: clamp(72px, 8vw, 104px) 0;
-  background:
-    linear-gradient(180deg, var(--surface-paper, #f8f5ee) 0%, var(--editorial-paper-warm, #fffaf1) 55%, var(--editorial-paper-deep, #f5efe4) 100%);
-  border-top: 1px solid rgba(13, 26, 42, 0.08);
-  border-bottom: 1px solid rgba(13, 26, 42, 0.08);
+  background: #fafaf8;
+  border-top: none;
+  border-bottom: none;
 }
 
 body.about-page .about-flag-inner {
@@ -217,11 +222,9 @@ body.about-page .about-flag-body {
 
 body.about-page .about-founder-section {
   padding: clamp(78px, 8vw, 124px) 0;
-  background:
-    radial-gradient(circle at 14% 10%, rgba(27, 58, 140, 0.08), transparent 32%),
-    linear-gradient(180deg, #f8f5ee 0%, #fffaf1 54%, #f6f0e6 100%);
-  border-top: 1px solid rgba(13, 26, 42, 0.08);
-  border-bottom: 1px solid rgba(13, 26, 42, 0.08);
+  background: #fafaf8;
+  border-top: none;
+  border-bottom: none;
 }
 
 body.about-page .about-founder-section .founder-inner {
@@ -364,7 +367,7 @@ body.about-page .about-pillars-section {
     radial-gradient(ellipse 48% 60% at 8% 100%, rgba(245, 166, 35, 0.08), transparent 62%),
     linear-gradient(155deg, #050b18 0%, #071126 54%, #0a1c48 100%) !important;
   background-attachment: scroll;
-  border-top: 1px solid rgba(245, 166, 35, 0.16);
+  border-top: none;
 }
 
 body.about-page .about-pillars-section::before {
@@ -437,6 +440,16 @@ body.about-page .about-pillars-section .pillar-card:nth-child(n + 5) {
   grid-column: span 4;
 }
 
+@media (min-width: 1025px) {
+  body.about-page .about-pillars-section .pillar-card:nth-child(8) {
+    grid-column: 3 / span 4 !important;
+  }
+
+  body.about-page .about-pillars-section .pillar-card:nth-child(9) {
+    grid-column: 7 / span 4 !important;
+  }
+}
+
 body.about-page .about-pillars-section .pillar-card::before {
   content: "";
   position: absolute;
@@ -505,10 +518,9 @@ body.about-page .about-definition-section {
   position: relative;
   overflow: hidden;
   padding: clamp(82px, 8vw, 118px) 0;
-  background:
-    linear-gradient(180deg, #f8f5ee 0%, #fffaf1 54%, #f4ede1 100%);
-  border-top: 1px solid rgba(13, 26, 42, 0.10);
-  border-bottom: 1px solid rgba(13, 26, 42, 0.10);
+  background: #fafaf8;
+  border-top: none;
+  border-bottom: none;
 }
 
 body.about-page .about-definition-section::before {
@@ -596,7 +608,7 @@ body.about-page .final-cta-section {
   padding: clamp(86px, 9vw, 124px) 0;
   background:
     linear-gradient(135deg, rgba(7, 17, 38, 0.985), rgba(5, 10, 24, 0.985)) !important;
-  border-top: 1px solid rgba(245, 166, 35, 0.16);
+  border-top: none;
 }
 
 body.about-page .final-cta-section::before {
@@ -847,9 +859,9 @@ body.about-page .final-cta-buttons .btn {
 /* ── Organisation Section Styles ───────────────────────────── */
 body.about-page .about-organisation-section {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: #fbfaf6;
-  border-top: 1px solid rgba(13, 26, 42, 0.08);
-  border-bottom: 1px solid rgba(13, 26, 42, 0.08);
+  background: #fafaf8;
+  border-top: none;
+  border-bottom: none;
 }
 
 body.about-page .org-tabs-nav {
@@ -912,7 +924,7 @@ body.about-page .org-group-title {
   color: #071126;
   margin: 36px 0 16px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #e1dbcd;
+  border-bottom: none;
   font-weight: 700;
 }
 
@@ -928,7 +940,7 @@ body.about-page .org-grid {
 
 body.about-page .org-card {
   background: #ffffff;
-  border: 1px solid rgba(13, 26, 42, 0.08);
+  border: 1px solid rgba(13, 26, 42, 0.07);
   border-radius: 8px;
   padding: 16px 20px;
   transition: all 0.2s ease;
@@ -1000,3 +1012,172 @@ body.about-page .media-cell-main {
   flex-direction: column;
   gap: 24px;
 }
+
+/* ─── Mobile Responsiveness Additions ───────────────────────────────── */
+
+/* Flag grid: 3-col → 1-col on mobile */
+@media (max-width: 767px) {
+  body.about-page .about-flag-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.about-page .about-flag-card {
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(13, 26, 42, 0.10) !important;
+  }
+
+  body.about-page .about-flag-card:last-child {
+    border-bottom: 0 !important;
+  }
+
+  /* Page hero: proper top offset below fixed navbar */
+  body.about-page .page-hero {
+    min-height: auto !important;
+    padding: calc(var(--nav-h, 80px) + 44px) 0 56px !important;
+    text-align: center !important;
+  }
+
+  body.about-page .page-hero-inner {
+    text-align: center !important;
+  }
+
+  body.about-page .page-hero h1 {
+    font-size: clamp(28px, 8vw, 38px) !important;
+    line-height: 1.12 !important;
+    margin: 16px 0 14px !important;
+    max-width: 100% !important;
+  }
+
+  body.about-page .page-hero-sub {
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Founder section: stack vertically, portrait centred */
+  body.about-page .about-founder-section .founder-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  body.about-page .about-founder-section .founder-portrait-block {
+    position: static !important;
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+
+  body.about-page .about-founder-section .founder-portrait-img {
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  body.about-page .about-founder-section .founder-content-block {
+    max-width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  body.about-page .about-founder-section .founder-headline {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.15 !important;
+  }
+
+  body.about-page .about-founder-section .founder-quote p {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Pillars grid: 1-col on small mobile */
+  body.about-page .about-pillars-section .pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.about-page .about-pillars-section .pillar-card,
+  body.about-page .about-pillars-section .pillar-card:nth-child(n + 5),
+  body.about-page .about-pillars-section .pillar-card:last-child {
+    grid-column: auto !important;
+    min-height: auto !important;
+    padding: 22px 18px 26px !important;
+  }
+
+  /* Definition grid: 1-col on mobile */
+  body.about-page .about-definition-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.about-page .about-definition-card {
+    min-height: 0 !important;
+    padding: 22px 18px 26px !important;
+  }
+
+  /* CTA section */
+  body.about-page .final-cta-section {
+    padding: 56px 0 64px !important;
+  }
+
+  body.about-page .final-cta-headline {
+    font-size: clamp(26px, 8vw, 36px) !important;
+    line-height: 1.15 !important;
+  }
+
+  body.about-page .final-cta-sub {
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+  }
+
+  body.about-page .final-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    gap: 10px !important;
+  }
+
+  body.about-page .final-cta-buttons .btn {
+    width: 100% !important;
+    min-height: 50px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Organisation section */
+  body.about-page .about-organisation-section {
+    padding: 44px 0 54px !important;
+  }
+
+  body.about-page .org-tabs-nav {
+    gap: 8px !important;
+    margin-bottom: 32px !important;
+  }
+
+  body.about-page .org-tab-btn {
+    font-size: 13.5px !important;
+    padding: 9px 18px !important;
+  }
+
+  body.about-page .org-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.about-page .media-cell-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Intermediate breakpoint 768–900: 2-col flag on tablet */
+@media (min-width: 768px) and (max-width: 900px) {
+  body.about-page .about-flag-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  body.about-page .about-flag-card:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.about-page .page-hero h1 {
+    font-size: clamp(32px, 6vw, 48px) !important;
+  }
+
+  body.about-page .about-founder-section .founder-portrait-block {
+    max-width: 280px !important;
+  }
+}
+

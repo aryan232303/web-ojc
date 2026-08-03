@@ -492,3 +492,336 @@ body.colour-preview .mobile-nav .nav-link {
         rgba(58, 95, 163, 0.78) 100%) !important;
   }
 }
+
+@media (max-width: 900px) {
+
+  body.colour-preview .hero-inner,
+  body.colour-preview-c .hero-inner {
+    padding-top: clamp(88px, 12vw, 104px) !important;
+  }
+}
+
+/* ============================================================
+   PREMIUM POLITICAL CAMPAIGN HERO – COMPOSITION REFINED
+   ============================================================ */
+body.has-hero .hero,
+body .hero {
+  position: relative !important;
+  margin-top: 0 !important;
+  padding-top: var(--nav-h, 72px) !important;
+  min-height: clamp(560px, 86vh, 820px) !important;
+  background-image:
+    linear-gradient(90deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.98) 35%,
+      rgba(255, 255, 255, 0.78) 52%,
+      rgba(255, 255, 255, 0.20) 70%,
+      rgba(255, 255, 255, 0) 84%),
+    url('../images/selected/hero-full-composition-bg.webp'),
+    url('../images/selected/hero-full-composition-bg.jpg') !important;
+  background-size: cover, auto 88%, auto 88% !important;
+  background-position: left center, right center, right center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+body.has-hero .hero::before,
+body.has-hero .hero::after,
+body .hero::before,
+body .hero::after {
+  display: none !important;
+}
+
+body.has-hero .hero-inner,
+body .hero-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  min-height: calc(86vh - var(--nav-h, 72px)) !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  padding-left: clamp(20px, 3.5vw, 40px) !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+body.has-hero .hero-content,
+body .hero-content {
+  width: 100% !important;
+  max-width: 500px !important;
+  /* Left 42-46% column flush to left margin */
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  z-index: 3 !important;
+}
+
+body.has-hero .hero-portrait-col,
+body .hero-portrait-col {
+  display: none !important;
+}
+
+/* Hide paragraph completely on Tablet & Mobile (< 1024px) */
+@media (max-width: 1023px) {
+
+  .hero-body-desktop-only,
+  body.has-hero .hero-body,
+  body .hero-body {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Show paragraph ONLY on Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+
+  .hero-body-desktop-only,
+  body.has-hero .hero-body,
+  body .hero-body {
+    display: block !important;
+    margin-bottom: 24px !important;
+    height: auto !important;
+    visibility: visible !important;
+  }
+}
+
+/* Laptop Screens (< 1280px) */
+@media (max-width: 1280px) {
+
+  body.has-hero .hero,
+  body .hero {
+    background-size: cover, auto 85%, auto 85% !important;
+  }
+
+  body.has-hero .hero-content,
+  body .hero-content {
+    max-width: 460px !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE HERO SPLIT (DESKTOP VS MOBILE/TABLET)
+   ============================================================ */
+
+/* DESKTOP HERO (>= 1024px) */
+@media (min-width: 1024px) {
+
+  body.has-hero .hero-desktop-only,
+  body .hero-desktop-only {
+    display: flex !important;
+  }
+
+  body.has-hero .hero-mobile-only,
+  body .hero-mobile-only {
+    display: none !important;
+  }
+}
+
+/* MOBILE & TABLET HERO (< 1024px) */
+@media (max-width: 1023px) {
+
+  body.has-hero .hero-desktop-only,
+  body .hero-desktop-only {
+    display: none !important;
+  }
+
+  body.has-hero .hero-mobile-only,
+  body .hero-mobile-only {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+    padding-bottom: 36px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .hero-mobile-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-mobile-image-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 24px !important;
+    max-height: 46vh !important;
+  }
+
+  .hero-mobile-leader-img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: clamp(260px, 44vh, 380px) !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.08)) !important;
+  }
+
+  .hero-mobile-content {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-mobile-headline {
+    font-size: clamp(32px, 6.5vw, 42px) !important;
+    line-height: 1.15 !important;
+    color: var(--navy, #0B192C) !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    font-weight: 800 !important;
+  }
+
+  .hero-mobile-headline-odia {
+    font-size: clamp(20px, 4.5vw, 26px) !important;
+    color: var(--saffron, #FF9933) !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+    font-weight: 700 !important;
+    display: block !important;
+  }
+
+  .hero-mobile-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-mobile-ctas .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 13px 24px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Phone Fine-tuning (< 480px) */
+@media (max-width: 479px) {
+  .hero-mobile-headline {
+    font-size: clamp(28px, 8vw, 36px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-mobile-headline-odia {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-mobile-image-container {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ============================================================
+   REMOVE ALL SECTION SEPARATOR LINES & DIVIDERS ACROSS WHOLE SITE
+   ============================================================ */
+.pledges-trio-section::before,
+.chapters-section::before,
+.hero-trust-divider,
+.contact-info::before,
+.newsroom-rule,
+.newsroom-rule-thin,
+hr,
+.divider,
+.section-divider {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+}
+
+section,
+.pledges-trio-section,
+.founder-section,
+.pledges-grid-section,
+.three-fights-section,
+.press-kit-section,
+.district-grid-section,
+.about-pillars-section,
+.timeline-section,
+.stats-section,
+.ideology-section,
+.personas-section,
+.site-footer,
+body .site-footer {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Mirror / Invert Founder Portrait Image Horizontally */
+.founder-portrait-img img,
+.founder-official-image-slot img,
+body .founder-portrait-img img {
+  transform: scaleX(-1) !important;
+}
+
+/* ============================================================
+   ORGANIC HERO BOTTOM DIVIDER (SEAMLESS CURVED TRANSITION)
+   ============================================================ */
+.hero-bottom-divider {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 90px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  filter: drop-shadow(0 -10px 25px rgba(11, 25, 44, 0.03)) !important;
+}
+
+.hero-divider-svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1023px) {
+  .hero-bottom-divider {
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bottom-divider {
+    height: 44px !important;
+  }
+}

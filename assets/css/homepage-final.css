@@ -11,18 +11,7 @@ body.has-hero .hero {
 }
 
 body.has-hero .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 0 auto;
-  width: 50%;
-  background-image: url("../images/selected/hero-community-listening.webp") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 74% 52%;
-  opacity: 0.5;
-  filter: brightness(0.58) contrast(0.88) saturate(0.82);
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 body.has-hero .hero::after {
@@ -70,7 +59,7 @@ body.has-hero .hero-content {
   text-align: left;
 }
 
-body.has-hero .hero-content > .eyebrow {
+body.has-hero .hero-content>.eyebrow {
   color: rgba(var(--color-accent-rgb, 245, 166, 35), 0.85);
   letter-spacing: 3px;
 }
@@ -163,25 +152,7 @@ body.has-hero .cookie-actions .btn {
   font-size: 11px;
 }
 
-body.has-hero .ticker-wrap {
-  padding: 7px 0;
-  background: var(--ticker-bg, rgba(15, 23, 42, 0.98));
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(var(--color-accent-rgb, 245, 166, 35), 0.18);
-}
 
-body.has-hero .ticker-item {
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.035em;
-  padding: 0 42px;
-}
-
-body.has-hero .ticker-item .dot {
-  margin-right: 42px;
-  color: rgba(var(--color-accent-rgb, 245, 166, 35), 0.86);
-}
 
 /* 2. Section rhythm */
 body.has-hero .stats-section,
@@ -194,8 +165,7 @@ body.has-hero .pledges-grid-section {
   scroll-margin-top: calc(var(--nav-h, 72px) + 26px);
 }
 
-body.has-hero :is(
-  #stats-h2,
+body.has-hero :is(#stats-h2,
   #ideology-h2,
   #trio-h2,
   #fights-h2,
@@ -204,8 +174,7 @@ body.has-hero :is(
   #inclusion-h2,
   #vision-h2,
   #pledges-h2,
-  #final-cta-h2
-) {
+  #final-cta-h2) {
   scroll-margin-top: calc(var(--nav-h, 72px) + 42px);
 }
 
@@ -218,15 +187,28 @@ body.has-hero .stats-section {
 
 body.has-hero .stats-header {
   max-width: 1120px;
+  margin-left: auto !important;
+  margin-right: auto !important;
   margin-bottom: 48px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
 }
 
 body.has-hero .stats-header .eyebrow {
   color: var(--gold);
+  text-align: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 body.has-hero .stats-header .section-title--white {
-  max-width: 560px;
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
   color: var(--white);
   font-family: var(--font-display);
   font-size: clamp(24px, 3.5vw, 38px);
@@ -288,11 +270,11 @@ body.has-hero .ideology-section {
     linear-gradient(180deg, var(--surface-paper, #f8f6ef) 0%, var(--editorial-paper-warm, #fffaf1) 54%, var(--editorial-paper-deep, #f5efe4) 100%) !important;
 }
 
-body.has-hero .ideology-section > .container {
+body.has-hero .ideology-section>.container {
   max-width: 960px;
 }
 
-body.has-hero .ideology-section > .container > .eyebrow {
+body.has-hero .ideology-section>.container>.eyebrow {
   display: block;
   text-align: center;
 }
@@ -312,9 +294,9 @@ body.has-hero .ideology-body {
 }
 
 body.has-hero .pledges-trio-header .eyebrow,
-body.has-hero .three-fights-section > .container > .eyebrow,
-body.has-hero .founder-content-block > .eyebrow,
-body.has-hero .pledges-grid-section > .container > .eyebrow {
+body.has-hero .three-fights-section>.container>.eyebrow,
+body.has-hero .founder-content-block>.eyebrow,
+body.has-hero .pledges-grid-section>.container>.eyebrow {
   color: var(--blue);
 }
 
@@ -356,8 +338,8 @@ body.has-hero .trio-card .card-reveal {
   display: none !important;
 }
 
-body.has-hero .trio-card:hover > :not(.card-reveal),
-body.has-hero .trio-card:focus-within > :not(.card-reveal) {
+body.has-hero .trio-card:hover> :not(.card-reveal),
+body.has-hero .trio-card:focus-within> :not(.card-reveal) {
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
@@ -505,9 +487,9 @@ body.has-hero .persona-card::after {
   visibility: hidden !important;
 }
 
-body.has-hero .trio-card > :not(.card-reveal),
-body.has-hero .fight-block > :not(.card-reveal),
-body.has-hero .persona-card > :not(.card-reveal) {
+body.has-hero .trio-card> :not(.card-reveal),
+body.has-hero .fight-block> :not(.card-reveal),
+body.has-hero .persona-card> :not(.card-reveal) {
   position: relative;
   z-index: 2;
   transition: opacity 220ms ease, transform 260ms ease, visibility 220ms ease;
@@ -610,12 +592,12 @@ body.has-hero .persona-card .card-reveal-title {
   font-size: clamp(21px, 1.8vw, 28px);
 }
 
-body.has-hero .trio-card:hover > :not(.card-reveal),
-body.has-hero .fight-block:hover > :not(.card-reveal),
-body.has-hero .persona-card:hover > :not(.card-reveal),
-body.has-hero .trio-card:focus-within > :not(.card-reveal),
-body.has-hero .fight-block:focus-within > :not(.card-reveal),
-body.has-hero .persona-card:focus-within > :not(.card-reveal) {
+body.has-hero .trio-card:hover> :not(.card-reveal),
+body.has-hero .fight-block:hover> :not(.card-reveal),
+body.has-hero .persona-card:hover> :not(.card-reveal),
+body.has-hero .trio-card:focus-within> :not(.card-reveal),
+body.has-hero .fight-block:focus-within> :not(.card-reveal),
+body.has-hero .persona-card:focus-within> :not(.card-reveal) {
   opacity: 0 !important;
   visibility: hidden;
   transform: translateY(8px);
@@ -632,8 +614,8 @@ body.has-hero .persona-card:focus-within .card-reveal {
   transform: scale(1);
 }
 
-body.has-hero .trio-card:hover > :not(.card-reveal),
-body.has-hero .trio-card:focus-within > :not(.card-reveal) {
+body.has-hero .trio-card:hover> :not(.card-reveal),
+body.has-hero .trio-card:focus-within> :not(.card-reveal) {
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
@@ -709,6 +691,7 @@ body.has-hero .founder-portrait-img img {
   object-fit: cover;
   object-position: 50% 16%;
   filter: saturate(0.94) contrast(0.98) brightness(0.98);
+  transform: scaleX(-1) !important;
 }
 
 body.has-hero .founder-name {
@@ -1048,9 +1031,9 @@ body.has-hero .final-cta-buttons .btn {
     display: none !important;
   }
 
-  body.has-hero .trio-card > :not(.card-reveal),
-  body.has-hero .fight-block > :not(.card-reveal),
-  body.has-hero .persona-card > :not(.card-reveal) {
+  body.has-hero .trio-card> :not(.card-reveal),
+  body.has-hero .fight-block> :not(.card-reveal),
+  body.has-hero .persona-card> :not(.card-reveal) {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
@@ -1114,20 +1097,21 @@ body.has-hero .final-cta-buttons .btn {
 
   body.has-hero .hero-inner {
     grid-template-columns: 1fr !important;
-    padding-top: 42px !important;
-    padding-bottom: 42px !important;
+    padding-top: clamp(88px, 12vw, 104px) !important;
+    padding-bottom: 32px !important;
   }
 
   body.has-hero .hero-content {
     max-width: 680px !important;
-    padding-top: 40px !important;
+    padding-top: 16px !important;
     padding-right: 0 !important;
-    padding-bottom: 38px !important;
+    padding-bottom: 24px !important;
   }
 
   body.has-hero .hero-headline {
     max-width: 680px;
-    font-size: clamp(40px, 9vw, 54px) !important;
+    font-size: clamp(30px, 7.5vw, 42px) !important;
+    line-height: 1.15 !important;
   }
 
   body.has-hero .hero-trust {
@@ -1224,14 +1208,7 @@ body.has-hero .final-cta-buttons .btn {
 }
 
 @media (max-width: 520px) {
-  body.has-hero .ticker-wrap {
-    padding: 6px 0;
-  }
 
-  body.has-hero .ticker-item {
-    padding: 0 30px;
-    font-size: 10.5px;
-  }
 
   body.has-hero .hero::before {
     background-position: 76% top;
@@ -1316,5 +1293,330 @@ body.has-hero .final-cta-buttons .btn {
     min-height: 0;
     border-right: 0 !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
+  }
+}
+
+/* ============================================================
+   PREMIUM POLITICAL CAMPAIGN HERO – COMPOSITION REFINED
+   ============================================================ */
+body.has-hero .hero,
+body .hero {
+  position: relative !important;
+  margin-top: 0 !important;
+  padding-top: var(--nav-h, 72px) !important;
+  min-height: clamp(560px, 86vh, 820px) !important;
+  background-image:
+    linear-gradient(90deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.98) 35%,
+      rgba(255, 255, 255, 0.78) 52%,
+      rgba(255, 255, 255, 0.20) 70%,
+      rgba(255, 255, 255, 0) 84%),
+    url('../images/selected/hero-full-composition-bg.webp'),
+    url('../images/selected/hero-full-composition-bg.jpg') !important;
+  background-size: cover, auto 88%, auto 88% !important;
+  background-position: left center, right center, right center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+body.has-hero .hero::before,
+body.has-hero .hero::after,
+body .hero::before,
+body .hero::after {
+  display: none !important;
+}
+
+body.has-hero .hero-inner,
+body .hero-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  min-height: calc(86vh - var(--nav-h, 72px)) !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  padding-left: clamp(20px, 3.5vw, 40px) !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+body.has-hero .hero-content,
+body .hero-content {
+  width: 100% !important;
+  max-width: 500px !important;
+  /* Left 42-46% column flush to left margin */
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  z-index: 3 !important;
+}
+
+body.has-hero .hero-portrait-col,
+body .hero-portrait-col {
+  display: none !important;
+}
+
+/* Hide paragraph completely on Tablet & Mobile (< 1024px) */
+@media (max-width: 1023px) {
+
+  .hero-body-desktop-only,
+  body.has-hero .hero-body,
+  body .hero-body {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Show paragraph ONLY on Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+
+  .hero-body-desktop-only,
+  body.has-hero .hero-body,
+  body .hero-body {
+    display: block !important;
+    margin-bottom: 24px !important;
+    height: auto !important;
+    visibility: visible !important;
+  }
+}
+
+/* Laptop Screens (< 1280px) */
+@media (max-width: 1280px) {
+
+  body.has-hero .hero,
+  body .hero {
+    background-size: cover, auto 85%, auto 85% !important;
+  }
+
+  body.has-hero .hero-content,
+  body .hero-content {
+    max-width: 460px !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE HERO SPLIT (DESKTOP VS MOBILE/TABLET)
+   ============================================================ */
+
+/* DESKTOP HERO (>= 1024px) */
+@media (min-width: 1024px) {
+
+  body.has-hero .hero-desktop-only,
+  body .hero-desktop-only {
+    display: flex !important;
+  }
+
+  body.has-hero .hero-mobile-only,
+  body .hero-mobile-only {
+    display: none !important;
+  }
+}
+
+/* MOBILE & TABLET HERO (< 1024px) */
+@media (max-width: 1023px) {
+
+  body.has-hero .hero-desktop-only,
+  body .hero-desktop-only {
+    display: none !important;
+  }
+
+  body.has-hero .hero-mobile-only,
+  body .hero-mobile-only {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+    padding-bottom: 36px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .hero-mobile-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-mobile-image-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 24px !important;
+    max-height: 46vh !important;
+  }
+
+  .hero-mobile-leader-img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: clamp(260px, 44vh, 380px) !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.08)) !important;
+  }
+
+  .hero-mobile-content {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-mobile-headline {
+    font-size: clamp(32px, 6.5vw, 42px) !important;
+    line-height: 1.15 !important;
+    color: var(--navy, #0B192C) !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    font-weight: 800 !important;
+  }
+
+  .hero-mobile-headline-odia {
+    font-size: clamp(20px, 4.5vw, 26px) !important;
+    color: var(--saffron, #FF9933) !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+    font-weight: 700 !important;
+    display: block !important;
+  }
+
+  .hero-mobile-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-mobile-ctas .btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 13px 24px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Phone Fine-tuning (< 480px) */
+@media (max-width: 479px) {
+  .hero-mobile-headline {
+    font-size: clamp(28px, 8vw, 36px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-mobile-headline-odia {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-mobile-image-container {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ============================================================
+   REMOVE ALL SECTION SEPARATOR LINES & DIVIDERS ACROSS WHOLE SITE
+   ============================================================ */
+.pledges-trio-section::before,
+.chapters-section::before,
+.hero-trust-divider,
+.contact-info::before,
+.newsroom-rule,
+.newsroom-rule-thin,
+hr,
+.divider,
+.section-divider {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+}
+
+section,
+.pledges-trio-section,
+.founder-section,
+.pledges-grid-section,
+.three-fights-section,
+.press-kit-section,
+.district-grid-section,
+.about-pillars-section,
+.timeline-section,
+.stats-section,
+.ideology-section,
+.personas-section,
+.site-footer,
+body .site-footer {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Mirror / Invert Founder Portrait Image Horizontally */
+.founder-portrait-img img,
+.founder-official-image-slot img,
+body .founder-portrait-img img {
+  transform: scaleX(-1) !important;
+}
+
+/* ============================================================
+   ORGANIC HERO BOTTOM DIVIDER (SEAMLESS CURVED TRANSITION)
+   ============================================================ */
+.hero-bottom-divider {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 90px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  filter: drop-shadow(0 -10px 25px rgba(11, 25, 44, 0.03)) !important;
+}
+
+.hero-divider-svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1023px) {
+  .hero-bottom-divider {
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-bottom-divider {
+    height: 44px !important;
   }
 }
