@@ -609,3 +609,300 @@ body .site-footer {
   border-top: none !important;
   border-bottom: none !important;
 }
+
+/* ============================================================
+   MOBILE & TABLET ANIMATIONS FOR TEXT & BUTTONS
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fade-in-delay-1 {
+  transition-delay: 0.08s !important;
+}
+
+.fade-in-delay-2 {
+  transition-delay: 0.16s !important;
+}
+
+.fade-in-delay-3 {
+  transition-delay: 0.24s !important;
+}
+
+.fade-in-delay-4 {
+  transition-delay: 0.32s !important;
+}
+
+/* Touch feedback for all interactive buttons on mobile & tablet */
+@media (max-width: 1024px) {
+
+  body .main-nav,
+  .main-nav {
+    display: none !important;
+  }
+
+  body .header-ctas,
+  .header-ctas {
+    display: none !important;
+  }
+
+  body .hamburger,
+  .hamburger {
+    display: flex !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  body .header-inner,
+  .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .btn,
+  button,
+  a.btn {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.4, 1), background 0.18s ease, box-shadow 0.18s ease !important;
+  }
+
+  .btn:active,
+  button:active,
+  a.btn:active {
+    transform: scale(0.96) translateY(1px) !important;
+    opacity: 0.92 !important;
+  }
+
+  .hero-mobile-headline-odia {
+    color: var(--pr-gold, #D8A21D) !important;
+  }
+
+  /* Ensure text elements in mobile view fade in smoothly */
+  .hero-mobile-headline,
+  .hero-mobile-headline-odia,
+  .hero-mobile-ctas {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-mobile-headline.visible,
+  .hero-mobile-headline-odia.visible,
+  .hero-mobile-ctas.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  body.about-page .media-cell-container {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 24px !important;
+  }
+
+  body.about-page .media-cell-sidebar {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.about-page .media-cell-main {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.about-page .media-cell-main .org-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  body.join-page .district-grid,
+  .district-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    padding: 0 !important;
+  }
+
+  body.join-page .district-tag,
+  .district-tag {
+    padding: 8px 4px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Remove all animations from District Grid section */
+.district-grid,
+.district-tag,
+body.join-page .district-grid,
+body.join-page .district-tag {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+  animation: none !important;
+}
+
+/* Parallel headline & body text alignment for reason cards */
+body.join-page .reason-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+}
+
+body.join-page .reason-title {
+  min-height: 2.6em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.join-page .reason-card--wide .reason-title,
+body.join-page .reasons-grid>.reason-card:last-child .reason-title {
+  min-height: 0 !important;
+}
+
+.contact-card-icon::before,
+.contact-card-icon::after,
+body.contact-page .contact-card-icon::before,
+body.contact-page .contact-card-icon::after {
+  display: none !important;
+  content: none !important;
+}
+
+@media (max-width: 1024px) {
+
+  body.contact-page .contact-channel-grid,
+  body.contact-page main>section:nth-of-type(2) .container>div,
+  body.contact-page .contact-channels,
+  body.contact-page .contact-cards,
+  .contact-channel-grid,
+  .contact-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  body.contact-page .contact-card,
+  .contact-card {
+    padding: 14px 10px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    min-height: 0 !important;
+  }
+
+  body.contact-page .contact-cards>.contact-card:first-child,
+  body.contact-page .contact-cards>.contact-card:last-child {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  html body.about-page .about-pillars-section .pillar-card:last-child,
+  body.about-page .about-pillars-section .pillar-card:last-child {
+    grid-column: 1 / -1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  body.about-page .about-flag-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  body.about-page .about-flag-card {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile drawer navigation buttons styling */
+.mobile-nav .btn-outline {
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  color: #ffffff !important;
+  background: transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 240px !important;
+  height: 46px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: var(--pr-r-lg, 10px) !important;
+  text-decoration: none !important;
+  transition: all 0.22s ease !important;
+}
+
+.mobile-nav .btn-outline:hover,
+.mobile-nav .btn-outline:active {
+  border-color: var(--pr-yellow, #F6C21A) !important;
+  color: var(--pr-yellow, #F6C21A) !important;
+  background: rgba(246, 194, 26, 0.12) !important;
+}
+
+/* Small Phone Hero Overlay & Title Text Scaling (<= 480px) */
+@media (max-width: 480px) {
+  body.has-hero .hero-mobile-headline,
+  body .hero-mobile-headline,
+  .hero-mobile-headline {
+    font-size: clamp(1.0rem, 4.3vw, 1.25rem) !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+    left: clamp(24px, 6.5vw, 34px) !important;
+    top: 17% !important;
+    text-align: left !important;
+  }
+
+  body.has-hero .hero-mobile-headline-odia,
+  body .hero-mobile-headline-odia,
+  .hero-mobile-headline-odia {
+    font-size: clamp(0.72rem, 3.1vw, 0.88rem) !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+    left: clamp(24px, 6.5vw, 34px) !important;
+    top: calc(17% + clamp(1.6rem, 5.5vw, 2.2rem)) !important;
+    text-align: left !important;
+  }
+
+  body .page-hero h1,
+  .page-hero h1 {
+    font-size: clamp(22px, 6.5vw, 28px) !important;
+    line-height: 1.18 !important;
+  }
+
+  body .section-title,
+  .section-title {
+    font-size: clamp(19px, 5.5vw, 24px) !important;
+    line-height: 1.22 !important;
+  }
+}

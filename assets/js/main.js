@@ -57,9 +57,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
   if (link.href === window.location.href) link.classList.add('active');
 });
 
-// ── Fade-in on scroll ────────────────────────────────────────
+// ── Fade-in on scroll & load ──────────────────────────────────
 const fadeEls = document.querySelectorAll('.fade-in');
 if (fadeEls.length) {
+  const isMobile = window.innerWidth <= 1024;
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -67,18 +68,62 @@ if (fadeEls.length) {
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, {
+    threshold: isMobile ? 0.01 : 0.08,
+    rootMargin: isMobile ? '0px 0px 60px 0px' : '0px 0px -40px 0px'
+  });
   fadeEls.forEach(el => observer.observe(el));
 }
 
-// ── Pop-out animation for stat cards & persona cards on scroll entry ─────────
-document.querySelectorAll('.stats-grid, .personas-grid').forEach(grid => {
+// Guarantee immediate reveal of hero elements visible at page start (mobile/tablet/desktop)
+const triggerInitialHeroAnimations = () => {
+  document.querySelectorAll('.hero-mobile-only .fade-in, .hero .fade-in').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 40) {
+      el.classList.add('visible');
+    }
+  });
+};
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', triggerInitialHeroAnimations);
+} else {
+  triggerInitialHeroAnimations();
+}
+window.addEventListener('load', triggerInitialHeroAnimations);
+
+// ── Springy Pop-Out Stagger Animation for ALL Grid Cards across all pages ─────
+const popOutGridSelector = [
+  '.stats-grid',
+  '.personas-grid',
+  '.trio-grid',
+  '.fights-grid',
+  '.vision-grid',
+  '.inclusion-grid',
+  '.pillars-grid',
+  '.pledges-grid',
+  '.pledges-grid-ref',
+  '.chapters-grid',
+  '.reasons-grid',
+  '.press-kit-grid',
+  '.statements-grid',
+  '.about-flag-grid',
+  '.contact-cards',
+  '.contact-channel-grid',
+  '.newsroom-gallery-grid',
+  '.org-grid',
+  '.about-pillars-grid',
+  '.reasons-grid-ref'
+].join(', ');
+
+document.querySelectorAll(popOutGridSelector).forEach(grid => {
   const children = Array.from(grid.children);
   children.forEach(child => {
     child.style.opacity = '0';
-    child.style.transform = 'scale(0.82) translateY(28px)';
+    child.style.transform = 'scale(0.84) translateY(32px)';
     child.style.transition = 'opacity 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    child.style.willChange = 'opacity, transform';
   });
+  const isMobile = window.innerWidth <= 1024;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -86,40 +131,12 @@ document.querySelectorAll('.stats-grid, .personas-grid').forEach(grid => {
           setTimeout(() => {
             child.style.opacity = '1';
             child.style.transform = 'scale(1) translateY(0)';
-          }, i * 90);
+          }, i * 75); // 75ms responsive stagger delay per item
         });
         obs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-  obs.observe(grid);
-});
-
-// ── Auto-stagger grid children on scroll entry ────────────────
-document.querySelectorAll(
-  '.trio-grid, .fights-grid, ' +
-  '.vision-grid, .inclusion-grid, .pillars-grid, .pledges-grid, ' +
-  '.chapters-grid, .reasons-grid, .press-kit-grid, .statements-grid'
-).forEach(grid => {
-  const children = Array.from(grid.children);
-  children.forEach(child => {
-    child.style.opacity = '0';
-    child.style.transform = 'translateY(16px)';
-    child.style.transition = 'opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1)';
-  });
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        children.forEach((child, i) => {
-          setTimeout(() => {
-            child.style.opacity = '1';
-            child.style.transform = 'translateY(0)';
-          }, i * 60);          // 60ms stagger — subtle, not theatrical
-        });
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+  }, { threshold: isMobile ? 0.02 : 0.08, rootMargin: '0px 0px 40px 0px' });
   obs.observe(grid);
 });
 

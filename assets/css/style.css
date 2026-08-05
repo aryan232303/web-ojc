@@ -1110,11 +1110,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-main { grid-template-columns: 1fr 1fr; gap: 36px; }
   .pillars-grid { grid-template-columns: repeat(2,1fr); }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   :root { --nav-h: 64px; }
-  .main-nav { display: none; }
-  .header-ctas { display: none; }
-  .hamburger { display: flex; }
+  .main-nav { display: none !important; }
+  .header-ctas { display: none !important; }
+  .hamburger { display: flex !important; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; }
   .trio-grid { grid-template-columns: 1fr; }

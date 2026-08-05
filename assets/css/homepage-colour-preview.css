@@ -574,8 +574,8 @@ body .hero-portrait-col {
   display: none !important;
 }
 
-/* Hide paragraph completely on Tablet & Mobile (< 1024px) */
-@media (max-width: 1023px) {
+/* Hide paragraph on Tablet & Mobile (<= 1024px) */
+@media (max-width: 1024px) {
 
   .hero-body-desktop-only,
   body.has-hero .hero-body,
@@ -589,8 +589,8 @@ body .hero-portrait-col {
   }
 }
 
-/* Show paragraph ONLY on Desktop (>= 1024px) */
-@media (min-width: 1024px) {
+/* Show paragraph ONLY on Desktop (>= 1025px) */
+@media (min-width: 1025px) {
 
   .hero-body-desktop-only,
   body.has-hero .hero-body,
@@ -602,8 +602,8 @@ body .hero-portrait-col {
   }
 }
 
-/* Laptop Screens (< 1280px) */
-@media (max-width: 1280px) {
+/* Laptop & Mid-size Desktop Screens (1025px – 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
 
   body.has-hero .hero,
   body .hero {
@@ -612,7 +612,12 @@ body .hero-portrait-col {
 
   body.has-hero .hero-content,
   body .hero-content {
-    max-width: 460px !important;
+    max-width: 440px !important;
+  }
+
+  body.has-hero .hero-body,
+  body .hero-body {
+    max-width: 420px !important;
   }
 }
 
@@ -620,8 +625,8 @@ body .hero-portrait-col {
    RESPONSIVE HERO SPLIT (DESKTOP VS MOBILE/TABLET)
    ============================================================ */
 
-/* DESKTOP HERO (>= 1024px) */
-@media (min-width: 1024px) {
+/* DESKTOP HERO (>= 1025px) */
+@media (min-width: 1025px) {
 
   body.has-hero .hero-desktop-only,
   body .hero-desktop-only {
@@ -634,8 +639,8 @@ body .hero-portrait-col {
   }
 }
 
-/* MOBILE & TABLET HERO (< 1024px) */
-@media (max-width: 1023px) {
+/* MOBILE & TABLET HERO (<= 1024px) */
+@media (max-width: 1024px) {
 
   body.has-hero .hero-desktop-only,
   body .hero-desktop-only {
@@ -707,7 +712,7 @@ body .hero-portrait-col {
 
   .hero-mobile-headline-odia {
     font-size: clamp(20px, 4.5vw, 26px) !important;
-    color: var(--saffron, #FF9933) !important;
+    color: var(--pr-gold, #D8A21D) !important;
     text-align: center !important;
     margin-bottom: 24px !important;
     font-weight: 700 !important;
