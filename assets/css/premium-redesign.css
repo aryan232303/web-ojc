@@ -72,24 +72,23 @@ body {
 }
 
 /* ==========================================
-   3. SKIP LINK
+   3. SKIP LINK — permanently hidden
    ========================================== */
-.skip-link {
-  position: absolute;
-  top: -9999px;
-  left: 16px;
-  z-index: 9999;
-  padding: 10px 18px;
-  background: var(--pr-blue);
-  color: #fff;
-  border-radius: var(--pr-r-sm);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
+.skip-link,
 .skip-link:focus {
-  top: 16px;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* ==========================================
@@ -2155,10 +2154,16 @@ body .cookie-btn-reject:hover {
 }
 
 @media (max-width: 768px) {
+  body .site-header {
+    min-height: 76px !important;
+  }
+
   body .header-inner {
     display: flex !important;
     gap: 12px !important;
-    min-height: 64px !important;
+    min-height: 76px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
 
   body .main-nav {
@@ -2192,17 +2197,102 @@ body .cookie-btn-reject:hover {
     gap: 0 !important;
   }
 
-  body.has-hero .personas-grid {
-    grid-template-columns: 1fr !important;
+  /* IDEOLOGY SECTION MOBILE */
+  body.has-hero .ideology-section {
+    padding: 44px 0 !important;
   }
 
-  body.has-hero .persona-card,
+  body.has-hero .ideology-headline {
+    font-size: clamp(22px, 5.5vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+
+  body.has-hero .ideology-body {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-top: 14px !important;
+    padding-top: 16px !important;
+  }
+
+  /* PERSONAS GRID MOBILE (2 per row, 5th centered spanning 2 cols) */
+  body.has-hero .personas-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  body.has-hero .persona-card {
+    min-height: 220px !important;
+    max-height: 260px !important;
+    height: 230px !important;
+    padding: 16px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  body.has-hero .persona-card .card-reveal {
+    padding: 14px 12px !important;
+    gap: 4px !important;
+    background-position: center 20% !important;
+  }
+
+  body.has-hero .persona-card .card-reveal-kicker {
+    font-size: 9px !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.has-hero .persona-card .card-reveal-title,
+  body.has-hero .persona-card .persona-title {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0 !important;
+    word-break: break-word !important;
+  }
+
+  body.has-hero .persona-card .persona-body {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
   body.has-hero .persona-card:nth-child(5) {
-    grid-column: auto !important;
+    grid-column: span 2 !important;
+    max-width: 100% !important;
+    min-height: 150px !important;
+    height: 160px !important;
+  }
+
+  body.has-hero .persona-card:nth-child(5) .card-reveal {
+    padding: 16px 16px !important;
+    background-position: center center !important;
   }
 
   body.has-hero .stats-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  body.has-hero .stat-card {
+    padding: 18px 14px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  body.has-hero .stat-number {
+    font-size: clamp(22px, 5.5vw, 30px) !important;
+  }
+
+  body.has-hero .stat-label {
+    margin-top: 8px !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.has-hero .stat-source {
+    margin-top: 10px !important;
+    font-size: 9.5px !important;
+    letter-spacing: 0.03em !important;
   }
 
   body.has-hero .vision-grid {
@@ -2244,13 +2334,93 @@ body .cookie-btn-reject:hover {
 }
 
 @media (max-width: 480px) {
-  body.has-hero .personas-grid {
-    grid-template-columns: 1fr !important;
+
+  /* IDEOLOGY SECTION SMALL MOBILE */
+  body.has-hero .ideology-section {
+    padding: 36px 0 !important;
   }
 
-  body.has-hero .persona-card,
+  body.has-hero .ideology-headline {
+    font-size: clamp(20px, 5vw, 25px) !important;
+    line-height: 1.25 !important;
+  }
+
+  body.has-hero .ideology-body {
+    font-size: 12.5px !important;
+    line-height: 1.48 !important;
+    margin-top: 12px !important;
+    padding-top: 14px !important;
+  }
+
+  /* PERSONAS GRID SMALL MOBILE */
+  body.has-hero .personas-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  body.has-hero .persona-card {
+    min-height: 210px !important;
+    max-height: 250px !important;
+    height: 220px !important;
+    padding: 12px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  body.has-hero .persona-card .card-reveal {
+    padding: 12px 10px !important;
+    gap: 3px !important;
+    background-position: center 18% !important;
+  }
+
+  body.has-hero .persona-card .card-reveal-kicker {
+    font-size: 8.5px !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 1px !important;
+  }
+
+  body.has-hero .persona-card .card-reveal-title,
+  body.has-hero .persona-card .persona-title {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
+  }
+
   body.has-hero .persona-card:nth-child(5) {
-    grid-column: auto !important;
+    grid-column: span 2 !important;
+    max-width: 100% !important;
+    min-height: 140px !important;
+    height: 150px !important;
+  }
+
+  body.has-hero .persona-card:nth-child(5) .card-reveal {
+    padding: 14px 14px !important;
+    background-position: center center !important;
+  }
+
+  body.has-hero .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  body.has-hero .stat-card {
+    padding: 14px 10px 12px !important;
+    border-radius: 10px !important;
+  }
+
+  body.has-hero .stat-number {
+    font-size: clamp(20px, 5vw, 26px) !important;
+  }
+
+  body.has-hero .stat-label {
+    margin-top: 6px !important;
+    font-size: 11px !important;
+    line-height: 1.38 !important;
+  }
+
+  body.has-hero .stat-source {
+    margin-top: 8px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.02em !important;
   }
 
   body.has-hero .inclusion-grid {
@@ -4934,40 +5104,47 @@ body .hero-portrait-col {
     height: auto !important;
     min-height: 0 !important;
     margin-top: 0 !important;
-    padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+    padding-top: 42px !important;
     padding-bottom: 36px !important;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+    background: #ffffff !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
   }
 
   .hero-mobile-inner {
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 640px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
 
   .hero-mobile-image-container {
+    position: relative !important;
     width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    margin-top: -24px !important;
     margin-bottom: 24px !important;
-    max-height: 46vh !important;
+    max-height: none !important;
+    padding: 0 !important;
   }
 
   .hero-mobile-leader-img {
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    max-height: clamp(260px, 44vh, 380px) !important;
-    object-fit: contain !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    display: block !important;
     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.08)) !important;
+    border-radius: 0 !important;
   }
 
   .hero-mobile-content {
@@ -4976,6 +5153,8 @@ body .hero-portrait-col {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
   }
 
   .hero-mobile-headline {
@@ -5017,20 +5196,64 @@ body .hero-portrait-col {
   }
 }
 
-/* Phone Fine-tuning (< 480px) */
-@media (max-width: 479px) {
-  .hero-mobile-headline {
-    font-size: clamp(28px, 8vw, 36px) !important;
-    margin-bottom: 12px !important;
+/* MOBILE PHONE HERO OVERLAY (< 768px) - FLUID RESPONSIVE ALIGNMENT ON LEFT */
+@media (max-width: 767px) {
+
+  body.has-hero .hero-mobile-headline,
+  body .hero-mobile-headline {
+    position: absolute !important;
+    top: 15% !important;
+    left: clamp(28px, 8vw, 48px) !important;
+    z-index: 10 !important;
+    font-size: clamp(1.3rem, 4.2vw, 1.85rem) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    color: var(--navy, #0B192C) !important;
+    max-width: clamp(140px, 28vw, 195px) !important;
+    text-align: left !important;
+    margin: 0 !important;
   }
 
-  .hero-mobile-headline-odia {
-    font-size: clamp(18px, 5vw, 22px) !important;
-    margin-bottom: 20px !important;
+  body.has-hero .hero-mobile-headline-odia,
+  body .hero-mobile-headline-odia {
+    position: absolute !important;
+    top: calc(15% + clamp(2.9rem, 6.5vw, 4.0rem)) !important;
+    left: clamp(28px, 8vw, 48px) !important;
+    z-index: 10 !important;
+    font-size: clamp(0.88rem, 2.4vw, 1.15rem) !important;
+    font-weight: 700 !important;
+    color: var(--saffron, #FF9933) !important;
+    max-width: clamp(140px, 28vw, 195px) !important;
+    text-align: left !important;
+    margin: 0 !important;
+    display: block !important;
   }
 
-  .hero-mobile-image-container {
-    margin-bottom: 20px !important;
+  body.has-hero .hero-mobile-ctas,
+  body .hero-mobile-ctas {
+    margin-top: 0 !important;
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+}
+
+/* Medium Mobile & Tablet Fine-tuning (480px – 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+
+  body.has-hero .hero-mobile-headline,
+  body .hero-mobile-headline {
+    top: 18% !important;
+    left: 44px !important;
+    font-size: 1.85rem !important;
+    max-width: 195px !important;
+  }
+
+  body.has-hero .hero-mobile-headline-odia,
+  body .hero-mobile-headline-odia {
+    top: calc(18% + 4.0rem) !important;
+    left: 44px !important;
+    font-size: 1.15rem !important;
+    max-width: 195px !important;
   }
 }
 
@@ -5074,4 +5297,544 @@ body .site-footer {
 .founder-official-image-slot img,
 body .founder-portrait-img img {
   transform: scaleX(-1) !important;
+}
+
+margin-top: 10px !important;
+margin-bottom: 0 !important;
+text-align: left !important;
+color: var(--saffron, #FF9933) !important;
+display: block !important;
+max-width: 210px !important;
+}
+
+body.has-hero .hero-mobile-ctas,
+body .hero-mobile-ctas {
+  margin-top: 26px !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+body.has-hero .hero-mobile-ctas .btn,
+body .hero-mobile-ctas .btn {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+}
+
+/* ============================================================
+   REMOVE ALL SECTION SEPARATOR LINES & DIVIDERS ACROSS WHOLE SITE
+   ============================================================ */
+.pledges-trio-section::before,
+.chapters-section::before,
+.hero-trust-divider,
+.contact-info::before,
+.newsroom-rule,
+.newsroom-rule-thin,
+hr,
+.divider,
+.section-divider {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+}
+
+section,
+.pledges-trio-section,
+.founder-section,
+.pledges-grid-section,
+.three-fights-section,
+.press-kit-section,
+.district-grid-section,
+.about-pillars-section,
+.timeline-section,
+.stats-section,
+.ideology-section,
+.personas-section,
+.site-footer,
+body .site-footer {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Mirror / Invert Founder Portrait Image Horizontally */
+.founder-portrait-img img,
+.founder-official-image-slot img,
+body .founder-portrait-img img {
+  transform: scaleX(-1) !important;
+}
+
+/* Stat Cards & Persona Cards Scroll Pop-Out Animation & Hover */
+.stat-card,
+.persona-card {
+  will-change: transform, opacity;
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.55s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 0 16px 38px rgba(11, 25, 44, 0.12) !important;
+}
+
+.persona-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(11, 25, 44, 0.15) !important;
+}
+
+/* SHORT SLIDE DOWN ANIMATION (IDEOLOGY SECTION) */
+.ideology-section {
+  position: relative !important;
+  height: auto !important;
+  background: var(--navy, #0B192C) !important;
+  padding: 80px 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.ideology-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 24px !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.ideology-slide-line {
+  display: block !important;
+  will-change: transform, opacity, filter !important;
+  opacity: 0 !important;
+  filter: blur(2.4px) !important;
+  transform: translateY(-28px) scale(0.992) !important;
+  transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.ideology-slide-line.slide-active {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.ideology-callout {
+  margin-top: 14px !important;
+  font-size: clamp(20px, 4vw, 28px) !important;
+  font-weight: 800 !important;
+  color: #FBC02D !important;
+  line-height: 1.35 !important;
+}
+
+/* Pillar Card Header & Swatches */
+body.about-page .pillar-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+body.about-page .pillar-icon-block {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #2474D2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.about-page .pillar-icon-block svg {
+  width: 22px;
+  height: 22px;
+  stroke: #ffffff;
+  display: block;
+}
+
+/* ============================================================
+   ABOUT PAGE — PHONE MOBILE COMPACT 2-COLUMN LAYOUT (≤ 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* ── NINE PILLARS — white-background reference design ── */
+  html body.about-page .about-pillars-section {
+    padding: 44px 0 56px !important;
+    background: #f5f6f8 !important;
+    background-color: #f5f6f8 !important;
+    background-image: none !important;
+  }
+
+  html body.about-page .about-pillars-section::before {
+    display: none !important;
+  }
+
+  /* Section title & lead: switch to dark text */
+  body.about-page .about-pillars-section .eyebrow {
+    color: #0a4fb7 !important;
+  }
+
+  body.about-page .about-pillars-section .section-title {
+    color: #071126 !important;
+    font-size: clamp(22px, 6.5vw, 28px) !important;
+    line-height: 1.18 !important;
+    margin-top: 8px !important;
+  }
+
+  body.about-page .about-pillars-section .about-pillars-lead {
+    color: rgba(13, 26, 42, 0.65) !important;
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Grid */
+  body.about-page .about-pillars-section .pillars-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* White card */
+  html body.about-page .about-pillars-section .pillar-card,
+  html body.about-page .about-pillars-section .pillar-card:nth-child(n + 5),
+  html body.about-page .about-pillars-section .pillar-card:last-child {
+    grid-column: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 16px 14px 18px !important;
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(13, 26, 42, 0.07) !important;
+    box-shadow: 0 2px 12px rgba(13, 26, 42, 0.07) !important;
+    overflow: visible !important;
+  }
+
+  /* 9th lone card centered */
+  html body.about-page .about-pillars-section .pillar-card:last-child {
+    grid-column: 1 / -1 !important;
+    max-width: 50% !important;
+    width: 50% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Card header: icon + badge side by side */
+  body.about-page .about-pillars-section .pillar-card-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Blue icon block with white SVG icon centered */
+  body.about-page .about-pillars-section .pillar-icon-block {
+    flex-shrink: 0 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 10px !important;
+    background: #2474D2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  body.about-page .pillar-icon-block svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke: #ffffff !important;
+    display: block !important;
+  }
+
+  /* Yellow badge - pale soft yellow with top border & golden text */
+  body.about-page .about-pillars-section .pillar-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 3px 8px !important;
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    color: #DA8900 !important;
+    background: #FFF7E6 !important;
+    border: 1px solid rgba(251, 192, 45, 0.25) !important;
+    border-top: 2px solid #F9CE27 !important;
+    border-radius: 3px !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Title & body text */
+  body.about-page .about-pillars-section .pillar-name {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    margin-bottom: 7px !important;
+    max-width: 100% !important;
+    color: #071126 !important;
+  }
+
+  body.about-page .about-pillars-section .pillar-body {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    color: rgba(13, 26, 42, 0.6) !important;
+  }
+
+  /* ── WHY THIS PARTY WAS FORMED (2-col, compact) ── */
+  body.about-page .about-definition-section {
+    padding: 44px 0 52px !important;
+  }
+
+  body.about-page .about-definition-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1px !important;
+    margin-top: 22px !important;
+  }
+
+  body.about-page .about-definition-card {
+    min-height: 0 !important;
+    padding: 14px 12px 16px !important;
+    border-top-width: 3px !important;
+  }
+
+  body.about-page .about-definition-kicker {
+    font-size: 10px !important;
+    min-height: 22px !important;
+    padding: 0 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.about-page .about-definition-card h3 {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+
+  body.about-page .about-definition-card p {
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
+
+  body.about-page .about-definition-lead {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Section heading size reduction */
+  body.about-page .about-pillars-section .section-title,
+  body.about-page .about-definition-section .section-title {
+    font-size: clamp(20px, 6vw, 26px) !important;
+    line-height: 1.18 !important;
+    margin-top: 8px !important;
+  }
+
+  /* ── PARTY LEADERSHIP & ORGANISATION (2-col compact) ── */
+  body.about-page .about-organisation-section {
+    padding: 44px 0 52px !important;
+  }
+
+  body.about-page .about-organisation-section .section-title {
+    font-size: clamp(20px, 6vw, 26px) !important;
+    line-height: 1.18 !important;
+  }
+
+  body.about-page .org-tabs-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 12px !important;
+    white-space: nowrap !important;
+    scroll-snap-type: x proximity !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-bottom: 22px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.about-page .org-tabs-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body.about-page .org-tab-btn {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    scroll-snap-align: start !important;
+    font-size: 12px !important;
+    padding: 8px 16px !important;
+    border-radius: 30px !important;
+  }
+
+  body.about-page .org-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  body.about-page .org-card {
+    padding: 10px 12px !important;
+    border-radius: 6px !important;
+  }
+
+  body.about-page .org-card-name {
+    font-size: 12.5px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+  }
+
+  body.about-page .org-card-role {
+    font-size: 10.5px !important;
+    margin-top: 3px !important;
+  }
+
+  body.about-page .org-group-title {
+    font-size: 15px !important;
+    margin: 22px 0 10px !important;
+  }
+
+  body.about-page .media-cell-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* ── VISION PAGE — COMPACT MOBILE LAYOUT (≤ 640px) ── */
+  body.vision-page .pledges-register-section {
+    padding: 32px 0 44px !important;
+  }
+
+  /* Top banner hero */
+  body.vision-page .pledges-banner-hero {
+    padding: 16px 16px 18px !important;
+    min-height: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  body.vision-page .pledges-banner-illustration {
+    max-height: 90px !important;
+    opacity: 0.4 !important;
+  }
+
+  body.vision-page .illustration-img {
+    max-height: 90px !important;
+  }
+
+  body.vision-page .pledges-banner-title {
+    font-size: clamp(18px, 5.5vw, 22px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+
+  body.vision-page .pledges-banner-sub {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Grid of pledge cards */
+  body.vision-page .pledges-grid-ref {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  /* Compact pledge card */
+  html body.vision-page .pledge-card-ref {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    padding: 12px 14px 14px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(11, 73, 170, 0.12) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(7, 17, 38, 0.04) !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  body.vision-page .pledge-ribbon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 22px !important;
+    height: 22px !important;
+    width: auto !important;
+    padding: 0 8px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    background: #0b49aa !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    clip-path: none !important;
+    align-self: flex-start !important;
+  }
+
+  body.vision-page .pledge-icon-circle {
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    background: rgba(11, 73, 170, 0.08) !important;
+  }
+
+  body.vision-page .pledge-icon-circle svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Main content text */
+  body.vision-page .pledge-main-content {
+    padding: 8px 0 0 0 !important;
+  }
+
+  body.vision-page .pledge-accent-bar {
+    display: none !important;
+  }
+
+  body.vision-page .pledge-card-title {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
+    color: #071126 !important;
+  }
+
+  body.vision-page .pledge-card-desc {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    color: rgba(13, 26, 42, 0.68) !important;
+  }
+
+  /* Other vision cards compact styling */
+  body.vision-page .chapter-card,
+  body.vision-page .phase-card,
+  body.vision-page .vision-card {
+    padding: 14px 14px 16px !important;
+    min-height: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  body.vision-page .chapter-title,
+  body.vision-page .phase-title,
+  body.vision-page .vision-pillar {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
+  }
+
+  body.vision-page .chapter-body,
+  body.vision-page .phase-body,
+  body.vision-page .vision-body {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
 }

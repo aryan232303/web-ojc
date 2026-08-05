@@ -651,7 +651,7 @@ body .hero-portrait-col {
     height: auto !important;
     min-height: 0 !important;
     margin-top: 0 !important;
-    padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+    padding-top: 76px !important;
     padding-bottom: 36px !important;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
     box-sizing: border-box !important;

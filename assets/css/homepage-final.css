@@ -1446,7 +1446,7 @@ body .hero-portrait-col {
     height: auto !important;
     min-height: 0 !important;
     margin-top: 0 !important;
-    padding-top: calc(var(--nav-h, 72px) + 20px) !important;
+    padding-top: 42px !important;
     padding-bottom: 36px !important;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
     box-sizing: border-box !important;
@@ -1469,6 +1469,7 @@ body .hero-portrait-col {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    margin-top: -24px !important;
     margin-bottom: 24px !important;
     max-height: 46vh !important;
   }

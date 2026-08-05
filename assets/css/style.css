@@ -1135,9 +1135,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .pillars-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .personas-grid { grid-template-columns: 1fr; }
+  .personas-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .persona-card:nth-child(5) { grid-column: span 2; }
   .pledges-grid { grid-template-columns: repeat(2,1fr); }
-  .stats-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
   .footer-main { grid-template-columns: 1fr; }
   .district-grid { grid-template-columns: repeat(2,1fr); }
   .inclusion-grid { grid-template-columns: 1fr 1fr; }
@@ -4346,7 +4347,9 @@ a, button, input, select, textarea,
 /* ── Small phones (≤ 390px) ──────────────────────────────────── */
 @media (max-width: 390px) {
   .hero-headline { font-size: 38px; }
-  .stats-grid    { grid-template-columns: 1fr; }
+  .stats-grid    { grid-template-columns: repeat(2, 1fr); }
+  .personas-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .persona-card:nth-child(5) { grid-column: span 2; }
   .pledges-grid  { grid-template-columns: 1fr; }
   .vision-grid   { grid-template-columns: 1fr; }
   .inclusion-grid { grid-template-columns: 1fr; }
@@ -4468,7 +4471,7 @@ a, button, input, select, textarea,
   .ticker-item { font-size: 11px; padding: 0 32px; }
 
   /* ── Stats: 1 column ──────────────────────────────── */
-  .stats-grid { grid-template-columns: 1fr; gap: 2px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .stat-card  { padding: 32px 24px; }
   .stat-number { font-size: 48px; }
 
@@ -4756,8 +4759,9 @@ a, button, input, select, textarea,
 @media (max-width: 390px) {
   .container { padding: 0 16px; }
   .hero-headline { font-size: 38px; }
-  .stats-grid     { grid-template-columns: 1fr; }
-  .personas-grid  { grid-template-columns: 1fr; }
+  .stats-grid     { grid-template-columns: repeat(2, 1fr); }
+  .personas-grid  { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .persona-card:nth-child(5) { grid-column: span 2; }
   .pledges-grid   { grid-template-columns: 1fr 1fr; }
   .vision-grid    { grid-template-columns: 1fr; }
   .inclusion-grid { grid-template-columns: 1fr; }

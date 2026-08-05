@@ -71,9 +71,33 @@ if (fadeEls.length) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
+// ── Pop-out animation for stat cards & persona cards on scroll entry ─────────
+document.querySelectorAll('.stats-grid, .personas-grid').forEach(grid => {
+  const children = Array.from(grid.children);
+  children.forEach(child => {
+    child.style.opacity = '0';
+    child.style.transform = 'scale(0.82) translateY(28px)';
+    child.style.transition = 'opacity 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        children.forEach((child, i) => {
+          setTimeout(() => {
+            child.style.opacity = '1';
+            child.style.transform = 'scale(1) translateY(0)';
+          }, i * 90);
+        });
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+  obs.observe(grid);
+});
+
 // ── Auto-stagger grid children on scroll entry ────────────────
 document.querySelectorAll(
-  '.stats-grid, .trio-grid, .fights-grid, .personas-grid, ' +
+  '.trio-grid, .fights-grid, ' +
   '.vision-grid, .inclusion-grid, .pillars-grid, .pledges-grid, ' +
   '.chapters-grid, .reasons-grid, .press-kit-grid, .statements-grid'
 ).forEach(grid => {
@@ -223,7 +247,7 @@ setupForm('rsvp-form', 'rsvp-success', '[POST_ENDPOINT_RSVP]');
 setupForm('contact-form', 'contact-success', '[POST_ENDPOINT_CONTACT]');
 
 // ── Share buttons ────────────────────────────────────────────
-document.querySelector('.copy-link-btn')?.addEventListener('click', function() {
+document.querySelector('.copy-link-btn')?.addEventListener('click', function () {
   navigator.clipboard.writeText(window.location.origin + '/join.html').then(() => {
     this.textContent = 'Copied!';
     setTimeout(() => this.textContent = 'Copy Link', 2000);
@@ -237,3 +261,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+// ── ShortSlideDown Animation (Ideology 3 Lines Drop-In) ──
+(function initIdeologyShortSlideDown() {
+  const ideologySection = document.querySelector('.ideology-section');
+  if (!ideologySection) return;
+
+  const lines = Array.from(ideologySection.querySelectorAll('.ideology-slide-line'));
+  if (!lines.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        lines.forEach((line, i) => {
+          setTimeout(() => {
+            line.classList.add('slide-active');
+          }, i * 500); // 500ms interval per line matching ShortSlideDown timing
+        });
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  observer.observe(ideologySection);
+})();
