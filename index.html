@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=12.0">
   <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=12.0">
@@ -71,7 +71,8 @@
     <a href="join.html" class="nav-link">Join OJC</a>
     <a href="newsroom.html" class="nav-link">Newsroom</a>
     <a href="contact.html" class="nav-link">Contact</a>
-    <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline" style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a>
+    <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline"
+      style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a>
     <a href="join.html" class="btn btn-primary">Become a Member</a>
   </nav>
 
@@ -192,19 +193,43 @@
       </div>
     </section>
 
-    <!-- IDEOLOGY CORE (SHORT SLIDE DOWN ANIMATION) -->
-    <section class="ideology-section" aria-labelledby="ideology-h2">
-      <div class="container ideology-container">
-        <h2 id="ideology-h2" class="ideology-headline ideology-slide-line" data-line="1">Odisha's wealth leaves.<br>Its
-          people stay poor.</h2>
-        <p class="ideology-body ideology-slide-line" data-line="2">We mine the iron ore — the cars are built elsewhere.
-          We dig the bauxite — the aluminium goods are made elsewhere. We supply the chromite — the value is captured
-          elsewhere. Odisha's natural endowment is extraordinary. Two decades of governance answering to outside
-          priorities have been our betrayal.</p>
-        <p class="ideology-callout ideology-slide-line" data-line="3">It is time for governance that answers only to
-          Odias.</p>
+    <!-- IDEOLOGY SECTION -->
+    <section class="hero-wave-section ideology-section" aria-labelledby="ideology-h2">
+      <!-- Full-bleed background photo -->
+      <img class="hero-photo ideology-photo" src="assets/images/home-resourse.png" alt="Odisha Resource and Landscape" loading="lazy" />
+
+      <!-- Plain blue panel with a straight left edge — no curve in the divider -->
+      <div class="hero-panel ideology-panel"></div>
+
+      <!-- Copy -->
+      <div class="hero-copy ideology-copy">
+        <h2 id="ideology-h2" class="ideology-headline">Odisha’s wealth leaves.<br>Its people stay poor.</h2>
+        <div class="ideology-divider"></div>
+        <p class="ideology-body">We mine the iron ore — the cars are built elsewhere. We dig the bauxite — the
+          aluminium goods are made elsewhere. We supply the chromite — the value is captured elsewhere. Odisha's
+          natural endowment is extraordinary. Two decades of governance answering to outside priorities have been our
+          betrayal.</p>
+        <p class="ideology-callout">It is time for governance that answers only to Odias.</p>
       </div>
     </section>
+
+    <!-- Clip path defining the wavy TOP edge only; sides and bottom stay straight -->
+    <svg width="0" height="0" style="position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true">
+      <defs>
+        <clipPath id="topClip" clipPathUnits="objectBoundingBox">
+          <path d="
+            M 0,0.07
+            C 0.18,0.02 0.32,0.12 0.5,0.06
+            S 0.82,0.0 1,0.05
+            L 1,1
+            L 0,1
+            Z
+          "/>
+        </clipPath>
+      </defs>
+    </svg>
+
+
 
 
 
@@ -274,6 +299,21 @@
               <span class="card-reveal-title">Adivasi Bhumi</span>
             </div>
           </article>
+        </div>
+        <div class="personas-nav-controls" aria-label="Persona cards navigation">
+          <button type="button" class="personas-nav-btn personas-prev-btn" aria-label="Previous persona card">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="personas-nav-dots">
+            <span class="personas-dot active" data-index="0" title="Go to card 1"></span>
+            <span class="personas-dot" data-index="1" title="Go to card 2"></span>
+            <span class="personas-dot" data-index="2" title="Go to card 3"></span>
+            <span class="personas-dot" data-index="3" title="Go to card 4"></span>
+            <span class="personas-dot" data-index="4" title="Go to card 5"></span>
+          </div>
+          <button type="button" class="personas-nav-btn personas-next-btn" aria-label="Next persona card">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </div>
         <div class="personas-cta">
           <a href="vision.html#pledges" class="btn btn-outline-dark">Read All 16 Pledges →</a>
@@ -411,8 +451,157 @@
     </div>
   </div>
   <script src="assets/js/main.js?v=6.0"></script>
-</body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.querySelector('.personas-grid');
+      if (!carousel) return;
 
-</html>
+      // Mouse Click-and-Drag horizontal scroll
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener('mousedown', function (e) {
+        isDown = true;
+        carousel.classList.add('is-dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener('mouseleave', function () {
+        isDown = false;
+        carousel.classList.remove('is-dragging');
+      });
+
+      carousel.addEventListener('mouseup', function () {
+        isDown = false;
+        carousel.classList.remove('is-dragging');
+      });
+
+      carousel.addEventListener('mousemove', function (e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.8;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      // Wheel & Trackpad Vertical-to-Horizontal Scroll Interceptor (Activates ONLY when section is fully in view)
+      const section = document.querySelector('.personas-section');
+      let isScrolling = false;
+
+      function isSectionFocusedInView() {
+        if (!section) return true;
+        const rect = section.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+
+        // Section must be aligned inside the viewport (top in view range, bottom in view range)
+        const isTopAligned = rect.top <= 140 && rect.top >= -250;
+        const isBottomAligned = rect.bottom >= 350;
+        return isTopAligned && isBottomAligned;
+      }
+
+      carousel.addEventListener('wheel', function (e) {
+        // Allow native 2-finger trackpad horizontal gesture
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          return;
+        }
+
+        // ONLY intercept if the Personas section is fully focused in view
+        if (!isSectionFocusedInView()) {
+          return; // Allow normal vertical page scrolling before/after section is in view
+        }
+
+        const delta = e.deltaY;
+        if (!delta) return;
+
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        const atStart = carousel.scrollLeft <= 4;
+        const atEnd = carousel.scrollLeft >= maxScrollLeft - 4;
+
+        // Scroll DOWN: move carousel right until last card
+        if (delta > 0 && !atEnd) {
+          e.preventDefault();
+          if (isScrolling) return;
+          isScrolling = true;
+          const cardStep = carousel.firstElementChild ? (carousel.firstElementChild.offsetWidth + 24) : 380;
+          carousel.scrollBy({ left: cardStep, behavior: 'smooth' });
+          setTimeout(function () { isScrolling = false; }, 280);
+        }
+        // Scroll UP: move carousel left until first card
+        else if (delta < 0 && !atStart) {
+          e.preventDefault();
+          if (isScrolling) return;
+          isScrolling = true;
+          const cardStep = carousel.firstElementChild ? (carousel.firstElementChild.offsetWidth + 24) : 380;
+          carousel.scrollBy({ left: -cardStep, behavior: 'smooth' });
+          setTimeout(function () { isScrolling = false; }, 280);
+        }
+        // At start (scrolling up) or at end (scrolling down): allow natural vertical page scroll
+      }, { passive: false });
+
+      // Personas section nav buttons & dynamic indicator dots
+      const pGrid = document.querySelector('.personas-grid');
+      const pPrevBtn = document.querySelector('.personas-prev-btn');
+      const pNextBtn = document.querySelector('.personas-next-btn');
+      const pDots = document.querySelectorAll('.personas-dot');
+
+      if (pGrid) {
+        function getCardStep() {
+          const card = pGrid.querySelector('.persona-card');
+          return card ? (card.offsetWidth + 24) : 340;
+        }
+
+        function updateDots() {
+          if (!pDots.length) return;
+          const maxScroll = pGrid.scrollWidth - pGrid.clientWidth;
+          let activeIndex = 0;
+          if (maxScroll > 0) {
+            if (pGrid.scrollLeft >= maxScroll - 12) {
+              activeIndex = pDots.length - 1;
+            } else {
+              const scrollRatio = Math.max(0, pGrid.scrollLeft / maxScroll);
+              activeIndex = Math.min(
+                pDots.length - 1,
+                Math.round(scrollRatio * (pDots.length - 1))
+              );
+            }
+          }
+          pDots.forEach((dot, idx) => {
+            if (idx === activeIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+
+        if (pPrevBtn) {
+          pPrevBtn.addEventListener('click', function () {
+            pGrid.scrollBy({ left: -getCardStep(), behavior: 'smooth' });
+          });
+        }
+
+        if (pNextBtn) {
+          pNextBtn.addEventListener('click', function () {
+            pGrid.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+          });
+        }
+
+        pDots.forEach((dot, idx) => {
+          dot.addEventListener('click', function () {
+            const maxScroll = pGrid.scrollWidth - pGrid.clientWidth;
+            const targetScroll = (idx / (pDots.length - 1)) * maxScroll;
+            pGrid.scrollTo({ left: targetScroll, behavior: 'smooth' });
+          });
+        });
+
+        pGrid.addEventListener('scroll', updateDots, { passive: true });
+        window.addEventListener('resize', updateDots, { passive: true });
+        updateDots();
+      }
+    });
+  </script>
+</body>
 
 </html>

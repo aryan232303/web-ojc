@@ -14,20 +14,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Noto+Sans+Oriya:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css">
   <link rel="stylesheet" href="assets/css/hero-system.css">
-  <link rel="stylesheet" href="assets/css/vision-final.css">
   <link rel="stylesheet" href="assets/css/global-final.css">
+  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=6.0">
+  <!-- EDITORIAL VISION REDESIGN -->
+  <link rel="stylesheet" href="assets/css/vision-redesign.css?v=3.0">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('consent', 'default', { analytics_storage: 'denied' }); gtag('config', 'G-XXXXXXXXXX');</script>
-  <!-- PREMIUM REDESIGN -->
-  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=6.0">
 </head>
 
-<body class="vision-page">
+<body class="vision-page vision-page-redesign">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header scrolled" role="banner">
     <div class="container header-inner">
@@ -54,460 +54,592 @@
   <nav class="mobile-nav" id="mobile-nav"><button class="mobile-nav-close" aria-label="Close menu">&times;</button><a
       href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="vision.html"
       class="nav-link">Vision</a><a href="join.html" class="nav-link">Join OJC</a><a href="newsroom.html"
-      class="nav-link">Newsroom</a><a href="contact.html" class="nav-link">Contact</a><a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline" style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a><a href="join.html"
+      class="nav-link">Newsroom</a><a href="contact.html" class="nav-link">Contact</a><a href="manifesto.pdf"
+      download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline"
+      style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a><a href="join.html"
       class="btn btn-primary vision-mobile-join">Become a Member</a></nav>
 
-  <main id="main">
+  <!-- MOBILE STICKY PROGRESS BAR -->
+  <div class="vision-mobile-sticky-bar" id="mobile-sticky-bar">
+    <div class="mobile-bar-counter"><span id="mobile-pledge-num">01</span> / 16</div>
+    <div class="mobile-bar-title" id="mobile-pledge-title">Secular politics</div>
+  </div>
 
+  <!-- MAIN EDITORIAL SHELL -->
+  <div class="vision-redesign-shell">
 
+    <!-- FLOATING EDITORIAL SIDEBAR NAVIGATION (DESKTOP) -->
+    <aside class="vision-sticky-sidebar" aria-label="Vision Page Navigation">
+      <div class="sidebar-counter"><span id="current-pledge-num">01</span> / 16</div>
+      <ul class="sidebar-nav-list">
+        <li class="sidebar-nav-item"><a href="#pledge-01" class="sidebar-nav-link active" data-pledge-ref="1"
+            data-title="01 Secular politics">01</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-02" class="sidebar-nav-link" data-pledge-ref="2"
+            data-title="02 Youth-centric party">02</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-03" class="sidebar-nav-link" data-pledge-ref="3"
+            data-title="03 Women's empowerment">03</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-04" class="sidebar-nav-link" data-pledge-ref="4"
+            data-title="04 Dalits, Tribals & Marginalized">04</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-05" class="sidebar-nav-link" data-pledge-ref="5"
+            data-title="05 Participation of society">05</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-06" class="sidebar-nav-link" data-pledge-ref="6"
+            data-title="06 Priority to farmers">06</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-07" class="sidebar-nav-link" data-pledge-ref="7"
+            data-title="07 Rights of tribal people">07</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-08" class="sidebar-nav-link" data-pledge-ref="8"
+            data-title="08 Odia pride & identity">08</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-09" class="sidebar-nav-link" data-pledge-ref="9"
+            data-title="09 Ideal democratic values">09</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-10" class="sidebar-nav-link" data-pledge-ref="10"
+            data-title="10 Constitutional rights">10</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-11" class="sidebar-nav-link" data-pledge-ref="11"
+            data-title="11 Social, political & economic rights">11</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-12" class="sidebar-nav-link" data-pledge-ref="12"
+            data-title="12 Transparency & accountability">12</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-13" class="sidebar-nav-link" data-pledge-ref="13"
+            data-title="13 Disaster management">13</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-14" class="sidebar-nav-link" data-pledge-ref="14"
+            data-title="14 Environmental protection">14</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-15" class="sidebar-nav-link" data-pledge-ref="15"
+            data-title="15 Skill development & jobs">15</a></li>
+        <li class="sidebar-nav-item"><a href="#pledge-16" class="sidebar-nav-link" data-pledge-ref="16"
+            data-title="16 Conservation of natural resources">16</a></li>
+      </ul>
+    </aside>
 
-    <!-- 16 PLEDGES FULL -->
-    <section class="pledges-register-section" id="pledges" aria-labelledby="pledges-full-h2">
-      <div class="container">
-        <div class="pledges-banner-hero">
-          <div class="pledges-banner-illustration" aria-hidden="true">
-            <div class="illustration-radial-glow"></div>
-            <img src="assets/images/odisha-hero-illustration-rich.png" alt="" class="illustration-img">
+    <!-- MAIN CONTENT AREA -->
+    <main id="main" class="vision-main-wrapper">
+
+      <!-- FULL-BLEED EDITORIAL HERO SECTION (TEXT OVER IMAGE) -->
+      <section class="vision-hero-redesign">
+        <div class="hero-bg-image-wrapper">
+          <img src="assets/images/vision/hero-banner.jpg"
+            alt="Odisha coastline at sunrise with Jagannath Puri temple and Konark Sun Wheel visual artwork"
+            class="hero-bg-image">
+          <div class="hero-cinematic-overlay"></div>
+        </div>
+        <div class="vision-hero-content">
+          <div class="vision-eyebrow-badge fade-in fade-in-delay-1">
+            <span class="eyebrow-text">OUR VISION</span>
+            <div class="eyebrow-line"></div>
           </div>
-          <div class="pledges-banner-content">
-            <div class="pledges-eyebrow-pill fade-in">
-              <span class="pledges-eyebrow-text">OUR VISION</span>
-              <div class="pledges-eyebrow-line"></div>
+          <h1 class="vision-hero-headline fade-in fade-in-delay-2">16 Unbreakable Pledges<br>for a Stronger Odisha</h1>
+          <p class="vision-hero-sub fade-in fade-in-delay-3">Our commitments for good governance, inclusive development,
+            and a better future for every Odia.</p>
+        </div>
+        <!-- ELEGANT ORGANIC CURVED WAVE TRANSITION (HERO TO VISION 01) -->
+        <div class="hero-curved-divider" aria-hidden="true">
+          <svg class="curved-wave-svg" viewBox="0 0 1440 90" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,32 C360,85 1080,-15 1440,40 L1440,65 C1080,10 360,105 0,50 Z" fill="#FADE25" opacity="0.9" />
+            <path d="M0,48 C380,95 1060,5 1440,52 L1440,90 L0,90 Z" fill="#FAF9F5" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- VISIONS 01–04: IMMERSIVE FEATURE CHAPTERS (FULL HEIGHT COVER SPREADS) -->
+      <section class="visions-feature-group" id="feature-chapters">
+
+        <!-- 01 -->
+        <article class="feature-section theme-light" id="pledge-01" data-pledge-id="1"
+          data-pledge-title="Secular politics">
+          <div class="composition-01-wrapper">
+            <div class="composition-01-bg-image">
+              <img src="assets/images/vision/01-secular.jpg"
+                alt="Diverse Odia citizens naturally talking together in a community courtyard" loading="lazy">
             </div>
-            <h2 id="pledges-full-h2" class="pledges-banner-title fade-in fade-in-delay-1">16 Unbreakable Pledges<br>for a Stronger Odisha</h2>
-            <p class="pledges-banner-sub fade-in fade-in-delay-2">Our commitments for good governance, inclusive development, and a better
-              future for every Odia.</p>
-            <div class="pledges-title-underline"></div>
+            <div class="composition-01-text">
+              <div class="giant-number">01</div>
+              <h2 class="feature-title">Secular politics</h2>
+              <p class="feature-desc">Governance firmly rooted in the Constitution of India, ensuring equality before
+                law and freedom from religious discrimination, division, or majoritarian politics.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Equal respect.</span>
+                <span class="tagline-chip">Equal rights.</span>
+                <span class="tagline-chip">One Odisha.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROGRESS DIVIDER: 01 -> 02 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 01</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">01</span><span class="step-total"> / 16</span>
+            </div>
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 02</span>
           </div>
         </div>
 
-        <div class="pledges-grid-ref">
-
-          <!-- 01 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">01</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v18M3 7h18M5 7l-2 5h6l-2-5zM19 7l-2 5h6l-2-5zM7 19h10" />
-              </svg>
+        <!-- 02 -->
+        <article class="feature-section theme-dark" id="pledge-02" data-pledge-id="2"
+          data-pledge-title="A youth-centric party">
+          <div class="composition-02-wrapper">
+            <div class="composition-02-bg-image">
+              <img src="assets/images/vision/02-youth.jpg"
+                alt="Young Odia students and professionals collaborating on modern skill development and technology"
+                loading="lazy">
             </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Secular politics</h3>
-              <p class="pledge-card-desc">Governance firmly rooted in the Constitution of India, ensuring equality
-                before law and freedom from religious discrimination, division, or majoritarian politics.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Equal respect.</span>
-                <span>Equal rights.</span>
-                <span>One Odisha.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 02 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-1">
-            <div class="pledge-ribbon">02</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">A youth-centric party</h3>
-              <p class="pledge-card-desc">Prioritising education, skill development, employment, and entrepreneurship to
+            <div class="composition-02-text">
+              <div class="giant-number">02</div>
+              <h2 class="feature-title">A youth-centric party</h2>
+              <p class="feature-desc">Prioritising education, skill development, employment, and entrepreneurship to
                 ensure that Odisha's youth can build their future within the state.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Empowering youth.</span>
-                <span>Inspiring leadership.</span>
-                <span>Building tomorrow.</span>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Empowering youth.</span>
+                <span class="tagline-chip">Inspiring leadership.</span>
+                <span class="tagline-chip">Building tomorrow.</span>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 03 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-2">
-            <div class="pledge-ribbon">03</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="7" r="4" />
-                <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2" />
-                <path d="M12 11v10" />
-              </svg>
+        <!-- PROGRESS DIVIDER: 02 -> 03 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 02</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">02</span><span class="step-total"> / 16</span>
             </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Women's empowerment</h3>
-              <p class="pledge-card-desc">Commitment to full political, economic, and social equality for women, with
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 03</span>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <article class="feature-section theme-light" id="pledge-03" data-pledge-id="3"
+          data-pledge-title="Women's empowerment">
+          <div class="composition-03-wrapper">
+            <div class="composition-03-bg-image">
+              <img src="assets/images/vision/03-women.jpg"
+                alt="Confident Odia women leaders engaged in discussion in a bright modern community office"
+                loading="lazy">
+            </div>
+            <div class="composition-03-text">
+              <div class="giant-number">03</div>
+              <h2 class="feature-title">Women's empowerment</h2>
+              <p class="feature-desc">Commitment to full political, economic, and social equality for women, with
                 guaranteed representation, safety, financial independence, and institutional support.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Empowered women.</span>
-                <span>Stronger families.</span>
-                <span>Progressive Odisha.</span>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Empowered women.</span>
+                <span class="tagline-chip">Stronger families.</span>
+                <span class="tagline-chip">Progressive Odisha.</span>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 04 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">04</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
+        <!-- PROGRESS DIVIDER: 03 -> 04 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 03</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">03</span><span class="step-total"> / 16</span>
             </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">A party dedicated to Dalits, the oppressed, tribals and backward classes
-              </h3>
-              <p class="pledge-card-desc">Unwavering commitment to the dignity, constitutional rights, representation,
-                and socio-economic advancement of Dalits, tribals, OBCs, and marginalized communities.</p>
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 04</span>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <article class="feature-section theme-dark" id="pledge-04" data-pledge-id="4"
+          data-pledge-title="Dalits, tribals & backward classes">
+          <div class="composition-04-wrapper">
+            <div class="composition-04-bg-image">
+              <img src="assets/images/vision/04-tribal.jpg"
+                alt="Dignified tribal elders and women in an authentic village setting in Odisha" loading="lazy">
             </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Social justice.</span>
-                <span>Equal dignity.</span>
-                <span>Inclusive growth.</span>
+            <div class="composition-04-text">
+              <div class="giant-number">04</div>
+              <h2 class="feature-title">A party dedicated to Dalits, the oppressed, tribals and backward classes</h2>
+              <p class="feature-desc">Unwavering commitment to the dignity, constitutional rights, representation, and
+                socio-economic advancement of Dalits, tribals, OBCs, and marginalized communities.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Social justice.</span>
+                <span class="tagline-chip">Equal dignity.</span>
+                <span class="tagline-chip">Inclusive growth.</span>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- VISIONS 05–08: COMPACT EDITORIAL INDEX -->
+      <div class="editorial-index-container" id="editorial-index">
+        <div class="index-section-header">
+          <h2 class="index-section-title">Core Pillars of Public Governance</h2>
+        </div>
+        <div class="index-grid">
 
           <!-- 05 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-1">
-            <div class="pledge-ribbon">05</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Participation of society and of the people</h3>
-              <p class="pledge-card-desc">Development driven by the needs and direct participation of citizens, where
-                public policies are shaped by people's voices from every household.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Citizen led.</span>
-                <span>Transparent power.</span>
-                <span>Grassroots voice.</span>
+          <article class="index-card" id="pledge-05" data-pledge-id="5"
+            data-pledge-title="Participation of society and people">
+            <div class="index-card-header">
+              <div class="index-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
               </div>
+              <div class="index-number">05</div>
+            </div>
+            <h3 class="index-card-title">Participation of society and of the people</h3>
+            <p class="index-card-desc">Development driven by the needs and direct participation of citizens, where
+              public policies are shaped by people's voices from every household.</p>
+            <div class="index-taglines">
+              <span class="index-tagline-chip">Citizen led.</span>
+              <span class="index-tagline-chip">Transparent power.</span>
+              <span class="index-tagline-chip">Grassroots voice.</span>
             </div>
           </article>
 
           <!-- 06 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-2">
-            <div class="pledge-ribbon">06</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Priority to the development of farmers</h3>
-              <p class="pledge-card-desc">Ensuring fair pricing, legal MSP guarantee, water security, income stability,
-                and modern agricultural support for farmers as the backbone of Odisha.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Respect farmers.</span>
-                <span>Reward hard work.</span>
-                <span>Strengthen Odisha.</span>
+          <article class="index-card" id="pledge-06" data-pledge-id="6"
+            data-pledge-title="Priority to the development of farmers">
+            <div class="index-card-header">
+              <div class="index-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="7" cy="17" r="3"></circle>
+                  <circle cx="17" cy="15" r="5"></circle>
+                  <path d="M7 17h5l3-7h4v4"></path>
+                  <path d="M7 10h5v4"></path>
+                </svg>
               </div>
+              <div class="index-number">06</div>
+            </div>
+            <h3 class="index-card-title">Priority to the development of farmers</h3>
+            <p class="index-card-desc">Ensuring fair pricing, legal MSP guarantee, water security, income stability,
+              and modern agricultural support for farmers as the backbone of Odisha.</p>
+            <div class="index-taglines">
+              <span class="index-tagline-chip">Respect farmers.</span>
+              <span class="index-tagline-chip">Reward hard work.</span>
+              <span class="index-tagline-chip">Strengthen Odisha.</span>
             </div>
           </article>
 
           <!-- 07 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">07</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 22h20L12 2z" />
-                <path d="M12 6l6 12H6l6-12z" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Emphasis on the rights of tribal people on natural resources</h3>
-              <p class="pledge-card-desc">Uncompromising protection of tribal land, forest rights, cultural identity,
-                and natural resources under Jal, Jungle, Jameen rights.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Protect land.</span>
-                <span>Honor heritage.</span>
-                <span>Tribal dignity.</span>
+          <article class="index-card" id="pledge-07" data-pledge-id="7"
+            data-pledge-title="Rights of tribal people on natural resources">
+            <div class="index-card-header">
+              <div class="index-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
+                </svg>
               </div>
+              <div class="index-number">07</div>
+            </div>
+            <h3 class="index-card-title">Emphasis on the rights of tribal people on natural resources</h3>
+            <p class="index-card-desc">Uncompromising protection of tribal land, forest rights, cultural identity, and
+              natural resources under Jal, Jungle, Jameen rights.</p>
+            <div class="index-taglines">
+              <span class="index-tagline-chip">Protect land.</span>
+              <span class="index-tagline-chip">Honor heritage.</span>
+              <span class="index-tagline-chip">Tribal dignity.</span>
             </div>
           </article>
 
           <!-- 08 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-1">
-            <div class="pledge-ribbon">08</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="7" />
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Preservation, development and propagation of Odia pride, the distinct
-                identity of the Odia people, and the Odia language, literature, culture and history</h3>
-              <p class="pledge-card-desc">Promoting Odia language, literature, art, and historical heritage while
-                protecting the self-respect and distinct identity of the Odia people nationwide.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Odia pride.</span>
-                <span>Rich culture.</span>
-                <span>Eternal identity.</span>
+          <article class="index-card" id="pledge-08" data-pledge-id="8"
+            data-pledge-title="Preservation of Odia pride & identity">
+            <div class="index-card-header">
+              <div class="index-badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4 22L8 2h8l4 20"></path>
+                  <path d="M6 16h12"></path>
+                  <path d="M7 11h10"></path>
+                </svg>
               </div>
+              <div class="index-number">08</div>
+            </div>
+            <h3 class="index-card-title">Preservation, development and propagation of Odia pride, the distinct
+              identity of the Odia people, and the Odia language, literature, culture and history</h3>
+            <p class="index-card-desc">Promoting Odia language, literature, art, and historical heritage while
+              protecting the self-respect and distinct identity of the Odia people nationwide.</p>
+            <div class="index-taglines">
+              <span class="index-tagline-chip">Odia pride.</span>
+              <span class="index-tagline-chip">Rich culture.</span>
+              <span class="index-tagline-chip">Eternal identity.</span>
             </div>
           </article>
 
-          <!-- 09 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-2">
-            <div class="pledge-ribbon">09</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18M3 10h18M5 10v11M9 10v11M13 10v11M17 10v11M12 3L2 10h20L12 3z" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Preservation of ideal democratic values, and moral support for the
-                democratic process from the grassroots level upward</h3>
-              <p class="pledge-card-desc">Upholding democratic ethics, free speech, and institutional integrity from
-                Gram Panchayats upward to protect public trust in governance.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Grassroots democracy.</span>
-                <span>Moral leadership.</span>
-                <span>Public trust.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 10 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">10</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Protection of the constitutional rights of every section of society</h3>
-              <p class="pledge-card-desc">Safeguarding individual liberty, justice, and fundamental constitutional
-                rights for every citizen regardless of background, faith, or status.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Guaranteed rights.</span>
-                <span>Legal safety.</span>
-                <span>Constitutional rule.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 11 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-1">
-            <div class="pledge-ribbon">11</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Safeguarding the social, political and economic rights of citizens</h3>
-              <p class="pledge-card-desc">Guaranteeing universal access to economic opportunity, political voice, and
-                social security so that no household is left behind in progress.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Economic security.</span>
-                <span>Social safety.</span>
-                <span>Equal voice.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 12 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-2">
-            <div class="pledge-ribbon">12</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Transparency and accountability in the political and administrative system
-              </h3>
-              <p class="pledge-card-desc">Eradicating corruption through real-time governance dashboards, public audits,
-                digital transparency, and strict accountability for public servants.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Zero corruption.</span>
-                <span>Real accountability.</span>
-                <span>Clean governance.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 13 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">13</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 12a11 11 0 0 1-22 0 11 11 0 0 1 22 0z" />
-                <path d="M12 2v20M2 12h20" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Better management of natural disasters and containment of the impact of
-                damage</h3>
-              <p class="pledge-card-desc">State-of-the-art early warning systems, resilient coastal infrastructure,
-                rapid relief protocols, and long-term protection against cyclones and floods.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Rapid relief.</span>
-                <span>Safe coastlines.</span>
-                <span>Resilient Odisha.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 14 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-1">
-            <div class="pledge-ribbon">14</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Undertaking programmes for community-centred environmental protection and
-                effective management of climate change</h3>
-              <p class="pledge-card-desc">Citizen-led afforestation, river conservation including the Mahanadi, clean
-                energy transition, and local environmental stewardship across districts.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Clean environment.</span>
-                <span>Save rivers.</span>
-                <span>Sustainable future.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 15 -->
-          <article class="pledge-card-ref fade-in fade-in-delay-2">
-            <div class="pledge-ribbon">15</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Creating skill development, employment and entrepreneurial capability among
-                young men and women from the school and college level onward</h3>
-              <p class="pledge-card-desc">Integrating practical vocational training, tech skills, incubator funds, and
-                entrepreneurship support directly into school and university curricula.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Industry skills.</span>
-                <span>Local jobs.</span>
-                <span>Young entrepreneurs.</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 16 -->
-          <article class="pledge-card-ref fade-in">
-            <div class="pledge-ribbon">16</div>
-            <div class="pledge-icon-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <path
-                  d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-              </svg>
-            </div>
-            <div class="pledge-main-content">
-              <div class="pledge-accent-bar"></div>
-              <h3 class="pledge-card-title">Ensuring the conservation and judicious use of Odisha's natural resources,
-                and making Odisha's future bright</h3>
-              <p class="pledge-card-desc">Managing mineral wealth, water reservoirs, and natural assets responsibly for
-                long-term public revenue, ecological balance, and generational prosperity.</p>
-            </div>
-            <div class="pledge-highlight-box">
-              <div class="pledge-highlight-text">
-                <span>Protect wealth.</span>
-                <span>Judicious use.</span>
-                <span>Bright future.</span>
-              </div>
-            </div>
         </div>
+      </div>
 
-        <!-- VISION FINAL CTA CARD (Matching Page UI) -->
-        <div class="vision-final-cta-card fade-in">
-          <div class="cta-accent-line"></div>
-          <h2 class="vision-final-cta-title">This vision belongs to you.<br>Hold us accountable.</h2>
-          <div class="vision-final-cta-actions">
-            <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-primary btn-lg">Download Full Vision (PDF)</a>
-            <a href="join.html" class="btn btn-outline-dark btn-lg">Join the OJC Movement</a>
+      <!-- VISIONS 09–12: ALTERNATING MAGAZINE SECTIONS (FULL HEIGHT COVER SPREADS) -->
+      <section class="alternating-section-group" id="alternating-sections">
+
+        <!-- 09 -->
+        <article class="alternating-row bg-light" id="pledge-09" data-pledge-id="9"
+          data-pledge-title="Preservation of ideal democratic values">
+          <div class="composition-09-wrapper">
+            <div class="composition-09-bg-image">
+              <img src="assets/images/vision/09-democracy.jpg"
+                alt="Gram Sabha village community meeting under banyan tree in Odisha" loading="lazy">
+            </div>
+            <div class="composition-09-text">
+              <div class="giant-number">09</div>
+              <h2 class="feature-title">Preservation of ideal democratic values, and moral support for the democratic
+                process from the grassroots level upward</h2>
+              <p class="feature-desc">Upholding democratic ethics, free speech, and institutional integrity from Gram
+                Panchayats upward to protect public trust in governance.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Grassroots democracy.</span>
+                <span class="tagline-chip">Moral leadership.</span>
+                <span class="tagline-chip">Public trust.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROGRESS DIVIDER: 09 -> 10 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 09</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">09</span><span class="step-total"> / 16</span>
+            </div>
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 10</span>
           </div>
         </div>
 
-      </div>
-    </section>
+        <!-- 10 -->
+        <article class="alternating-row bg-navy" id="pledge-10" data-pledge-id="10"
+          data-pledge-title="Protection of constitutional rights">
+          <div class="composition-10-wrapper">
+            <div class="composition-10-bg-image">
+              <img src="assets/images/vision/odisha-high-court.png"
+                alt="Architectural facade of Odisha High Court bathed in morning sunlight" loading="lazy">
+            </div>
+            <div class="composition-10-text">
+              <div class="giant-number">10</div>
+              <h2 class="feature-title">Protection of the constitutional rights of every section of society</h2>
+              <p class="feature-desc">Safeguarding individual liberty, justice, and fundamental constitutional rights
+                for every citizen regardless of background, faith, or status.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Guaranteed rights.</span>
+                <span class="tagline-chip">Legal safety.</span>
+                <span class="tagline-chip">Constitutional rule.</span>
+              </div>
+            </div>
+          </div>
+        </article>
 
+        <!-- PROGRESS DIVIDER: 10 -> 11 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 10</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">10</span><span class="step-total"> / 16</span>
+            </div>
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 11</span>
+          </div>
+        </div>
 
+        <!-- 11 -->
+        <article class="alternating-row bg-light" id="pledge-11" data-pledge-id="11"
+          data-pledge-title="Social, political and economic rights">
+          <div class="composition-11-wrapper">
+            <div class="composition-11-bg-image">
+              <img src="assets/images/vision/11-security.jpg"
+                alt="Odia multi-generational family walking happily in a Bhubaneswar civic park" loading="lazy">
+            </div>
+            <div class="composition-11-text">
+              <div class="giant-number">11</div>
+              <h2 class="feature-title">Safeguarding the social, political and economic rights of citizens</h2>
+              <p class="feature-desc">Guaranteeing universal access to economic opportunity, political voice, and social
+                security so that no household is left behind in progress.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Economic security.</span>
+                <span class="tagline-chip">Social safety.</span>
+                <span class="tagline-chip">Equal voice.</span>
+              </div>
+            </div>
+          </div>
+        </article>
 
+        <!-- PROGRESS DIVIDER: 11 -> 12 -->
+        <div class="vision-progress-divider-shell">
+          <div class="vision-progress-divider">
+            <span class="divider-prev-label">VISION 11</span>
+            <span class="divider-dashed-line"></span>
+            <div class="divider-step-counter">
+              <span class="step-num">11</span><span class="step-total"> / 16</span>
+            </div>
+            <span class="divider-dashed-line"></span>
+            <span class="divider-next-label">VISION 12</span>
+          </div>
+        </div>
 
+        <!-- 12 -->
+        <article class="alternating-row bg-navy" id="pledge-12" data-pledge-id="12"
+          data-pledge-title="Transparency and accountability">
+          <div class="composition-12-wrapper">
+            <div class="composition-12-bg-image">
+              <img src="assets/images/vision/12-transparency.jpg"
+                alt="Odia citizen receiving transparent digital public service at a modern administrative kiosk"
+                loading="lazy">
+            </div>
+            <div class="composition-12-text">
+              <div class="giant-number">12</div>
+              <h2 class="feature-title">Transparency and accountability in the political and administrative system</h2>
+              <p class="feature-desc">Eradicating corruption through real-time governance dashboards, public audits,
+                digital transparency, and strict accountability for public servants.</p>
+              <div class="feature-tagline-pills">
+                <span class="tagline-chip">Zero corruption.</span>
+                <span class="tagline-chip">Real accountability.</span>
+                <span class="tagline-chip">Clean governance.</span>
+              </div>
+            </div>
+          </div>
+        </article>
 
-  </main>
+      </section>
+
+      <!-- VISIONS 13–16: FINAL CLIMAX GRID -->
+      <section class="climax-grid-section" id="climax-grid">
+        <div class="climax-container">
+          <div class="climax-grid">
+
+            <!-- 13 -->
+            <article class="climax-card" id="pledge-13" data-pledge-id="13"
+              data-pledge-title="Better management of natural disasters">
+              <div class="climax-card-left">
+                <div class="climax-number">13</div>
+                <div class="climax-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 12a11 11 0 0 1-22 0 11 11 0 0 1 22 0z"></path>
+                    <path d="M12 2v20M2 12h20"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="climax-card-content">
+                <h3 class="climax-title">Better management of natural disasters and containment of the impact of damage
+                </h3>
+                <p class="climax-desc">State-of-the-art early warning systems, resilient coastal infrastructure, rapid
+                  relief protocols, and long-term protection against cyclones and floods.</p>
+                <div class="climax-taglines">
+                  <span class="tagline-chip">Rapid relief.</span>
+                  <span class="tagline-chip">Safe coastlines.</span>
+                  <span class="tagline-chip">Resilient Odisha.</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 14 -->
+            <article class="climax-card" id="pledge-14" data-pledge-id="14"
+              data-pledge-title="Environmental protection & climate change">
+              <div class="climax-card-left">
+                <div class="climax-number">14</div>
+                <div class="climax-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M2 12h20"></path>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="climax-card-content">
+                <h3 class="climax-title">Undertaking programmes for community-centred environmental protection and
+                  effective management of climate change</h3>
+                <p class="climax-desc">Citizen-led afforestation, river conservation including the Mahanadi, clean
+                  energy transition, and local environmental stewardship across districts.</p>
+                <div class="climax-taglines">
+                  <span class="tagline-chip">Clean environment.</span>
+                  <span class="tagline-chip">Save rivers.</span>
+                  <span class="tagline-chip">Sustainable future.</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 15 -->
+            <article class="climax-card" id="pledge-15" data-pledge-id="15"
+              data-pledge-title="Skill development & entrepreneurial capability">
+              <div class="climax-card-left">
+                <div class="climax-number">15</div>
+                <div class="climax-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="climax-card-content">
+                <h3 class="climax-title">Creating skill development, employment and entrepreneurial capability among
+                  young men and women from the school and college level onward</h3>
+                <p class="climax-desc">Integrating practical vocational training, tech skills, incubator funds, and
+                  entrepreneurship support directly into school and university curricula.</p>
+                <div class="climax-taglines">
+                  <span class="tagline-chip">Industry skills.</span>
+                  <span class="tagline-chip">Local jobs.</span>
+                  <span class="tagline-chip">Young entrepreneurs.</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 16 -->
+            <article class="climax-card" id="pledge-16" data-pledge-id="16"
+              data-pledge-title="Conservation of natural resources">
+              <div class="climax-card-left">
+                <div class="climax-number">16</div>
+                <div class="climax-icon-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <path
+                      d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="climax-card-content">
+                <h3 class="climax-title">Ensuring the conservation and judicious use of Odisha's natural resources, and
+                  making Odisha's future bright</h3>
+                <p class="climax-desc">Managing mineral wealth, water reservoirs, and natural assets responsibly for
+                  long-term public revenue, ecological balance, and generational prosperity.</p>
+                <div class="climax-taglines">
+                  <span class="tagline-chip">Protect wealth.</span>
+                  <span class="tagline-chip">Judicious use.</span>
+                  <span class="tagline-chip">Bright future.</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING STATEMENT & CTA -->
+      <section class="vision-closing-section">
+        <img src="assets/images/vision/closing-banner.jpg" alt="" class="closing-bg-image">
+        <div class="closing-overlay"></div>
+        <div class="closing-container">
+          <div class="closing-accent-bar"></div>
+          <h2 class="closing-headline">This vision belongs to you.<br>Hold us accountable.</h2>
+          <div class="closing-actions">
+            <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-primary btn-lg">Download
+              Full Vision (PDF)</a>
+            <a href="join.html" class="btn btn-outline btn-lg">Join the OJC Movement</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
@@ -568,6 +700,7 @@
       </div>
     </div>
   </footer>
+
   <a class="wa-float" href="https://wa.me/919777770323?text=Hello%2C%20I%20have%20a%20query%20about%20OJC"
     target="_blank" rel="noopener noreferrer" aria-label="Chat with OJC on WhatsApp"><svg viewBox="0 0 24 24">
       <path
@@ -579,6 +712,8 @@
         class="cookie-btn cookie-btn-reject">Reject Non-Essential</button></div>
   </div>
   <script src="assets/js/main.js?v=6.0"></script>
+  <!-- EDITORIAL VISION NAVIGATION SCRIPT -->
+  <script src="assets/js/vision-nav.js"></script>
 </body>
 
 </html>

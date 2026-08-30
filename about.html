@@ -27,7 +27,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('consent', 'default', { analytics_storage: 'denied' }); gtag('config', 'G-XXXXXXXXXX');</script>
   <!-- PREMIUM REDESIGN -->
-  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=6.0">
+  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=7.0">
 </head>
 
 <body class="about-page">
@@ -68,19 +68,37 @@
     <a href="join.html" class="nav-link">Join OJC</a>
     <a href="newsroom.html" class="nav-link">Newsroom</a>
     <a href="contact.html" class="nav-link">Contact</a>
-    <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline" style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a>
+    <a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline"
+      style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a>
     <a href="join.html" class="btn btn-primary">Become a Member</a>
   </nav>
 
   <main id="main">
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container page-hero-inner">
-        <span class="eyebrow fade-in">Party Profile</span>
-        <h1 class="fade-in fade-in-delay-1">Who We Are <span class="amp">&amp;</span> Why We Exist</h1>
-        <p class="page-hero-sub fade-in fade-in-delay-2">The Odisha Janta Congress Party — a regional movement of farmers, women, youth, tribal
-          communities, professionals, and citizens who share one conviction: Odisha belongs to Odias.</p>
+    <!-- FULL-BLEED ABOUT HERO SECTION -->
+    <section class="about-hero-redesign vision-hero-redesign">
+      <div class="hero-bg-image-wrapper">
+        <img src="assets/images/about-hero-section.png?v=3.0"
+          alt="Odisha Janta Congress Party Flag and Official Emblem Artwork" class="hero-bg-image about-hero-bg-image">
+        <div class="hero-cinematic-overlay"></div>
+      </div>
+      <div class="vision-hero-content about-hero-content">
+        <div class="vision-eyebrow-badge fade-in fade-in-delay-1">
+          <span class="eyebrow-text">PARTY PROFILE</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h1 class="vision-hero-headline fade-in fade-in-delay-2">Who We Are &amp;<br>Why We Exist</h1>
+        <p class="vision-hero-sub fade-in fade-in-delay-3">The Odisha Janta Congress Party — a regional movement of
+          farmers, women, youth, tribal communities, professionals, and citizens who share one conviction: Odisha
+          belongs to Odias.</p>
+      </div>
+      <!-- ELEGANT ORGANIC CURVED WAVE TRANSITION -->
+      <div class="hero-curved-divider" aria-hidden="true">
+        <svg class="curved-wave-svg" viewBox="0 0 1440 90" preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,32 C360,85 1080,-15 1440,40 L1440,65 C1080,10 360,105 0,50 Z" fill="#FADE25" opacity="0.9" />
+          <path d="M0,48 C380,95 1060,5 1440,52 L1440,90 L0,90 Z" fill="#FAF9F5" />
+        </svg>
       </div>
     </section>
 
@@ -134,32 +152,57 @@
     <!-- FLAG -->
     <section class="about-flag-section" aria-labelledby="flag-h2">
       <div class="container">
-        <div class="about-flag-inner">
-          <span class="eyebrow about-flag-eyebrow">Our Flag · Our Identity</span>
+
+        <!-- HEADING BLOCK ON TOP -->
+        <div class="flag-header-box">
+          <span class="eyebrow about-flag-eyebrow">OUR FLAG · OUR IDENTITY</span>
           <h2 id="flag-h2" class="about-flag-title">Three colours. One vision.</h2>
-          <div class="about-flag-grid">
-            <div class="about-flag-card about-flag-card--gold">
-              <div class="about-flag-swatch" aria-hidden="true"></div>
-              <div class="about-flag-copy"><strong class="about-flag-name">Golden Yellow Band</strong>
-                <p class="about-flag-body">The prosperity, hope, and enduring strength of our agricultural heritage. The
-                  harvest that feeds Odisha. The future we are building.</p>
-              </div>
-            </div>
-            <div class="about-flag-card about-flag-card--white">
-              <div class="about-flag-swatch" aria-hidden="true"></div>
-              <div class="about-flag-copy"><strong class="about-flag-name">White Band</strong>
-                <p class="about-flag-body">Peace, integrity, and transparent governance. The honest foundation on which
-                  a self-reliant Odisha will be built.</p>
-              </div>
-            </div>
-            <div class="about-flag-card about-flag-card--blue">
-              <div class="about-flag-swatch" aria-hidden="true"></div>
-              <div class="about-flag-copy"><strong class="about-flag-name">Royal Blue Band</strong>
-                <p class="about-flag-body">Odisha's rivers, its coastline, the untapped potential of its people and our
-                  commitment to inclusive and equitable development. And, the Mahanadi, which is ours to protect.</p>
-              </div>
+        </div>
+
+        <div class="about-flag-2col-wrapper">
+
+          <!-- LEFT COLUMN: FLAG GRAPHIC (~28% width) -->
+          <div class="flag-left-col">
+            <div class="flag-graphic-card">
+              <img src="assets/images/selected/ojcp-flag-official.jpg?v=7.0" alt="Official Odisha Janta Congress Party Flag" class="flag-official-img">
             </div>
           </div>
+
+          <!-- RIGHT COLUMN: 3 CARDS IN 1 ROW (~72% width) -->
+          <div class="flag-right-col">
+            <div class="flag-cards-row">
+              <!-- Card 1: Golden Yellow -->
+              <article class="flag-info-card flag-info-card--yellow">
+                <div class="flag-card-top">
+                  <span class="flag-badge flag-badge--yellow">01</span>
+                  <div class="flag-swatch flag-swatch--yellow"></div>
+                </div>
+                <h3 class="flag-card-name">GOLDEN YELLOW BAND</h3>
+                <p class="flag-card-body">The prosperity, hope, and enduring strength of our agricultural heritage. The harvest that feeds Odisha. The future we are building.</p>
+              </article>
+
+              <!-- Card 2: White -->
+              <article class="flag-info-card flag-info-card--white">
+                <div class="flag-card-top">
+                  <span class="flag-badge flag-badge--white">02</span>
+                  <div class="flag-swatch flag-swatch--white"></div>
+                </div>
+                <h3 class="flag-card-name">WHITE BAND</h3>
+                <p class="flag-card-body">Peace, integrity, and transparent governance. The honest foundation on which a self-reliant Odisha will be built.</p>
+              </article>
+
+              <!-- Card 3: Royal Blue -->
+              <article class="flag-info-card flag-info-card--blue">
+                <div class="flag-card-top">
+                  <span class="flag-badge flag-badge--blue">03</span>
+                  <div class="flag-swatch flag-swatch--blue"></div>
+                </div>
+                <h3 class="flag-card-name">ROYAL BLUE BAND</h3>
+                <p class="flag-card-body">Odisha's rivers, its coastline, the untapped potential of its people and our commitment to inclusive and equitable development. And, the Mahanadi, which is ours to protect.</p>
+              </article>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -167,56 +210,142 @@
     <!-- 9 PILLARS -->
     <section class="about-pillars-section" id="pillars" aria-labelledby="pillars-h2">
       <div class="container">
-        <span class="eyebrow">Core Ideology</span>
-        <h2 id="pillars-h2" class="section-title section-title--white">Nine pillars. One conviction.<br>Odisha for
-          Odias.</h2>
-        <p class="about-pillars-lead">The Odisha Janta Congress Party brings together citizens who share the conviction
-          that Odisha has been underserved by governments focused on agendas other than the priorities of this state.
-        </p>
+        <span class="eyebrow">CORE IDEOLOGY</span>
+        <h2 id="pillars-h2" class="section-title">Nine pillars. One conviction. Odisha for Odias.</h2>
         <div class="pillars-grid">
+
+          <!-- 01: Secular Politics -->
           <article class="pillar-card fade-in">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 3L2 10h20L12 3z"/></svg></div><span class="pillar-number">PILLAR 01</span></div>
-            <h3 class="pillar-name">Secular Politics</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">01</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20h20M4 17h16M6 17V10M10 10v7M14 10v7M18 10v7M12 3L2 8h20z"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Secular Politics</h3>
+            </div>
             <p class="pillar-body">Governance firmly rooted in the Constitution of India, ensuring equality before law and freedom from religious discrimination, division, or majoritarian politics.</p>
           </article>
+
+          <!-- 02: Women's Empowerment -->
           <article class="pillar-card fade-in fade-in-delay-1">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"/><path d="M9 14.5c.9 1 2.1 1.5 3 1.5s2.1-.5 3-1.5"/></svg></div><span class="pillar-number">PILLAR 02</span></div>
-            <h3 class="pillar-name">Women's Empowerment</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">02</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="5"/>
+                  <path d="M12 13v8M9 17h6"/>
+                  <path d="M16 4l2 2 3-3"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Women's Empowerment</h3>
+            </div>
             <p class="pillar-body">Commitment to full political, economic, and social equality for women, with guaranteed representation, safety, financial independence, and institutional support.</p>
           </article>
+
+          <!-- 03: Youth-First -->
           <article class="pillar-card fade-in fade-in-delay-2">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="pillar-number">PILLAR 03</span></div>
-            <h3 class="pillar-name">Youth-First</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">03</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+                  <polyline points="18 16 22 16"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Youth-First</h3>
+            </div>
             <p class="pillar-body">Prioritising education, skill development, employment, and entrepreneurship to ensure that Odisha's youth can build their future within the state.</p>
           </article>
+
+          <!-- 04: People-Led Development -->
           <article class="pillar-card fade-in fade-in-delay-3">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 6.5v10M7 17l3.5-8.5M17 17l-3.5-8.5"/></svg></div><span class="pillar-number">PILLAR 04</span></div>
-            <h3 class="pillar-name">People-Led Development</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">04</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">People-Led Development</h3>
+            </div>
             <p class="pillar-body">Development driven by the needs and participation of citizens, where policies are shaped by people's voices and benefits reach every household.</p>
           </article>
+
+          <!-- 05: Pro-Farmer -->
           <article class="pillar-card fade-in">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M12 20H8M12 20h4M12 10C12 5 7 3 4 5c0 5 4 7 8 5M12 10c0-5 5-7 8-5 0 5-4 7-8 5"/></svg></div><span class="pillar-number">PILLAR 05</span></div>
-            <h3 class="pillar-name">Pro-Farmer</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">05</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20V10M12 20H8M12 20h4M12 10C12 5 7 3 4 5c0 5 4 7 8 5M12 10c0-5 5-7 8-5 0 5-4 7-8 5"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Pro-Farmer</h3>
+            </div>
             <p class="pillar-body">Ensuring fair pricing, water security, income stability, and dignity for farmers, recognising them as the backbone of Odisha's economy.</p>
           </article>
+
+          <!-- 06: Tribal Rights -->
           <article class="pillar-card fade-in fade-in-delay-1">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="5" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="9" cy="19" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="15" cy="19" r="2"/><path d="M9 7v3M9 14v3M15 7v3M15 14v3"/></svg></div><span class="pillar-number">PILLAR 06</span></div>
-            <h3 class="pillar-name">Tribal Rights</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">06</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 10l-6 8h12l-6-8zM17 14l-4 6h8l-4-6zM10 18v4M17 20v2"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Tribal Rights</h3>
+            </div>
             <p class="pillar-body">Uncompromising protection of tribal land, forest rights, cultural identity, and constitutional safeguards, with development that respects and empowers communities.</p>
           </article>
+
+          <!-- 07: Odia Identity -->
           <article class="pillar-card fade-in fade-in-delay-2">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><span class="pillar-number">PILLAR 07</span></div>
-            <h3 class="pillar-name">Odia Identity</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">07</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.63 5.63l4.25 4.25M14.12 14.12l4.25 4.25M5.63 18.37l4.25-4.25M14.12 9.88l4.25-4.25"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Odia Identity</h3>
+            </div>
             <p class="pillar-body">Strong pride in Odia language, culture, and heritage, alongside a firm commitment to safeguarding Odisha's rights, resources, and voice within the Indian Union.</p>
           </article>
+
+          <!-- 08: Grassroots Democracy -->
           <article class="pillar-card fade-in fade-in-delay-3">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><span class="pillar-number">PILLAR 08</span></div>
-            <h3 class="pillar-name">Grassroots Democracy</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">08</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Grassroots Democracy</h3>
+            </div>
             <p class="pillar-body">Strengthening Panchayati Raj institutions, empowering local governance, and ensuring decision-making power reaches villages and communities.</p>
           </article>
+
+          <!-- 09: Social Justice -->
           <article class="pillar-card fade-in">
-            <div class="pillar-card-header"><div class="pillar-icon-block"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l7-4 7 4M5 7L2 14h6L5 7zm14 0l-3 7h6l-3-7zM2 20h20"/></svg></div><span class="pillar-number">PILLAR 09</span></div>
-            <h3 class="pillar-name">Social Justice</h3>
+            <div class="pillar-card-header">
+              <span class="pillar-badge">09</span>
+              <div class="pillar-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v18M5 7l7-4 7 4M5 7L2 14h6L5 7zm14 0l-3 7h6l-3-7zM2 20h20"/>
+                </svg>
+              </div>
+              <h3 class="pillar-name">Social Justice</h3>
+            </div>
             <p class="pillar-body">Building an equitable society through fair access to opportunities, resources, and public services, ensuring that no section of society is left behind.</p>
           </article>
         </div>
@@ -226,31 +355,51 @@
     <!-- FORMATION PURPOSE -->
     <section class="about-definition-section" id="founding-story" aria-labelledby="definition-h2">
       <div class="container">
-        <span class="eyebrow">Formation Purpose</span>
+        <span class="eyebrow">FORMATION PURPOSE</span>
         <h2 id="definition-h2" class="section-title">Why This Party Was Formed</h2>
         <p class="about-definition-lead">OJC is a new political movement formed to organise citizens around Odisha-first
           identity, clean governance, public accountability, and district-level democratic participation.</p>
         <div class="about-definition-grid">
           <article class="about-definition-card">
-            <span class="about-definition-kicker">01</span>
+            <span class="about-definition-kicker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg></span>
             <h3>Odisha at the centre</h3>
             <p>The party was formed around the belief that Odisha's resources and institutions must answer first to the
               people of Odisha.</p>
           </article>
           <article class="about-definition-card">
-            <span class="about-definition-kicker">02</span>
+            <span class="about-definition-kicker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg></span>
             <h3>Clean governance standard</h3>
             <p>OJC stands for politics where public plans are written, budgeted, measured, and opened to citizen
               scrutiny.</p>
           </article>
           <article class="about-definition-card">
-            <span class="about-definition-kicker">03</span>
+            <span class="about-definition-kicker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg></span>
             <h3>Built by Citizens</h3>
             <p>The movement is being built through membership, district outreach, local coordination, and direct
               conversations with supporters across Odisha.</p>
           </article>
           <article class="about-definition-card">
-            <span class="about-definition-kicker">04</span>
+            <span class="about-definition-kicker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg></span>
             <h3>Accountability before power</h3>
             <p>As a newly formed party, OJC seeks public trust through a clear vision, transparent organisation, and
               future intent that citizens can question.</p>

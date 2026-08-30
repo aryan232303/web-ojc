@@ -392,9 +392,10 @@ body.about-page .about-pillars-section .eyebrow {
 }
 
 body.about-page .about-pillars-section .section-title {
-  max-width: 760px;
-  margin-top: 14px;
-  line-height: 1.06;
+  max-width: 100%;
+  margin: 14px auto 0 auto;
+  text-align: center;
+  line-height: 1.25;
 }
 
 body.about-page .about-pillars-section .about-pillars-lead {
@@ -407,28 +408,18 @@ body.about-page .about-pillars-section .about-pillars-lead {
 
 body.about-page .about-pillars-section .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 52px !important;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.11);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px !important;
+  border: none;
+  background: transparent;
 }
 
 body.about-page .about-pillars-section .pillar-card {
   position: relative;
-  grid-column: span 3;
-  min-height: 282px;
-  padding: 30px 26px 32px;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.038)),
-    #071126;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  transition:
-    background 180ms ease,
-    box-shadow 180ms ease;
+  grid-column: auto !important;
+  min-height: 0;
+  padding: 22px 24px;
 }
 
 body.about-page .about-pillars-section .pillar-card.fade-in {
@@ -436,18 +427,8 @@ body.about-page .about-pillars-section .pillar-card.fade-in {
   transform: none;
 }
 
-body.about-page .about-pillars-section .pillar-card:nth-child(n + 5) {
-  grid-column: span 4;
-}
-
-@media (min-width: 1025px) {
-  body.about-page .about-pillars-section .pillar-card:nth-child(8) {
-    grid-column: 3 / span 4 !important;
-  }
-
-  body.about-page .about-pillars-section .pillar-card:nth-child(9) {
-    grid-column: 7 / span 4 !important;
-  }
+body.about-page .about-pillars-section .pillar-card:nth-child(n) {
+  grid-column: auto !important;
 }
 
 body.about-page .about-pillars-section .pillar-card::before {

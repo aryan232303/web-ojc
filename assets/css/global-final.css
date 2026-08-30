@@ -372,9 +372,7 @@ body:is(.vision-page, .join-page) main .page-hero h1::after {
 body .site-footer {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 14% 0%, rgba(202, 169, 91, 0.1), transparent 30%),
-    linear-gradient(180deg, #061022 0%, #030814 100%);
+  background: #2A6DB5 !important;
   border-top: 1px solid rgba(202, 169, 91, 0.26);
 }
 
@@ -603,9 +601,7 @@ section,
 .timeline-section,
 .stats-section,
 .ideology-section,
-.personas-section,
-.site-footer,
-body .site-footer {
+.personas-section {
   border-top: none !important;
   border-bottom: none !important;
 }
@@ -824,10 +820,7 @@ body.contact-page .contact-card-icon::after {
 
   html body.about-page .about-pillars-section .pillar-card:last-child,
   body.about-page .about-pillars-section .pillar-card:last-child {
-    grid-column: 1 / -1 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 !important;
+    grid-column: auto !important;
   }
 
   body.about-page .about-flag-grid {
