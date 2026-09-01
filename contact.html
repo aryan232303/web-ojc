@@ -34,105 +34,241 @@
 <nav class="mobile-nav" id="mobile-nav"><button class="mobile-nav-close" aria-label="Close menu">&times;</button><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="vision.html" class="nav-link">Vision</a><a href="join.html" class="nav-link">Join OJC</a><a href="newsroom.html" class="nav-link">Newsroom</a><a href="contact.html" class="nav-link">Contact</a><a href="manifesto.pdf" download="OJC_Party_Vision_Manifesto.pdf" class="btn btn-outline" style="margin-top: 14px; margin-bottom: 8px;">Download Vision (PDF)</a><a href="join.html" class="btn btn-primary">Become a Member</a></nav>
 
 <main id="main">
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <span class="eyebrow fade-in">Get In Touch</span>
-      <h1 class="fade-in fade-in-delay-1">Contact OJC</h1>
-      <p class="page-hero-sub fade-in fade-in-delay-2">We are a party that listens. Whether you are a voter, a journalist, a volunteer, or a citizen with a question — reach us below and we will respond.</p>
+  <!-- SVG ClipPath defining the wavy TOP edge only -->
+  <svg width="0" height="0" style="position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true">
+    <defs>
+      <clipPath id="topClip" clipPathUnits="objectBoundingBox">
+        <path d="
+          M 0,0.02
+          C 0.2,0.005 0.35,0.03 0.5,0.018
+          S 0.8,0.005 1,0.015
+          L 1,1
+          L 0,1
+          Z
+        "/>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- FULL-BLEED CONTACT HERO SECTION -->
+  <section class="contact-hero-redesign vision-hero-redesign">
+    <div class="hero-bg-image-wrapper">
+      <img src="assets/images/contact-hero-bg.png?v=2.0" alt="Odisha Janta Congress Party Contact & Desk Support Artwork"
+        class="hero-bg-image contact-hero-bg-image">
+      <div class="hero-cinematic-overlay"></div>
+    </div>
+    <div class="vision-hero-content contact-hero-content">
+      <div class="vision-eyebrow-badge fade-in fade-in-delay-1">
+        <span class="eyebrow-text">GET IN TOUCH</span>
+        <div class="eyebrow-line"></div>
+      </div>
+      <h1 class="vision-hero-headline fade-in fade-in-delay-2">Contact OJC &amp;<br>Connect With Us</h1>
+      <p class="vision-hero-sub fade-in fade-in-delay-3">We are a party that listens. Whether you are a voter, a journalist, a volunteer, or a citizen with a question — reach us below and we will respond.</p>
+    </div>
+    <!-- ELEGANT ORGANIC CURVED WAVE TRANSITION -->
+    <div class="hero-curved-divider" aria-hidden="true">
+      <svg class="curved-wave-svg" viewBox="0 0 1440 90" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32 C360,85 1080,-15 1440,40 L1440,65 C1080,10 360,105 0,50 Z" fill="#FADE25" opacity="0.9" />
+        <path d="M0,48 C380,95 1060,5 1440,52 L1440,150 L0,150 Z" fill="#ffffff" />
+      </svg>
     </div>
   </section>
 
-  <!-- CONTACT CATEGORIES -->
+  <!-- 1. TOP CHANNEL CARDS (4-COLUMN GRID) -->
   <section class="contact-channel-section">
     <div class="container">
       <div class="contact-channel-grid">
-        <a href="mailto:press@ojcp.org.in" class="contact-card">
-          <span class="contact-card-icon">MEDIA</span>
-          <div><div class="contact-card-title">Press & Media</div><div class="contact-card-detail">press@ojcp.org.in</div></div>
+        <a href="mailto:press@ojcp.org.in" class="contact-channel-card fade-in">
+          <div class="channel-icon-wrapper">
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#2A6DB5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="8" y1="22" x2="16" y2="22"/>
+            </svg>
+          </div>
+          <div class="channel-yellow-dash"></div>
+          <h3 class="channel-card-title">PRESS &amp; MEDIA</h3>
+          <span class="channel-card-email">press@ojcp.org.in</span>
         </a>
-        <a href="mailto:contact@ojcp.org.in" class="contact-card">
-          <span class="contact-card-icon">MEM</span>
-          <div><div class="contact-card-title">Membership & Volunteering</div><div class="contact-card-detail">contact@ojcp.org.in</div></div>
+
+        <a href="mailto:contact@ojcp.org.in" class="contact-channel-card fade-in fade-in-delay-1">
+          <div class="channel-icon-wrapper">
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#2A6DB5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <circle cx="12" cy="14" r="2"/>
+            </svg>
+          </div>
+          <div class="channel-yellow-dash"></div>
+          <h3 class="channel-card-title">MEMBERSHIP &amp;<br>VOLUNTEERING</h3>
+          <span class="channel-card-email">contact@ojcp.org.in</span>
         </a>
-        <a href="mailto:vision@ojcp.org.in" class="contact-card">
-          <span class="contact-card-icon">POL</span>
-          <div><div class="contact-card-title">Vision & Policy</div><div class="contact-card-detail">vision@ojcp.org.in</div></div>
+
+        <a href="mailto:vision@ojcp.org.in" class="contact-channel-card fade-in fade-in-delay-2">
+          <div class="channel-icon-wrapper">
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#2A6DB5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="channel-yellow-dash"></div>
+          <h3 class="channel-card-title">VISION &amp; POLICY</h3>
+          <span class="channel-card-email">vision@ojcp.org.in</span>
         </a>
-        <a href="mailto:contact@ojcp.org.in" class="contact-card">
-          <span class="contact-card-icon">INFO</span>
-          <div><div class="contact-card-title">General Enquiries</div><div class="contact-card-detail">contact@ojcp.org.in</div></div>
+
+        <a href="mailto:contact@ojcp.org.in" class="contact-channel-card fade-in fade-in-delay-3">
+          <div class="channel-icon-wrapper">
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#2A6DB5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="channel-yellow-dash"></div>
+          <h3 class="channel-card-title">GENERAL ENQUIRIES</h3>
+          <span class="channel-card-email">contact@ojcp.org.in</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- MAIN CONTACT LAYOUT -->
-  <section class="contact-main-section">
+  <!-- 2. FIND US IN BHUBANESWAR & HQ DOSSIER CARD -->
+  <section class="contact-hq-section">
     <div class="container">
-      <div class="contact-layout">
-
-        <!-- Left: Info -->
-        <div class="contact-info">
-          <h2>Find us in Bhubaneswar.</h2>
-          <p>Our headquarters is open Monday–Saturday, 10 AM to 6 PM IST. For fastest response, use the appropriate email channel above.</p>
-
-          <div class="contact-cards">
-            <div class="contact-card">
-              <span class="contact-card-icon">HQ</span>
-              <div>
-                <div class="contact-card-title">Party Headquarters</div>
-                <div class="contact-card-detail">OJC Party Office, Plot No-56, Satya Nagar<br>Bhubaneswar – 751007, Odisha, India</div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <span class="contact-card-icon">MAIL</span>
-              <div>
-                <div class="contact-card-title">General Email</div>
-                <div class="contact-card-detail"><a href="mailto:contact@ojcp.org.in">contact@ojcp.org.in</a></div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <span class="contact-card-icon">TEL</span>
-              <div>
-                <div class="contact-card-title">Phone</div>
-                <div class="contact-card-detail"><a href="tel:+919777770323">+91 9777770323</a></div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <span class="contact-card-icon">PRESS</span>
-              <div>
-                <div class="contact-card-title">Press Contact</div>
-                <div class="contact-card-detail">Prashant Kumar Satpathy<br><a href="mailto:press@ojcp.org.in">press@ojcp.org.in</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hours-note">
-            <strong>Response Times:</strong><br>
-            Press enquiries: within 24 hours<br>
-            Membership / Volunteer: within 48 hours<br>
-            Vision queries: within 72 hours<br>
-            General: within 48 hours
-          </div>
-
-          <div class="contact-accreditation-note">
-            <p class="contact-accreditation-title">Media Accreditation</p>
-            <p class="contact-accreditation-body">OJC issues press accreditation for the founding launch and all ongoing campaign events, rallies, and district sammelans. Please apply via email to press@ojcp.org.in, including your name, publication, designation, and press card number. We typically respond within 24 hours.</p>
-          </div>
+      <div class="contact-hq-layout">
+        <!-- Left: Text -->
+        <div class="contact-hq-text">
+          <h2 class="hq-headline">Find us in<br>Bhubaneswar.</h2>
+          <div class="hq-yellow-dash"></div>
+          <p class="hq-body">Our headquarters is open Monday–Saturday, 10 AM to 6 PM IST. For fastest response, use the appropriate email channel above.</p>
         </div>
 
-        <!-- Right: Form -->
-        <div>
-          <div class="form-card">
-            <h2>Send Us a Message</h2>
-            <p>We'll route your message to the right person and respond within the timeframes above.</p>
+        <!-- Right: Dossier Card -->
+        <div class="contact-hq-dossier-card fade-in">
+          <!-- Row 1: HQ -->
+          <div class="hq-dossier-row">
+            <div class="hq-badge-cell">
+              <span class="hq-badge-label">HQ</span>
+              <div class="badge-dash"></div>
+            </div>
+            <div class="hq-content-cell">
+              <h3 class="hq-block-title">PARTY HEADQUARTERS</h3>
+              <p class="hq-block-desc">OJC Party Office, Plot No-56, Satya Nagar<br>Bhubaneswar – 751007, Odisha, India</p>
+            </div>
+          </div>
 
-            <form id="contact-form" novalidate>
-              <div class="form-honeypot"><label>Leave blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <!-- Row 2: Mail & Phone (2-col) -->
+          <div class="hq-dossier-row hq-split-row">
+            <div class="hq-split-col">
+              <div class="hq-badge-cell">
+                <span class="hq-badge-label">MAIL</span>
+                <div class="badge-dash"></div>
+              </div>
+              <div class="hq-content-cell">
+                <h3 class="hq-block-title">GENERAL EMAIL</h3>
+                <p class="hq-block-desc"><a href="mailto:contact@ojcp.org.in" class="hq-link">contact@ojcp.org.in</a></p>
+              </div>
+            </div>
+            <div class="hq-split-col">
+              <div class="hq-badge-cell">
+                <span class="hq-badge-label">TEL</span>
+                <div class="badge-dash"></div>
+              </div>
+              <div class="hq-content-cell">
+                <h3 class="hq-block-title">PHONE</h3>
+                <p class="hq-block-desc"><a href="tel:+919777770323" class="hq-phone-link">+91 9777770323</a></p>
+              </div>
+            </div>
+          </div>
 
+          <!-- Row 3: Press Contact -->
+          <div class="hq-dossier-row">
+            <div class="hq-badge-cell">
+              <span class="hq-badge-label">PRESS</span>
+              <div class="badge-dash"></div>
+            </div>
+            <div class="hq-content-cell">
+              <h3 class="hq-block-title">PRESS CONTACT</h3>
+              <p class="hq-block-desc">Prashant Kumar Satpathy<br><a href="mailto:press@ojcp.org.in" class="hq-link">press@ojcp.org.in</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BLUE DOSSIER BANNER (RESPONSE TIMES & ACCREDITATION) -->
+  <section class="contact-blue-dossier-section">
+    <div class="container">
+      <div class="contact-blue-dossier-card fade-in">
+        <!-- Left: Response Times -->
+        <div class="blue-dossier-col left-col">
+          <span class="blue-eyebrow">TIMES</span>
+          <h2 class="blue-dossier-title">Response Times</h2>
+          <ul class="response-times-list">
+            <li>
+              <span class="bullet-item"><span class="yellow-bullet-dash">■</span> Press enquiries:</span>
+              <span class="time-val">within 24 hours</span>
+            </li>
+            <li>
+              <span class="bullet-item"><span class="yellow-bullet-dash">■</span> Membership / Volunteer:</span>
+              <span class="time-val">within 48 hours</span>
+            </li>
+            <li>
+              <span class="bullet-item"><span class="yellow-bullet-dash">■</span> Vision queries:</span>
+              <span class="time-val">within 72 hours</span>
+            </li>
+            <li>
+              <span class="bullet-item"><span class="yellow-bullet-dash">■</span> General:</span>
+              <span class="time-val">within 48 hours</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Media Accreditation -->
+        <div class="blue-dossier-col right-col">
+          <div class="accreditation-header">
+            <div>
+              <span class="blue-eyebrow">PRESS</span>
+              <h2 class="blue-dossier-title">Media Accreditation</h2>
+            </div>
+            <div class="gold-doc-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FADE25" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+          </div>
+          <p class="accreditation-body">OJC issues press accreditation for the founding launch and all ongoing campaign events, rallies, and district sammelans. Please apply via email to <a href="mailto:press@ojcp.org.in" class="gold-email-link">press@ojcp.org.in</a>, including your name, publication, designation, and press card number. We typically respond within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEND US A MESSAGE FORM SECTION -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="contact-form-layout">
+        <!-- Left: Text -->
+        <div class="contact-form-intro">
+          <span class="form-eyebrow">MESSAGE</span>
+          <h2 class="form-headline">Send Us a<br>Message</h2>
+          <p class="form-lead">We'll route your message to the right person and respond within the timeframes above.</p>
+        </div>
+
+        <!-- Right: Interactive Card Form -->
+        <div class="contact-form-card fade-in">
+          <form id="contact-form" novalidate>
+            <div class="form-honeypot"><label>Leave blank<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+            <div class="form-grid-2col">
               <div class="form-group">
                 <label class="form-label" for="cf-name">Full Name <span class="req">*</span></label>
-                <input class="form-input" type="text" id="cf-name" name="fullName" required autocomplete="name">
+                <input class="form-input" type="text" id="cf-name" name="fullName" required placeholder="Full Name" autocomplete="name">
                 <p class="form-error">Please enter your full name.</p>
               </div>
               <div class="form-group">
@@ -140,9 +276,13 @@
                 <input class="form-input" type="tel" id="cf-mobile" name="mobile" required pattern="[6-9][0-9]{9}" placeholder="10-digit mobile" autocomplete="tel">
                 <p class="form-error">Enter a valid 10-digit Indian mobile number.</p>
               </div>
+            </div>
+
+            <div class="form-grid-2col">
               <div class="form-group">
-                <label class="form-label" for="cf-email">Email Address</label>
-                <input class="form-input" type="email" id="cf-email" name="email" placeholder="name@example.com" autocomplete="email">
+                <label class="form-label" for="cf-email">Email Address <span class="req">*</span></label>
+                <input class="form-input" type="email" id="cf-email" name="email" required placeholder="name@example.com" autocomplete="email">
+                <p class="form-error">Please enter a valid email address.</p>
               </div>
               <div class="form-group">
                 <label class="form-label" for="cf-reason">Reason for Contact <span class="req">*</span></label>
@@ -163,26 +303,29 @@
                 </select>
                 <p class="form-error">Please select a reason.</p>
               </div>
-              <div class="form-group">
-                <label class="form-label" for="cf-msg">Your Message <span class="req">*</span></label>
-                <textarea class="form-textarea" id="cf-msg" name="message" required rows="4" minlength="10" maxlength="1000" placeholder="Please describe your query in as much detail as helpful"></textarea>
-                <p class="form-error">Please enter a message (minimum 10 characters).</p>
-              </div>
-              <div class="form-group">
-                <label class="consent-label">
-                  <input type="checkbox" name="consent" required>
-                  I agree to OJC's <a href="privacy.html" target="_blank">Privacy Policy</a> and consent to OJC using my information to respond to my query.
-                </label>
-                <p class="form-error">Please accept the privacy policy.</p>
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message →</button>
-            </form>
-
-            <div class="form-success" id="contact-success">
-              <span class="success-icon">OJC</span>
-              <h2 class="success-headline">Message received.</h2>
-              <p class="success-body">Thank you for reaching out to the Odisha Janta Congress Party. We will respond within the timeframe for your query type. If urgent, call <a href="tel:+919777770323">+91 9777770323</a> during working hours.</p>
             </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="cf-msg">Your Message <span class="req">*</span></label>
+              <textarea class="form-textarea" id="cf-msg" name="message" required rows="4" minlength="10" maxlength="1000" placeholder="Please describe your query in as much detail as helpful"></textarea>
+              <p class="form-error">Please enter a message (minimum 10 characters).</p>
+            </div>
+
+            <div class="form-group full-width checkbox-group">
+              <label class="consent-label">
+                <input type="checkbox" name="consent" required>
+                I agree to OJC's <a href="privacy.html" target="_blank" class="policy-link">Privacy Policy</a> and consent to OJC using my information to respond to my query.
+              </label>
+              <p class="form-error">Please accept the privacy policy.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full contact-submit-btn">Send Message &rarr;</button>
+          </form>
+
+          <div class="form-success" id="contact-success">
+            <span class="success-icon">OJC</span>
+            <h2 class="success-headline">Message received.</h2>
+            <p class="success-body">Thank you for reaching out to the Odisha Janta Congress Party. We will respond within the timeframe for your query type. If urgent, call <a href="tel:+919777770323">+91 9777770323</a> during working hours.</p>
           </div>
         </div>
       </div>

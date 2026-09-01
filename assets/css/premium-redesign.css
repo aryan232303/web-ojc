@@ -581,9 +581,16 @@ body main>section:not(.hero):not(.page-hero):not(.final-cta-section):not(.downlo
 }
 
 /* Dividers between sections */
-body main>section+section::before {
-  background: linear-gradient(90deg, transparent, var(--pr-border), transparent) !important;
-  height: 1px !important;
+body main>section+section::before,
+body.about-page .about-hero-redesign + section::before,
+body.join-page .join-hero-redesign + section::before,
+body.newsroom-page .newsroom-hero-redesign + section::before,
+body.vision-page .vision-hero-redesign + section::before,
+body.has-hero .hero + section::before {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 /* ==========================================
@@ -2386,7 +2393,7 @@ body .cookie-btn-reject:hover {
 
   /* IDEOLOGY SECTION MOBILE */
   body.has-hero .ideology-section {
-    padding: 0 0 44px 0 !important;
+    padding: 0 !important;
   }
 
   body.has-hero .ideology-headline {
@@ -2520,7 +2527,7 @@ body .cookie-btn-reject:hover {
 
   /* IDEOLOGY SECTION SMALL MOBILE */
   body.has-hero .ideology-section {
-    padding: 0 0 36px 0 !important;
+    padding: 0 !important;
   }
 
   body.has-hero .ideology-headline {
@@ -3596,9 +3603,9 @@ body.join-page .form-card::before,
   opacity: 0 !important;
 }
 
-html body.join-page .form-card > h2::after,
-body.join-page .form-card > h2::after,
-.form-card > h2::after,
+html body.join-page .form-card>h2::after,
+body.join-page .form-card>h2::after,
+.form-card>h2::after,
 body.join-page .form-card h2::after {
   background: #2563eb !important;
   width: 54px !important;
@@ -3609,6 +3616,7 @@ body.join-page .form-card h2::after {
 }
 
 @media (max-width: 768px) {
+
   html body.join-page .form-card,
   body.join-page .form-card,
   .form-card {
@@ -3954,8 +3962,8 @@ body.newsroom-page .dossier-policy {
 body.newsroom-page .newsroom-media-contact-section,
 body.newsroom-page main>section:nth-of-type(4) {
   background: #ffffff !important;
-  border-top: 1px solid var(--pr-border) !important;
-  border-bottom: 1px solid var(--pr-border) !important;
+  border-top: none !important;
+  border-bottom: none !important;
   padding: 56px 0 !important;
 }
 
@@ -6546,7 +6554,9 @@ body .ideology-callout,
 
 @media (max-width: 768px) {
 
-  /* Remove all bottom padding/margin on stats section and cards on mobile */
+  /* High-specificity override for mobile (all sizes <= 768px): remove white space above & below ideology image section */
+  html body.has-hero main>section.stats-section:not(.hero):not(.page-hero):not(.final-cta-section),
+  html body main>section.stats-section:not(.hero):not(.page-hero):not(.final-cta-section),
   html body.has-hero section.stats-section,
   html body section.stats-section,
   body.has-hero .stats-section,
@@ -6554,14 +6564,15 @@ body .ideology-callout,
   .stats-section {
     height: auto !important;
     min-height: 0 !important;
-    padding-top: clamp(24px, 4vw, 36px) !important;
-    padding-bottom: 0 !important;
+    padding-top: clamp(20px, 3.5vw, 32px) !important;
+    padding-bottom: clamp(20px, 3.5vw, 28px) !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     background-color: #F8FAFD !important;
     box-sizing: border-box !important;
   }
 
+  html body.has-hero main>section.stats-section:not(.hero):not(.page-hero)>.container,
   html body.has-hero .stats-section>.container,
   body .stats-section>.container,
   .stats-section>.container {
@@ -6582,6 +6593,8 @@ body .ideology-callout,
     margin-bottom: 0 !important;
   }
 
+  html body.has-hero main>section.ideology-section:not(.hero):not(.page-hero):not(.final-cta-section),
+  html body main>section.ideology-section:not(.hero):not(.page-hero):not(.final-cta-section),
   html body.has-hero section.ideology-section,
   html body section.ideology-section,
   body.has-hero .ideology-section,
@@ -6592,7 +6605,7 @@ body .ideology-callout,
     -webkit-clip-path: none !important;
     background: transparent !important;
     overflow: visible !important;
-    margin-top: -16px !important;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding: 0 !important;
   }
@@ -6602,7 +6615,9 @@ body .ideology-callout,
   .ideology-photo {
     position: relative !important;
     width: 100% !important;
-    height: 300px !important;
+    height: auto !important;
+    min-height: 220px !important;
+    max-height: 360px !important;
     object-fit: cover !important;
     display: block !important;
     margin: 0 !important;
@@ -6623,8 +6638,9 @@ body .ideology-callout,
     width: 100% !important;
     height: auto !important;
     background: #2A6DB5 !important;
-    padding: 32px 24px 44px !important;
+    padding: 28px 20px 32px !important;
     margin-top: 0 !important;
+    margin-bottom: 0 !important;
     z-index: 2 !important;
   }
 
@@ -6645,6 +6661,19 @@ body .ideology-callout,
     -webkit-mask-size: 100% 100% !important;
     z-index: 3 !important;
   }
+
+  /* High specificity override for Personas section top padding directly following ideology image on mobile */
+  html body.has-hero main>section.personas-section:not(.hero):not(.page-hero):not(.final-cta-section),
+  html body main>section.personas-section:not(.hero):not(.page-hero):not(.final-cta-section),
+  html body.has-hero section.personas-section,
+  html body section.personas-section,
+  body.has-hero .personas-section,
+  body .personas-section,
+  .personas-section {
+    padding-top: clamp(20px, 3vw, 32px) !important;
+    margin-top: 0 !important;
+  }
+}
 }
 
 /* ============================================================
@@ -6928,11 +6957,11 @@ body.about-page .pillar-card-header,
   border: none !important;
 }
 
-/* Badge (Yellow rounded box) */
+/* Badge (Official Flag Yellow rounded box) */
 body.about-page .pillar-badge,
 .pillar-badge {
-  background: #f59e0b !important;
-  color: #ffffff !important;
+  background: #fade25 !important;
+  color: #0f172a !important;
   font-size: 14px !important;
   font-weight: 800 !important;
   letter-spacing: 0 !important;
@@ -6944,23 +6973,31 @@ body.about-page .pillar-badge,
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.25) !important;
+  box-shadow: 0 2px 6px rgba(250, 222, 37, 0.35) !important;
   border: none !important;
   margin: 0 !important;
   line-height: 1 !important;
 }
 
-/* Icon */
+/* Icon (Official Flag Blue) */
 body.about-page .pillar-icon,
 .pillar-icon {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  width: 28px !important;
-  height: 28px !important;
-  background: transparent !important;
-  border-radius: 0 !important;
+  color: #2a6db5 !important;
+}
+
+body.about-page .pillar-icon svg,
+.pillar-icon svg {
+  stroke: #2a6db5 !important;
+}
+
+width: 28px !important;
+height: 28px !important;
+background: transparent !important;
+border-radius: 0 !important;
 }
 
 body.about-page .pillar-icon svg,
@@ -7338,20 +7375,40 @@ body.about-page .about-hero-redesign .vision-hero-sub {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
-body.about-page .about-hero-redesign .hero-curved-divider {
-  position: absolute !important;
-  bottom: -1px !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: clamp(40px, 7vw, 75px) !important;
-  z-index: 4 !important;
-  pointer-events: none !important;
+body.about-page .about-hero-redesign,
+body.newsroom-page .newsroom-hero-redesign,
+body.join-page .join-hero-redesign,
+body.vision-page .vision-hero-redesign,
+.about-hero-redesign,
+.newsroom-hero-redesign,
+.join-hero-redesign,
+.vision-hero-redesign {
+  overflow: visible !important;
 }
 
-body.about-page .about-hero-redesign .curved-wave-svg {
+body.about-page .about-hero-redesign .hero-curved-divider,
+body.newsroom-page .newsroom-hero-redesign .hero-curved-divider,
+body.join-page .join-hero-redesign .hero-curved-divider,
+body.vision-page .vision-hero-redesign .hero-curved-divider,
+.hero-curved-divider {
+  position: absolute !important;
+  bottom: -3px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: clamp(50px, 8vw, 85px) !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+  margin-bottom: 0 !important;
+}
+
+body.about-page .about-hero-redesign .curved-wave-svg,
+body.newsroom-page .newsroom-hero-redesign .curved-wave-svg,
+.curved-wave-svg {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
+  transform: scaleY(1.03) !important;
+  transform-origin: bottom center !important;
 }
 
 /* RESPONSIVE MOBILE ART DIRECTION FOR ABOUT HERO (LEFT-ALIGNED, BIG & BOLD HEADLINE) */
@@ -7624,6 +7681,1012 @@ body.join-page .join-hero-redesign .curved-wave-svg {
 }
 
 /* ============================================================
+   NEWSROOM HERO REDESIGN — FULL-BLEED EDITORIAL HERO (DESKTOP & MOBILE)
+   ============================================================ */
+body.newsroom-page .newsroom-hero-redesign,
+.newsroom-hero-redesign {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: clamp(520px, 75vh, 720px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  background: #0a192f !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .hero-bg-image-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .hero-bg-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top right !important;
+  display: block !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .hero-cinematic-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.82) 45%, rgba(10, 25, 47, 0.35) 78%, transparent 100%) !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .vision-hero-content {
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: 840px !important;
+  margin: 0 !important;
+  padding-left: clamp(48px, 6.5vw, 110px) !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .vision-eyebrow-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 16px !important;
+  width: auto !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .eyebrow-text {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.6px !important;
+  text-transform: uppercase !important;
+  color: #fade25 !important;
+  display: inline-block !important;
+  width: auto !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .eyebrow-line {
+  width: 18px !important;
+  height: 2px !important;
+  background: #fade25 !important;
+  display: inline-block !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .vision-hero-headline {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px 0 !important;
+  letter-spacing: -0.5px !important;
+  max-width: 840px !important;
+  text-align: left !important;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .vision-hero-sub {
+  font-size: clamp(0.95rem, 1.2vw, 1.12rem) !important;
+  color: #d1dced !important;
+  max-width: 580px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .hero-curved-divider {
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: clamp(40px, 7vw, 75px) !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+
+body.newsroom-page .newsroom-hero-redesign .curved-wave-svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+body.newsroom-page .newsroom-gallery-section,
+.newsroom-gallery-section,
+body.about-page .about-founder-section,
+body.join-page #join-section,
+body.vision-page #feature-chapters,
+body.contact-page .contact-channel-section,
+.contact-channel-section {
+  background: #ffffff !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* RESPONSIVE MOBILE ART DIRECTION FOR NEWSROOM HERO */
+@media (max-width: 768px) {
+
+  body.newsroom-page .newsroom-hero-redesign,
+  .newsroom-hero-redesign {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 76px !important;
+    padding-bottom: 56px !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .hero-bg-image-wrapper {
+    inset: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .hero-bg-image {
+    object-position: top right !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .hero-cinematic-overlay {
+    background: linear-gradient(to right, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.84) 65%, rgba(10, 25, 47, 0.45) 100%) !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .vision-hero-content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .vision-eyebrow-badge {
+    margin: 0 0 10px 0 !important;
+    justify-content: flex-start !important;
+    display: inline-flex !important;
+    gap: 8px !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .eyebrow-text {
+    font-size: 0.60rem !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .eyebrow-line {
+    width: 14px !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .vision-hero-headline {
+    font-size: clamp(1.85rem, 6vw, 2.5rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 900 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .vision-hero-sub {
+    font-size: clamp(0.88rem, 3.4vw, 1rem) !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body.newsroom-page .newsroom-hero-redesign .hero-curved-divider {
+    height: clamp(35px, 8vw, 60px) !important;
+  }
+}
+
+/* ============================================================
+   CONTACT HERO REDESIGN — FULL-BLEED EDITORIAL HERO (DESKTOP & MOBILE)
+   ============================================================ */
+body.contact-page .contact-hero-redesign,
+.contact-hero-redesign {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: clamp(520px, 75vh, 720px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  background: #0a192f !important;
+}
+
+body.contact-page .contact-hero-redesign .hero-bg-image-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+body.contact-page .contact-hero-redesign .hero-bg-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top right !important;
+  display: block !important;
+}
+
+body.contact-page .contact-hero-redesign .hero-cinematic-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.82) 45%, rgba(10, 25, 47, 0.35) 78%, transparent 100%) !important;
+}
+
+body.contact-page .contact-hero-redesign .vision-hero-content {
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: 840px !important;
+  margin: 0 !important;
+  padding-left: clamp(48px, 6.5vw, 110px) !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+body.contact-page .contact-hero-redesign .vision-eyebrow-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 16px !important;
+  width: auto !important;
+}
+
+body.contact-page .contact-hero-redesign .eyebrow-text {
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.6px !important;
+  text-transform: uppercase !important;
+  color: #fade25 !important;
+  display: inline-block !important;
+  width: auto !important;
+}
+
+body.contact-page .contact-hero-redesign .eyebrow-line {
+  width: 18px !important;
+  height: 2px !important;
+  background: #fade25 !important;
+  display: inline-block !important;
+}
+
+body.contact-page .contact-hero-redesign .vision-hero-headline {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px 0 !important;
+  letter-spacing: -0.5px !important;
+  max-width: 840px !important;
+  text-align: left !important;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.contact-page .contact-hero-redesign .vision-hero-sub {
+  font-size: clamp(0.95rem, 1.2vw, 1.12rem) !important;
+  color: #d1dced !important;
+  max-width: 580px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.contact-page .contact-hero-redesign .hero-curved-divider {
+  position: absolute !important;
+  bottom: -3px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: clamp(50px, 8vw, 85px) !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+body.contact-page .contact-hero-redesign .curved-wave-svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  transform: scaleY(1.03) !important;
+  transform-origin: bottom center !important;
+}
+
+@media (max-width: 768px) {
+  body.contact-page .contact-hero-redesign,
+  .contact-hero-redesign {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 76px !important;
+    padding-bottom: 56px !important;
+  }
+
+  body.contact-page .contact-hero-redesign .hero-bg-image-wrapper {
+    inset: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body.contact-page .contact-hero-redesign .hero-bg-image {
+    object-position: top right !important;
+  }
+
+  body.contact-page .contact-hero-redesign .hero-cinematic-overlay {
+    background: linear-gradient(to right, rgba(10, 25, 47, 0.94) 0%, rgba(10, 25, 47, 0.84) 65%, rgba(10, 25, 47, 0.45) 100%) !important;
+  }
+
+  body.contact-page .contact-hero-redesign .vision-hero-content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  body.contact-page .contact-hero-redesign .vision-eyebrow-badge {
+    margin: 0 0 10px 0 !important;
+    justify-content: flex-start !important;
+    display: inline-flex !important;
+    gap: 8px !important;
+  }
+
+  body.contact-page .contact-hero-redesign .eyebrow-text {
+    font-size: 0.60rem !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  body.contact-page .contact-hero-redesign .eyebrow-line {
+    width: 14px !important;
+  }
+
+  body.contact-page .contact-hero-redesign .vision-hero-headline {
+    font-size: clamp(1.85rem, 6vw, 2.5rem) !important;
+    line-height: 1.18 !important;
+    font-weight: 900 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  body.contact-page .contact-hero-redesign .vision-hero-sub {
+    font-size: clamp(0.88rem, 3.4vw, 1rem) !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body.contact-page .contact-hero-redesign .hero-curved-divider {
+    height: clamp(35px, 8vw, 60px) !important;
+  }
+}
+
+/* ============================================================
+   NEWSROOM PAGE — VISION STATISTICS SECTION REDESIGN
+   ============================================================ */
+body.newsroom-page .stats-dossier {
+  background: #edf4fd !important;
+  padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 44px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(42, 109, 181, 0.12) !important;
+  margin-top: 48px !important;
+  margin-bottom: 48px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03) !important;
+}
+
+/* ============================================================
+   CONTACT PAGE — COMPLETE REDESIGN MATCHING REFERENCE SPEC
+   ============================================================ */
+
+body.contact-page .container {
+  max-width: 1320px !important;
+  width: 95% !important;
+}
+
+/* 1. TOP CHANNEL CARDS (4-COLUMN GRID) */
+.contact-channel-section {
+  padding: 24px 0 16px !important;
+  background: #ffffff !important;
+}
+
+.contact-channel-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 28px !important;
+}
+
+.contact-channel-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(42, 109, 181, 0.16) !important;
+  border-radius: 20px !important;
+  padding: 36px 24px 32px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.28s ease !important;
+}
+
+.contact-channel-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #2A6DB5 !important;
+  box-shadow: 0 16px 36px rgba(42, 109, 181, 0.14) !important;
+}
+
+.channel-badge-pill {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.4px !important;
+  color: #2A6DB5 !important;
+  background: #eff6ff !important;
+  border: 1px solid rgba(42, 109, 181, 0.18) !important;
+  padding: 5px 16px !important;
+  border-radius: 50px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 24px !important;
+}
+
+.channel-icon-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 18px !important;
+}
+
+.channel-icon-wrapper svg {
+  width: 54px !important;
+  height: 54px !important;
+}
+
+.channel-yellow-dash {
+  width: 36px !important;
+  height: 3.5px !important;
+  background: #FADE25 !important;
+  border-radius: 2px !important;
+  margin-bottom: 20px !important;
+}
+
+.channel-card-title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.4 !important;
+  margin: 0 0 14px 0 !important;
+  text-transform: uppercase !important;
+}
+
+.channel-card-email {
+  font-size: 1.02rem !important;
+  font-weight: 700 !important;
+  color: #2A6DB5 !important;
+}
+
+.contact-channel-card:hover .channel-card-email {
+  text-decoration: underline !important;
+}
+
+/* 2. FIND US IN BHUBANESWAR & HQ DOSSIER CARD */
+.contact-hq-section {
+  padding: 16px 0 20px !important;
+  background: #ffffff !important;
+}
+
+.contact-hq-layout {
+  display: grid !important;
+  grid-template-columns: minmax(320px, 380px) minmax(0, 1fr) !important;
+  gap: 56px !important;
+  align-items: center !important;
+}
+
+.hq-headline {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2.5rem, 4.2vw, 3.6rem) !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px 0 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.hq-yellow-dash {
+  width: 40px !important;
+  height: 4px !important;
+  background: #FADE25 !important;
+  border-radius: 2px !important;
+  margin-bottom: 24px !important;
+}
+
+.hq-body {
+  font-size: 1.05rem !important;
+  color: #475569 !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  max-width: 360px !important;
+}
+
+.contact-hq-dossier-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(42, 109, 181, 0.16) !important;
+  border-radius: 20px !important;
+  padding: 20px 40px !important;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04) !important;
+}
+
+.hq-dossier-row {
+  display: flex !important;
+  gap: 28px !important;
+  padding: 28px 0 !important;
+  border-bottom: 1px solid #eff6ff !important;
+}
+
+.hq-dossier-row:last-child {
+  border-bottom: none !important;
+}
+
+.hq-badge-cell {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  min-width: 48px !important;
+}
+
+.hq-badge-label {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #2A6DB5 !important;
+  letter-spacing: 1.4px !important;
+}
+
+.badge-dash {
+  width: 18px !important;
+  height: 2.5px !important;
+  background: #FADE25 !important;
+  margin-top: 5px !important;
+}
+
+.hq-content-cell {
+  flex: 1 !important;
+}
+
+.hq-block-title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 0 8px 0 !important;
+  text-transform: uppercase !important;
+}
+
+.hq-block-desc {
+  font-size: 1.05rem !important;
+  color: #475569 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.hq-split-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+}
+
+.hq-split-col {
+  display: flex !important;
+  gap: 24px !important;
+}
+
+.hq-link {
+  color: #2A6DB5 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.hq-link:hover {
+  text-decoration: underline !important;
+}
+
+.hq-phone-link {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+/* 3. BLUE DOSSIER BANNER (RESPONSE TIMES & ACCREDITATION) */
+.contact-blue-dossier-section {
+  padding: 20px 0 24px !important;
+  background: #ffffff !important;
+}
+
+.contact-blue-dossier-card {
+  background: linear-gradient(135deg, #091e42 0%, #0b2545 100%) !important;
+  border-radius: 20px !important;
+  padding: 54px 56px !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 56px !important;
+  box-shadow: 0 16px 40px rgba(11, 37, 69, 0.28) !important;
+}
+
+.blue-dossier-col.left-col {
+  border-right: 1px solid rgba(255, 255, 255, 0.14) !important;
+  padding-right: 44px !important;
+}
+
+.blue-eyebrow {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  color: #FADE25 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 10px !important;
+}
+
+.blue-dossier-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2rem, 3vw, 2.7rem) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 28px 0 !important;
+  line-height: 1.2 !important;
+}
+
+.response-times-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+.response-times-list li {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 1.05rem !important;
+  color: #e2e8f0 !important;
+}
+
+.yellow-bullet-dash {
+  color: #FADE25 !important;
+  font-size: 12px !important;
+  margin-right: 12px !important;
+}
+
+.time-val {
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+.accreditation-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+
+.gold-doc-icon svg {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+.accreditation-body {
+  font-size: 1.05rem !important;
+  color: #cbd5e1 !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+.gold-email-link {
+  color: #FADE25 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+/* 4. SEND US A MESSAGE FORM SECTION */
+.contact-form-section {
+  padding: 24px 0 48px !important;
+  background: #ffffff !important;
+}
+
+.contact-form-layout {
+  display: grid !important;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) !important;
+  gap: 56px !important;
+}
+
+.form-eyebrow {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  color: #2A6DB5 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+}
+
+.form-headline {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2.5rem, 4.2vw, 3.6rem) !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px 0 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.form-lead {
+  font-size: 1.05rem !important;
+  color: #475569 !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+.contact-form-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(42, 109, 181, 0.16) !important;
+  border-radius: 20px !important;
+  padding: 48px !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05) !important;
+}
+
+.form-grid-2col {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+  margin-bottom: 24px !important;
+}
+
+.form-label {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-size: 1.02rem !important;
+  padding: 16px 18px !important;
+  border-radius: 10px !important;
+  border: 1px solid #cbd5e1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #2A6DB5 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(42, 109, 181, 0.15) !important;
+}
+
+.form-group.full-width {
+  margin-bottom: 24px !important;
+}
+
+.consent-label {
+  font-size: 0.98rem !important;
+  color: #475569 !important;
+  line-height: 1.5 !important;
+}
+
+.contact-submit-btn {
+  background: #2A6DB5 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1.12rem !important;
+  padding: 18px !important;
+  border-radius: 10px !important;
+  width: 100% !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(42, 109, 181, 0.25) !important;
+}
+
+.contact-submit-btn:hover {
+  background: #1e518b !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(42, 109, 181, 0.35) !important;
+}
+
+/* RESPONSIVE BREAKPOINTS FOR CONTACT PAGE */
+@media (max-width: 1024px) {
+  .contact-channel-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .contact-hq-layout,
+  .contact-form-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .contact-blue-dossier-card {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .blue-dossier-col.left-col {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding-right: 0 !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-channel-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hq-split-row,
+  .form-grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form-card {
+    padding: 24px 20px !important;
+  }
+
+  .contact-blue-dossier-card {
+    padding: 28px 24px !important;
+  }
+}
+body.newsroom-page .stats-dossier {
+  background: #edf4fd !important;
+  padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 44px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(42, 109, 181, 0.12) !important;
+  margin-top: 48px !important;
+  margin-bottom: 48px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03) !important;
+}
+
+body.newsroom-page .stats-dossier-flag {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  margin-bottom: 28px !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+body.newsroom-page .stats-dossier-title {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem) !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  letter-spacing: -0.3px !important;
+}
+
+body.newsroom-page .stats-dossier-sub {
+  font-size: 0.92rem !important;
+  color: #64748b !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+body.newsroom-page .stats-dossier-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+body.newsroom-page .dossier-block {
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 26px 30px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+body.newsroom-page .dossier-block:hover {
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+body.newsroom-page .dossier-block h3 {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 16px 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #2a6db5 !important;
+  display: block !important;
+}
+
+body.newsroom-page .dossier-block ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.newsroom-page .dossier-block li {
+  position: relative !important;
+  padding-left: 18px !important;
+  margin-bottom: 12px !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  color: #334155 !important;
+}
+
+body.newsroom-page .dossier-block li:last-child {
+  margin-bottom: 0 !important;
+}
+
+body.newsroom-page .dossier-block li::before {
+  content: "–" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: -1px !important;
+  color: #fade25 !important;
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.4 !important;
+}
+
+body.newsroom-page .dossier-block li strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+  body.newsroom-page .stats-dossier {
+    padding: 24px 16px !important;
+    border-radius: 14px !important;
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+
+  body.newsroom-page .stats-dossier-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  body.newsroom-page .dossier-block {
+    padding: 20px 18px !important;
+  }
+}
+
+/* ============================================================
    JOIN PAGE — WHY JOIN OJC & WINGS REFERENCE DESIGN OVERRIDE
    ============================================================ */
 
@@ -7653,7 +8716,7 @@ body.join-page .join-reasons .eyebrow-bar,
 .join-reasons .eyebrow-bar {
   width: 3.5px !important;
   height: 14px !important;
-  background: #f59e0b !important;
+  background: #fade25 !important;
   border-radius: 2px !important;
   display: inline-block !important;
 }
@@ -7748,14 +8811,16 @@ body.join-page .reason-card .reason-icon,
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #2563eb !important;
+  color: #2a6db5 !important;
 }
 
 body.join-page .reason-card .reason-icon svg,
-.reason-card .reason-icon svg {
+.reason-card .reason-icon svg,
+body.join-page .wing-card .wing-icon svg,
+.wing-card .wing-icon svg {
   width: 24px !important;
   height: 24px !important;
-  stroke: #2563eb !important;
+  stroke: #2a6db5 !important;
 }
 
 body.join-page .reason-card .reason-badge,
@@ -7998,7 +9063,7 @@ html body.about-page .flag-band,
 
 html body.about-page .flag-band--yellow,
 .flag-band--yellow {
-  background: #f59e0b !important;
+  background: #fade25 !important;
 }
 
 html body.about-page .flag-band--white,
