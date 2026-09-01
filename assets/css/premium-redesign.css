@@ -582,15 +582,50 @@ body main>section:not(.hero):not(.page-hero):not(.final-cta-section):not(.downlo
 
 /* Dividers between sections */
 body main>section+section::before,
-body.about-page .about-hero-redesign + section::before,
-body.join-page .join-hero-redesign + section::before,
-body.newsroom-page .newsroom-hero-redesign + section::before,
-body.vision-page .vision-hero-redesign + section::before,
-body.has-hero .hero + section::before {
+body.about-page .about-hero-redesign+section::before,
+body.join-page .join-hero-redesign+section::before,
+body.newsroom-page .newsroom-hero-redesign+section::before,
+body.vision-page .vision-hero-redesign+section::before,
+body.has-hero .hero+section::before {
   display: none !important;
   content: none !important;
   height: 0 !important;
   background: transparent !important;
+}
+
+/* Reduced space between Hero section and Content section */
+body main>section.hero+section,
+body main>section.hero-mobile-only+section,
+body main>section.vision-hero-redesign+section,
+body main>section.about-hero-redesign+section,
+body main>section.join-hero-redesign+section,
+body main>section.newsroom-hero-redesign+section,
+body main>section.contact-hero-redesign+section,
+body.join-page main>#join-section,
+body.newsroom-page main>.newsroom-gallery-section,
+body.about-page main>.about-founder-section,
+body.contact-page main>.contact-channel-section,
+body.vision-page main>#feature-chapters,
+body.vision-page main>.visions-feature-group,
+body.legal-page main>.legal-hero+section,
+body main>.page-hero+section,
+body main>.legal-hero+section {
+  padding-top: clamp(4px, 1vw, 12px) !important;
+}
+
+body.newsroom-page main>section .newsroom-flag {
+  padding: 0 !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+body.newsroom-page #gallery-h2 {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+body.newsroom-page .newsroom-gallery-grid {
+  margin-top: 16px !important;
 }
 
 /* ==========================================
@@ -7278,9 +7313,11 @@ body.about-page .about-hero-redesign,
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
-  height: clamp(520px, 75vh, 720px) !important;
+  height: auto !important;
+  min-height: clamp(400px, 52vh, 540px) !important;
+  padding-top: clamp(100px, 12vh, 130px) !important;
+  padding-bottom: clamp(40px, 5vw, 60px) !important;
   margin: 0 !important;
-  padding: 0 !important;
   border: none !important;
   outline: none !important;
   overflow: hidden !important;
@@ -7419,7 +7456,7 @@ body.newsroom-page .newsroom-hero-redesign .curved-wave-svg,
     height: auto !important;
     min-height: auto !important;
     padding-top: 76px !important;
-    padding-bottom: 56px !important;
+    padding-bottom: 24px !important;
   }
 
   body.about-page .about-hero-redesign .hero-bg-image-wrapper {
@@ -7496,9 +7533,11 @@ body.join-page .join-hero-redesign,
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
-  height: clamp(520px, 75vh, 720px) !important;
+  height: auto !important;
+  min-height: clamp(400px, 52vh, 540px) !important;
+  padding-top: clamp(100px, 12vh, 130px) !important;
+  padding-bottom: clamp(40px, 5vw, 60px) !important;
   margin: 0 !important;
-  padding: 0 !important;
   border: none !important;
   outline: none !important;
   overflow: hidden !important;
@@ -7617,7 +7656,7 @@ body.join-page .join-hero-redesign .curved-wave-svg {
     height: auto !important;
     min-height: auto !important;
     padding-top: 76px !important;
-    padding-bottom: 56px !important;
+    padding-bottom: 24px !important;
   }
 
   body.join-page .join-hero-redesign .hero-bg-image-wrapper {
@@ -7689,9 +7728,11 @@ body.newsroom-page .newsroom-hero-redesign,
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
-  height: clamp(520px, 75vh, 720px) !important;
+  height: auto !important;
+  min-height: clamp(400px, 52vh, 540px) !important;
+  padding-top: clamp(100px, 12vh, 130px) !important;
+  padding-bottom: clamp(40px, 5vw, 60px) !important;
   margin: 0 !important;
-  padding: 0 !important;
   border: none !important;
   outline: none !important;
   overflow: visible !important;
@@ -7822,7 +7863,7 @@ body.contact-page .contact-channel-section,
     height: auto !important;
     min-height: auto !important;
     padding-top: 76px !important;
-    padding-bottom: 56px !important;
+    padding-bottom: 24px !important;
   }
 
   body.newsroom-page .newsroom-hero-redesign .hero-bg-image-wrapper {
@@ -7894,9 +7935,11 @@ body.contact-page .contact-hero-redesign,
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
-  height: clamp(520px, 75vh, 720px) !important;
+  height: auto !important;
+  min-height: clamp(400px, 52vh, 540px) !important;
+  padding-top: clamp(100px, 12vh, 130px) !important;
+  padding-bottom: clamp(40px, 5vw, 60px) !important;
   margin: 0 !important;
-  padding: 0 !important;
   border: none !important;
   outline: none !important;
   overflow: visible !important;
@@ -8010,12 +8053,13 @@ body.contact-page .contact-hero-redesign .curved-wave-svg {
 }
 
 @media (max-width: 768px) {
+
   body.contact-page .contact-hero-redesign,
   .contact-hero-redesign {
     height: auto !important;
     min-height: auto !important;
     padding-top: 76px !important;
-    padding-bottom: 56px !important;
+    padding-bottom: 24px !important;
   }
 
   body.contact-page .contact-hero-redesign .hero-bg-image-wrapper {
@@ -8559,6 +8603,7 @@ body.contact-page .container {
     padding: 28px 24px !important;
   }
 }
+
 body.newsroom-page .stats-dossier {
   background: #edf4fd !important;
   padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 44px) !important;

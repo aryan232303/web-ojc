@@ -1147,7 +1147,7 @@ body main>section+section::before {
     height: auto !important;
     min-height: auto !important;
     padding-top: 44px !important;
-    padding-bottom: 56px !important;
+    padding-bottom: 24px !important;
     position: relative !important;
     overflow: hidden !important;
   }
