@@ -9,13 +9,14 @@ document.addEventListener('click', e => {
 
 const header = document.querySelector('.site-header');
 if (header) {
+  const hasHeroSection = !!document.querySelector('.hero, .hero-desktop-only, .hero-mobile-only');
   const onScroll = () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 40 || !hasHeroSection) {
       header.classList.add('scrolled');
       header.classList.remove('hero-mode');
     } else {
       header.classList.remove('scrolled');
-      if (document.body.classList.contains('has-hero')) header.classList.add('hero-mode');
+      if (document.body.classList.contains('has-hero') && hasHeroSection) header.classList.add('hero-mode');
     }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -77,7 +78,7 @@ if (fadeEls.length) {
 
 // Guarantee immediate reveal of hero elements visible at page start (mobile/tablet/desktop)
 const triggerInitialHeroAnimations = () => {
-  document.querySelectorAll('.hero-mobile-only .fade-in, .hero .fade-in').forEach(el => {
+  document.querySelectorAll('.hero-mobile-only .fade-in, .hero .fade-in, main > section:first-of-type .fade-in').forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight + 40) {
       el.classList.add('visible');

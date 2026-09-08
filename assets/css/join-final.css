@@ -22,7 +22,8 @@ body.join-page .page-hero {
   align-items: center;
   isolation: isolate;
   overflow: hidden;
-  min-height: 540px;
+  min-height: clamp(550px, 80vh, 760px) !important;
+  height: clamp(550px, 80vh, 760px) !important;
   padding: calc(var(--nav-h, 80px) + 78px) 0 112px;
   text-align: center;
   background-color: var(--inner-hero-navy-950, #050b18);

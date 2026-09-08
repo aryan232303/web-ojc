@@ -11,7 +11,8 @@ body.newsroom-page {
 
 /* Hero */
 body.newsroom-page main > div:first-of-type {
-  min-height: clamp(430px, 58vh, 560px);
+  min-height: clamp(550px, 80vh, 760px) !important;
+  height: clamp(550px, 80vh, 760px) !important;
   padding: calc(var(--nav-h, 72px) + 108px) 0 86px !important;
   color: #ffffff;
   background:

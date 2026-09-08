@@ -27,7 +27,8 @@ body.legal-page main .legal-hero {
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 420px;
+  min-height: clamp(550px, 80vh, 760px) !important;
+  height: clamp(550px, 80vh, 760px) !important;
   padding: var(--inner-hero-top) 0 var(--inner-hero-bottom);
   color: var(--inner-hero-text);
   text-align: center;

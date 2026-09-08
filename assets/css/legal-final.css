@@ -15,7 +15,10 @@ body.legal-page main .legal-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 0;
+  min-height: clamp(550px, 80vh, 760px) !important;
+  height: clamp(550px, 80vh, 760px) !important;
+  display: flex !important;
+  align-items: center !important;
   padding: calc(var(--nav-h, 72px) + 48px) 0 58px;
   color: #ffffff;
   text-align: left;

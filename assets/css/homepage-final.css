@@ -165,7 +165,8 @@ body.has-hero .pledges-grid-section {
   scroll-margin-top: calc(var(--nav-h, 72px) + 26px);
 }
 
-body.has-hero :is(#stats-h2,
+body.has-hero :is(#stats-h1,
+  #stats-h2,
   #ideology-h2,
   #trio-h2,
   #fights-h2,
@@ -185,6 +186,11 @@ body.has-hero .stats-section {
   background:
     radial-gradient(ellipse 50% 40% at 86% 6%, rgba(var(--color-accent-rgb, 245, 166, 35), 0.035), transparent 68%),
     linear-gradient(180deg, var(--stats-dark-bg, #071126) 0%, var(--hero-panel-bg, #050b18) 100%) !important;
+}
+
+body.has-hero main > .stats-section:first-child,
+body.has-hero .stats-section:first-child {
+  padding-top: calc(var(--nav-h, 72px) + clamp(36px, 4vw, 56px)) !important;
 }
 
 body.has-hero .stats-header {
@@ -1622,30 +1628,36 @@ body .founder-portrait-img img {
    ============================================================ */
 .hero-bottom-divider {
   position: absolute !important;
-  bottom: 0 !important;
+  bottom: -2px !important;
   left: 0 !important;
+  right: 0 !important;
   width: 100% !important;
-  height: 90px !important;
-  z-index: 5 !important;
+  height: auto !important;
+  line-height: 0 !important;
+  z-index: 10 !important;
   pointer-events: none !important;
-  overflow: hidden !important;
-  filter: drop-shadow(0 -10px 25px rgba(11, 25, 44, 0.03)) !important;
+  overflow: visible !important;
 }
 
 .hero-divider-svg {
   display: block !important;
   width: 100% !important;
-  height: 100% !important;
+  height: clamp(36px, 6vw, 75px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: bottom !important;
 }
 
 @media (max-width: 1023px) {
   .hero-bottom-divider {
-    height: 60px !important;
+    height: auto !important;
+    bottom: -2px !important;
   }
 }
 
 @media (max-width: 640px) {
   .hero-bottom-divider {
-    height: 44px !important;
+    height: auto !important;
+    bottom: -2px !important;
   }
 }

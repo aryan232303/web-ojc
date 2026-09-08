@@ -21,12 +21,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/hero-system.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/homepage-final.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/global-final.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=12.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/hero-system.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/homepage-final.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/global-final.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=32.0">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('consent', 'default', { analytics_storage: 'denied' }); gtag('config', 'G-XXXXXXXXXX');</script>
 </head>
@@ -36,7 +36,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- HEADER -->
-  <header class="site-header hero-mode" role="banner">
+  <header class="site-header scrolled" role="banner">
     <div class="container header-inner">
       <a href="index.html" class="logo-link" aria-label="OJC Home">
         <img src="assets/images/selected/official-ojc-party-logo-final.png?v=6.0" alt="Odisha Janta Congress Party Logo"
@@ -79,16 +79,23 @@
 
   <main id="main">
 
-    <!-- HERO BANNER (DESKTOP) -->
-    <section class="hero hero-desktop-only" aria-labelledby="hero-h1">
-      <div class="hero-bg-texture" aria-hidden="true"></div>
+    <!-- HERO VIDEO SECTION -->
+    <section class="hero hero-video-section" aria-labelledby="hero-h1">
+      <div class="hero-video-wrapper" aria-hidden="true">
+        <video class="hero-bg-video" autoplay loop muted playsinline preload="auto">
+          <source src="assets/videos/hero-video.mp4" type="video/mp4">
+          <source src="hero%20video.mp4" type="video/mp4">
+          <source src="hero video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
       <div class="container hero-inner">
         <div class="hero-content">
           <h1 id="hero-h1" class="hero-headline fade-in fade-in-delay-1">
             Odisha For Odias
           </h1>
           <span class="hero-headline-odia fade-in fade-in-delay-2" lang="or">ଓଡ଼ିଆଙ୍କ ପାଇଁ ଓଡ଼ିଶା</span>
-          <p class="hero-body hero-body-desktop-only fade-in fade-in-delay-3">43.7% of India's mineral wealth comes from
+          <p class="hero-body fade-in fade-in-delay-3">43.7% of India's mineral wealth comes from
             Odisha, yet its people
             remain among the poorest in the country. <strong>That ends here.</strong> 16 unbreakable pledges to build
             the Odisha, Odias deserve.</p>
@@ -98,7 +105,7 @@
           </div>
         </div>
       </div>
-      <!-- Organic Hero Bottom Divider (Mix of Gold & White) -->
+      <!-- Organic Hero Bottom Divider (Gold & Light) -->
       <div class="hero-bottom-divider" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero-divider-svg">
           <defs>
@@ -113,47 +120,75 @@
               <stop offset="100%" stop-color="#D4A017" stop-opacity="0.8" />
             </linearGradient>
           </defs>
-
-          <!-- Layer 2: Gold Gradient Curve Layer -->
           <path d="M 0,20 C 400,85 1000,10 1440,24 L 1440,120 L 0,120 Z" fill="url(#goldWhiteGradient)" />
-
-          <!-- Layer 3: Vibrant Gold Accent Vector Line -->
           <path d="M 0,22 C 400,87 1000,12 1440,26" fill="none" stroke="url(#goldLineGradient)" stroke-width="3"
             stroke-linecap="round" />
-
-          <!-- Layer 1: Pure White Main Transition Curve -->
-          <path d="M 0,38 C 420,92 1020,24 1440,30 L 1440,120 L 0,120 Z" fill="#ffffff" />
+          <path d="M 0,38 C 420,92 1020,24 1440,30 L 1440,120 L 0,120 Z" fill="#F8FAFD" />
         </svg>
       </div>
     </section>
 
-    <!-- HERO BANNER (MOBILE & TABLET) -->
-    <section class="hero-mobile-only" aria-labelledby="hero-mobile-h1">
-      <div class="hero-mobile-inner">
-        <div class="hero-mobile-image-container">
-          <img src="assets/images/selected/hero-full-composition-bg.webp" alt="Leader Portrait"
-            class="hero-mobile-leader-img" />
+    <!-- TRANSFORMED ODISHA / MOVEMENT GALLERY SHOWCASE -->
+    <section class="transformed-section" aria-labelledby="transformed-h2">
+      <div class="container">
+        <!-- CENTERED HEADER (MATCHING USER DESIGN SCREENSHOT) -->
+        <div class="transformed-header-centered fade-in">
+          <span class="transformed-eyebrow-centered">
+            <span class="eyebrow-dash"></span> ODISHA IN ACTION
+          </span>
+          <h2 id="transformed-h2" class="transformed-title-centered">The people, strength, and spirit driving Odisha
+            forward.</h2>
         </div>
-        <div class="hero-mobile-content">
-          <h1 id="hero-mobile-h1" class="hero-mobile-headline fade-in fade-in-delay-1">Odisha For Odias</h1>
-          <span class="hero-mobile-headline-odia fade-in fade-in-delay-2" lang="or">ଓଡ଼ିଆଙ୍କ ପାଇଁ ଓଡ଼ିଶା</span>
-          <div class="hero-mobile-ctas fade-in fade-in-delay-3">
-            <a href="join.html" class="btn btn-primary btn-lg mobile-btn-anim">Join the Movement &rarr;</a>
-            <a href="vision.html" class="btn btn-outline btn-lg mobile-btn-anim">Read the Vision</a>
+
+        <!-- IMAGE CAROUSEL SHOWCASE -->
+        <div class="transformed-carousel-wrapper fade-in fade-in-delay-1">
+          <div class="transformed-carousel-grid">
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_1843.JPG.jpeg" alt="Grassroots Movement" loading="lazy" decoding="async">
+              </div>
+            </article>
+
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_1857.JPG.jpeg" alt="Women's Empowerment" loading="lazy" decoding="async">
+              </div>
+            </article>
+
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_8739.JPG.jpeg" alt="Grassroots Leadership" loading="lazy" decoding="async">
+              </div>
+            </article>
+
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_5259.JPG.jpeg" alt="Youth Power & Future" loading="lazy" decoding="async">
+              </div>
+            </article>
+
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_4659.JPG.jpeg" alt="Heritage & Dignity" loading="lazy" decoding="async">
+              </div>
+            </article>
+
+            <article class="transformed-card">
+              <div class="transformed-card-img-wrapper">
+                <img src="more photos/DSC_4662.JPG.jpeg" alt="Unity & Progress" loading="lazy" decoding="async">
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-      <!-- Organic Hero Bottom Divider -->
-      <div class="hero-bottom-divider" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero-divider-svg">
-          <!-- Layer 2: Subtle Blue Highlight -->
-          <path d="M 0,30 C 400,85 1000,16 1440,22 L 1440,120 L 0,120 Z" fill="#EAF2FF" opacity="0.8" />
-          <!-- Layer 3: Thin Gold Accent Line -->
-          <path d="M 120,50 C 480,86 960,35 1320,26" fill="none" stroke="#F2D21B" stroke-width="2" stroke-opacity="0.14"
-            stroke-linecap="round" />
-          <!-- Layer 1: Pure White Main Curve -->
-          <path d="M 0,38 C 420,92 1020,24 1440,30 L 1440,120 L 0,120 Z" fill="#ffffff" />
-        </svg>
+
+        <!-- CAPSULE DASHES INDICATORS (MATCHING USER IMAGE EXPLICITLY) -->
+        <div class="transformed-nav-dots" aria-label="Carousel pagination">
+          <span class="transformed-dot active" data-index="0" title="Go to slide 1"></span>
+          <span class="transformed-dot" data-index="1" title="Go to slide 2"></span>
+          <span class="transformed-dot" data-index="2" title="Go to slide 3"></span>
+          <span class="transformed-dot" data-index="3" title="Go to slide 4"></span>
+          <span class="transformed-dot" data-index="4" title="Go to slide 5"></span>
+        </div>
       </div>
     </section>
 
@@ -303,9 +338,9 @@
         </div>
         <div class="personas-nav-controls" aria-label="Persona cards navigation">
           <button type="button" class="personas-nav-btn personas-prev-btn" aria-label="Previous persona card">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
               stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
+              <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
           <div class="personas-nav-dots">
@@ -316,9 +351,9 @@
             <span class="personas-dot" data-index="4" title="Go to card 5"></span>
           </div>
           <button type="button" class="personas-nav-btn personas-next-btn" aria-label="Next persona card">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
               stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
+              <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
         </div>
@@ -369,13 +404,26 @@
 
 
     <!-- FINAL CTA -->
-    <section class="final-cta-section" aria-labelledby="final-cta-h2">
-      <div class="container final-cta-inner">
-        <h2 id="final-cta-h2" class="final-cta-headline">Be a member<br>of this movement.</h2>
-        <p class="final-cta-sub">All 30 districts. Every Odia counts.</p>
-        <div class="final-cta-buttons">
-          <a href="join.html" class="btn btn-primary btn-lg">Join the OJC Movement</a>
-          <a href="vision.html" class="btn btn-outline btn-lg">Read the Vision</a>
+    <section class="final-cta-section" aria-labelledby="final-cta-h2"
+      style="position: relative; overflow: hidden; background: #050b18 !important; border-top: 1px solid rgba(242, 183, 5, 0.25); border-bottom: none !important; margin-bottom: 0 !important; isolation: isolate; padding: clamp(70px, 8vw, 100px) 0;">
+      <div
+        style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(7, 19, 43, 0.82), rgba(5, 11, 24, 0.82)), url('assets/images/selected/movement-cta-bg.jpg') center 32% / cover no-repeat; opacity: 0.48; pointer-events: none; z-index: 1;">
+      </div>
+      <div class="container final-cta-inner" style="position: relative; z-index: 2; text-align: center;">
+        <h2 id="final-cta-h2" class="final-cta-headline"
+          style="color: #ffffff !important; font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,0.6);">
+          Be a member<br>of this movement.</h2>
+        <p class="final-cta-sub"
+          style="color: rgba(255, 255, 255, 0.85) !important; font-size: 18px; margin-bottom: 36px; text-shadow: 0 1px 6px rgba(0,0,0,0.6);">
+          All 30 districts. Every Odia counts.</p>
+        <div class="final-cta-buttons"
+          style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="join.html" class="btn btn-primary btn-lg"
+            style="background: #f2b705 !important; color: #050b18 !important; border: none !important; font-weight: 700; padding: 14px 32px; border-radius: 50px; box-shadow: 0 4px 20px rgba(242, 183, 5, 0.35);">Join
+            the OJC Movement</a>
+          <a href="vision.html" class="btn btn-outline btn-lg"
+            style="background: rgba(255, 255, 255, 0.10) !important; color: #ffffff !important; border: 2px solid rgba(255, 255, 255, 0.7) !important; font-weight: 600; padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(4px);">Read
+            the Vision</a>
         </div>
       </div>
     </section>
@@ -606,6 +654,99 @@
         pGrid.addEventListener('scroll', updateDots, { passive: true });
         window.addEventListener('resize', updateDots, { passive: true });
         updateDots();
+      }
+
+      // Transformed Odisha carousel showcase automatic 2s loop slider handler
+      const tGrid = document.querySelector('.transformed-carousel-grid');
+      const tDots = document.querySelectorAll('.transformed-dot');
+
+      if (tGrid && tDots.length > 0) {
+        let tTicking = false;
+        let autoPlayTimer = null;
+        let currentSlide = 0;
+
+        function updateTransformedDots() {
+          const maxScroll = tGrid.scrollWidth - tGrid.clientWidth;
+          if (maxScroll <= 0) {
+            tDots.forEach((d, i) => d.classList.toggle('active', i === 0));
+            return;
+          }
+          const scrollLeft = tGrid.scrollLeft;
+          const scrollRatio = Math.max(0, Math.min(1, scrollLeft / maxScroll));
+          const activeIndex = Math.min(tDots.length - 1, Math.round(scrollRatio * (tDots.length - 1)));
+
+          tDots.forEach((dot, idx) => {
+            if (idx === activeIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+          currentSlide = activeIndex;
+        }
+
+        function onTransformedScroll() {
+          if (!tTicking) {
+            window.requestAnimationFrame(() => {
+              updateTransformedDots();
+              tTicking = false;
+            });
+            tTicking = true;
+          }
+        }
+
+        tGrid.addEventListener('scroll', onTransformedScroll, { passive: true });
+        window.addEventListener('resize', onTransformedScroll, { passive: true });
+
+        // Automatic slide transition every 2 seconds
+        function advanceSlide() {
+          const maxScroll = tGrid.scrollWidth - tGrid.clientWidth;
+          if (maxScroll <= 0) return;
+
+          const cards = tGrid.querySelectorAll('.transformed-card');
+          const totalCards = cards.length;
+
+          let nextIndex = currentSlide + 1;
+          if (nextIndex >= tDots.length || nextIndex >= totalCards) {
+            nextIndex = 0;
+          }
+
+          let targetScroll = 0;
+          if (nextIndex === 0) {
+            targetScroll = 0;
+          } else if (nextIndex === tDots.length - 1) {
+            targetScroll = maxScroll;
+          } else if (cards[nextIndex]) {
+            targetScroll = cards[nextIndex].offsetLeft;
+          } else {
+            targetScroll = (nextIndex / (tDots.length - 1)) * maxScroll;
+          }
+
+          tGrid.scrollTo({ left: targetScroll, behavior: 'smooth' });
+          currentSlide = nextIndex;
+        }
+
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayTimer = setInterval(advanceSlide, 2000);
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+          }
+        }
+
+        // Pause auto-play on touch/hover if user interacts
+        const wrapper = document.querySelector('.transformed-carousel-wrapper') || tGrid;
+        wrapper.addEventListener('mouseenter', stopAutoPlay, { passive: true });
+        wrapper.addEventListener('mouseleave', startAutoPlay, { passive: true });
+        wrapper.addEventListener('touchstart', stopAutoPlay, { passive: true });
+        wrapper.addEventListener('touchend', startAutoPlay, { passive: true });
+
+        updateTransformedDots();
+        startAutoPlay();
       }
     });
   </script>

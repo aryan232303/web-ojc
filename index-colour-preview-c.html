@@ -21,13 +21,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/hero-system.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/homepage-final.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/global-final.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/homepage-colour-preview.css?v=12.0">
-  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=12.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/hero-system.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/homepage-final.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/global-final.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/homepage-colour-preview.css?v=18.0">
+  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=18.0">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('consent', 'default', { analytics_storage: 'denied' }); gtag('config', 'G-XXXXXXXXXX');</script>
 </head>
@@ -184,22 +184,6 @@
       </div>
     </section>
 
-    <!-- Trust strip -->
-    <div class="hero-trust fade-in fade-in-delay-4">
-      <div class="hero-trust-item"><span class="hero-trust-num">16</span><span class="hero-trust-label">Unbreakable
-          Pledges</span></div>
-      <div class="hero-trust-divider" aria-hidden="true"></div>
-      <div class="hero-trust-item"><span class="hero-trust-num">30</span><span class="hero-trust-label">Districts
-          Covered</span></div>
-      <div class="hero-trust-divider" aria-hidden="true"></div>
-      <div class="hero-trust-item"><span class="hero-trust-num">2036</span><span class="hero-trust-label">Vision
-          Horizon</span></div>
-    </div>
-    </div>
-
-    </div>
-    </section>
-
 
     <!-- STATS -->
     <section class="stats-section" aria-labelledby="stats-h2">
@@ -348,6 +332,27 @@
               <span class="card-reveal-title">Adivasi Bhumi</span>
             </div>
           </article>
+        </div>
+        <div class="personas-nav-controls" aria-label="Persona cards navigation">
+          <button type="button" class="personas-nav-btn personas-prev-btn" aria-label="Previous persona card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <div class="personas-nav-dots">
+            <span class="personas-dot active" data-index="0" title="Go to card 1"></span>
+            <span class="personas-dot" data-index="1" title="Go to card 2"></span>
+            <span class="personas-dot" data-index="2" title="Go to card 3"></span>
+            <span class="personas-dot" data-index="3" title="Go to card 4"></span>
+            <span class="personas-dot" data-index="4" title="Go to card 5"></span>
+          </div>
+          <button type="button" class="personas-nav-btn personas-next-btn" aria-label="Next persona card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -522,14 +527,14 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta-section" aria-labelledby="final-cta-h2">
-      <div class="container final-cta-inner">
-        <h2 id="final-cta-h2" class="final-cta-headline">Be a member<br>of this movement.</h2>
-        <p class="final-cta-sub">Your district coordinator will reach you within 48 hours.<br>All 30 districts. Every
-          Odia counts.</p>
-        <div class="final-cta-buttons">
-          <a href="join.html" class="btn btn-primary btn-lg">Join the OJC Movement</a>
-          <a href="vision.html" class="btn btn-outline btn-lg">Read the Vision</a>
+    <section class="final-cta-section" aria-labelledby="final-cta-h2" style="position: relative; overflow: hidden; background: #050b18 !important; border-top: 1px solid rgba(242, 183, 5, 0.25); border-bottom: none !important; margin-bottom: 0 !important; isolation: isolate; padding: clamp(70px, 8vw, 100px) 0;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(7, 19, 43, 0.82), rgba(5, 11, 24, 0.82)), url('assets/images/selected/movement-cta-bg.jpg') center 32% / cover no-repeat; opacity: 0.48; pointer-events: none; z-index: 1;"></div>
+      <div class="container final-cta-inner" style="position: relative; z-index: 2; text-align: center;">
+        <h2 id="final-cta-h2" class="final-cta-headline" style="color: #ffffff !important; font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,0.6);">Be a member<br>of this movement.</h2>
+        <p class="final-cta-sub" style="color: rgba(255, 255, 255, 0.85) !important; font-size: 18px; margin-bottom: 36px; text-shadow: 0 1px 6px rgba(0,0,0,0.6);">Your district coordinator will reach you within 48 hours.<br>All 30 districts. Every Odia counts.</p>
+        <div class="final-cta-buttons" style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <a href="join.html" class="btn btn-primary btn-lg" style="background: #f2b705 !important; color: #050b18 !important; border: none !important; font-weight: 700; padding: 14px 32px; border-radius: 50px; box-shadow: 0 4px 20px rgba(242, 183, 5, 0.35);">Join the OJC Movement</a>
+          <a href="vision.html" class="btn btn-outline btn-lg" style="background: rgba(255, 255, 255, 0.10) !important; color: #ffffff !important; border: 2px solid rgba(255, 255, 255, 0.7) !important; font-weight: 600; padding: 14px 32px; border-radius: 50px; backdrop-filter: blur(4px);">Read the Vision</a>
         </div>
       </div>
     </section>
@@ -613,5 +618,7 @@
   </div>
   <script src="assets/js/main.js?v=6.0"></script>
 </body>
+
+</html>
 
 </html>
