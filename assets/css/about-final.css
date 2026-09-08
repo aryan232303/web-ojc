@@ -937,12 +937,14 @@ body.about-page .org-grid {
 body.about-page .org-card {
   background: #ffffff;
   border: 1px solid rgba(13, 26, 42, 0.07);
-  border-radius: 8px;
-  padding: 16px 20px;
+  border-radius: 16px;
+  padding: 14px 18px;
   transition: all 0.2s ease;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
 }
 
 body.about-page .org-card:hover {

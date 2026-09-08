@@ -303,3 +303,42 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   observer.observe(ideologySection);
 })();
+
+// ── Global Clean Sans-Serif Ampersand Normalizer ──────────────────
+(function initCleanAmpersands() {
+  const normalizeAmpersands = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodesToReplace = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      if (node.nodeValue && node.nodeValue.includes('&')) {
+        const p = node.parentElement;
+        if (p && p.tagName !== 'SCRIPT' && p.tagName !== 'STYLE' && !p.classList.contains('amp') && !p.classList.contains('org-amp')) {
+          nodesToReplace.push(node);
+        }
+      }
+    }
+    nodesToReplace.forEach(textNode => {
+      const parent = textNode.parentElement;
+      if (!parent) return;
+      const frag = document.createDocumentFragment();
+      const parts = textNode.nodeValue.split('&');
+      parts.forEach((part, idx) => {
+        if (part) frag.appendChild(document.createTextNode(part));
+        if (idx < parts.length - 1) {
+          const ampSpan = document.createElement('span');
+          ampSpan.className = 'amp';
+          ampSpan.textContent = '&';
+          frag.appendChild(ampSpan);
+        }
+      });
+      parent.replaceChild(frag, textNode);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', normalizeAmpersands);
+  } else {
+    normalizeAmpersands();
+  }
+})();

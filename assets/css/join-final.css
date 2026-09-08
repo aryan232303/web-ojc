@@ -177,7 +177,7 @@ body.join-page .reason-card::after {
   opacity: 0.55;
 }
 
-body.join-page .reason-card > * {
+body.join-page .reason-card>* {
   position: relative;
   z-index: 1;
 }
@@ -241,15 +241,15 @@ body.join-page .form-card::before {
   background: linear-gradient(90deg, var(--blue), var(--gold), var(--blue));
 }
 
-body.join-page .form-card > h2,
-body.join-page .form-card > p,
+body.join-page .form-card>h2,
+body.join-page .form-card>p,
 body.join-page #join-form,
 body.join-page .form-success {
   margin-left: 34px;
   margin-right: 34px;
 }
 
-body.join-page .form-card > h2 {
+body.join-page .form-card>h2 {
   margin-top: 32px;
   margin-bottom: 8px;
   color: var(--navy);
@@ -258,7 +258,7 @@ body.join-page .form-card > h2 {
   letter-spacing: 0;
 }
 
-body.join-page .form-card > h2::after {
+body.join-page .form-card>h2::after {
   content: "";
   display: block;
   width: 72px;
@@ -267,7 +267,7 @@ body.join-page .form-card > h2::after {
   background: linear-gradient(90deg, var(--gold), rgba(245, 166, 35, 0));
 }
 
-body.join-page .form-card > p {
+body.join-page .form-card>p {
   max-width: 350px;
   margin-bottom: 26px;
   color: rgba(44, 62, 80, 0.78);
@@ -522,8 +522,8 @@ body.join-page #join-form .btn-full:hover {
 }
 
 /* Success state */
-body.join-page .form-card:has(.form-success.show) > h2,
-body.join-page .form-card:has(.form-success.show) > p {
+body.join-page .form-card:has(.form-success.show)>h2,
+body.join-page .form-card:has(.form-success.show)>p {
   display: none;
 }
 
@@ -800,15 +800,15 @@ body.join-page .district-tag:hover {
     width: 100%;
   }
 
-  body.join-page .form-card > h2,
-  body.join-page .form-card > p,
+  body.join-page .form-card>h2,
+  body.join-page .form-card>p,
   body.join-page #join-form,
   body.join-page .form-success {
     margin-left: 22px;
     margin-right: 22px;
   }
 
-  body.join-page .form-card > h2 {
+  body.join-page .form-card>h2 {
     margin-top: 28px;
     font-size: 25px;
   }
@@ -1250,13 +1250,13 @@ body.join-page #wings h3 {
   letter-spacing: 0 !important;
 }
 
-body.join-page #wings > div {
+body.join-page #wings>div {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 14px !important;
 }
 
-body.join-page #wings > div > div {
+body.join-page #wings>div>div {
   padding: 18px !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
   border-left: 3px solid rgba(202, 169, 91, 0.72) !important;
@@ -1266,7 +1266,7 @@ body.join-page #wings > div > div {
   box-shadow: none !important;
 }
 
-body.join-page #wings > div > div:nth-child(5) {
+body.join-page #wings>div>div:nth-child(5) {
   grid-column: 1 / -1 !important;
 }
 
@@ -1292,23 +1292,23 @@ body.join-page #wings strong::after {
   text-transform: uppercase;
 }
 
-body.join-page #wings > div > div:nth-child(1) strong::after {
+body.join-page #wings>div>div:nth-child(1) strong::after {
   content: "Youth Wing";
 }
 
-body.join-page #wings > div > div:nth-child(2) strong::after {
+body.join-page #wings>div>div:nth-child(2) strong::after {
   content: "Women's Wing";
 }
 
-body.join-page #wings > div > div:nth-child(3) strong::after {
+body.join-page #wings>div>div:nth-child(3) strong::after {
   content: "Tribal Wing";
 }
 
-body.join-page #wings > div > div:nth-child(4) strong::after {
+body.join-page #wings>div>div:nth-child(4) strong::after {
   content: "Farmer's Wing";
 }
 
-body.join-page #wings > div > div:nth-child(5) strong::after {
+body.join-page #wings>div>div:nth-child(5) strong::after {
   content: "Professional Support";
 }
 
@@ -1456,11 +1456,11 @@ body.join-page .district-tag:hover {
     padding: 24px 20px !important;
   }
 
-  body.join-page #wings > div {
+  body.join-page #wings>div {
     grid-template-columns: 1fr !important;
   }
 
-  body.join-page #wings > div > div:nth-child(5) {
+  body.join-page #wings>div>div:nth-child(5) {
     grid-column: auto !important;
   }
 

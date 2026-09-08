@@ -10861,3 +10861,20 @@ body .transformed-title-centered,
     letter-spacing: -0.4px !important;
   }
 }
+
+/* Global clean sans-serif ampersand rule */
+html body .amp,
+html body .org-amp,
+html body span.amp,
+html body span.org-amp,
+body .amp,
+body .org-amp,
+.amp,
+.org-amp,
+span.amp,
+span.org-amp {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
+}

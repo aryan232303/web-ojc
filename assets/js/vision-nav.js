@@ -106,4 +106,58 @@ document.addEventListener('DOMContentLoaded', () => {
   // Observe all feature sections, manifesto cards, and climax cards
   const popUpTargets = document.querySelectorAll('.feature-section, .alternating-row, .index-card, .climax-card');
   popUpTargets.forEach(target => revealObserver.observe(target));
+
+  // Auto-hide floating side navigation bar & reveal on scroll or hover near left edge
+  const sidebarNav = document.querySelector('.vision-sticky-sidebar');
+  if (sidebarNav) {
+    let scrollTimer = null;
+    let isHoveringLeft = false;
+
+    function showSidebar() {
+      sidebarNav.classList.add('visible');
+    }
+
+    function hideSidebar() {
+      if (!isHoveringLeft) {
+        sidebarNav.classList.remove('visible');
+      }
+    }
+
+    // Reveal on scroll (up or down) and hide 1.8 seconds after scrolling stops
+    window.addEventListener('scroll', () => {
+      showSidebar();
+      if (scrollTimer) clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        hideSidebar();
+        scrollTimer = null;
+      }, 1800);
+    }, { passive: true });
+
+    // Reveal when mouse moves near left edge of screen (<= 90px)
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientX <= 90) {
+        isHoveringLeft = true;
+        showSidebar();
+      } else if (e.clientX > 140) {
+        isHoveringLeft = false;
+        if (!scrollTimer) {
+          hideSidebar();
+        }
+      }
+    });
+
+    sidebarNav.addEventListener('mouseenter', () => {
+      isHoveringLeft = true;
+      showSidebar();
+    });
+
+    sidebarNav.addEventListener('mouseleave', (e) => {
+      if (e.clientX > 140) {
+        isHoveringLeft = false;
+        if (!scrollTimer) {
+          hideSidebar();
+        }
+      }
+    });
+  }
 });
