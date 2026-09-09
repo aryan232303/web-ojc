@@ -2158,7 +2158,7 @@ button {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   :root {
     --nav-h: 64px;
   }
@@ -8105,41 +8105,17 @@ body.has-hero .site-footer {
   background-attachment: scroll !important;
 }
 
-/* Hero: split editorial composition, text on dark left, image on right. */
+/* Hero: reset legacy override */
 body.has-hero .hero {
-  min-height: min(840px, 92svh) !important;
-  background: #050b18 !important;
-  background-image: none !important;
-  isolation: isolate;
+  min-height: 0 !important;
+  height: auto !important;
+  background: transparent !important;
 }
 
-body.has-hero .hero::before {
-  display: none !important;
-}
-
+body.has-hero .hero::before,
 body.has-hero .hero::after {
-  content: '' !important;
-  display: block !important;
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg,
-      #050b18 0%,
-      #050b18 48%,
-      rgba(5, 11, 24, 0.98) 54%,
-      rgba(5, 11, 24, 0.82) 64%,
-      rgba(5, 11, 24, 0.38) 78%,
-      rgba(5, 11, 24, 0.18) 100%),
-    linear-gradient(180deg,
-      rgba(5, 11, 24, 0.34) 0%,
-      rgba(5, 11, 24, 0.08) 44%,
-      rgba(5, 11, 24, 0.82) 100%),
-    radial-gradient(ellipse 70% 78% at 82% 46%,
-      rgba(245, 166, 35, 0.08) 0%,
-      rgba(5, 11, 24, 0.04) 42%,
-      transparent 68%);
-  z-index: 0;
-  pointer-events: none;
+  content: none !important;
+  display: none !important;
 }
 
 body.has-hero .hero-inner {

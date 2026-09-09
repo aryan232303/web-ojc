@@ -21,12 +21,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=32.0">
-  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=32.0">
-  <link rel="stylesheet" href="assets/css/hero-system.css?v=32.0">
-  <link rel="stylesheet" href="assets/css/homepage-final.css?v=32.0">
-  <link rel="stylesheet" href="assets/css/global-final.css?v=32.0">
-  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=32.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=53.0">
+  <link rel="stylesheet" href="assets/css/ojcp-theme-tokens.css?v=53.0">
+  <link rel="stylesheet" href="assets/css/hero-system.css?v=53.0">
+  <link rel="stylesheet" href="assets/css/homepage-final.css?v=53.0">
+  <link rel="stylesheet" href="assets/css/global-final.css?v=53.0">
+  <link rel="stylesheet" href="assets/css/premium-redesign.css?v=53.0">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('consent', 'default', { analytics_storage: 'denied' }); gtag('config', 'G-XXXXXXXXXX');</script>
 </head>
@@ -79,51 +79,28 @@
 
   <main id="main">
 
-    <!-- HERO VIDEO SECTION -->
-    <section class="hero hero-video-section" aria-labelledby="hero-h1">
-      <div class="hero-video-wrapper" aria-hidden="true">
-        <video class="hero-bg-video" autoplay loop muted playsinline preload="auto">
-          <source src="assets/videos/hero-video.mp4" type="video/mp4">
-          <source src="hero%20video.mp4" type="video/mp4">
-          <source src="hero video.mp4" type="video/mp4">
-        </video>
-        <div class="hero-video-overlay"></div>
-      </div>
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 id="hero-h1" class="hero-headline fade-in fade-in-delay-1">
-            Odisha For Odias
-          </h1>
-          <span class="hero-headline-odia fade-in fade-in-delay-2" lang="or">ଓଡ଼ିଆଙ୍କ ପାଇଁ ଓଡ଼ିଶା</span>
-          <p class="hero-body fade-in fade-in-delay-3">43.7% of India's mineral wealth comes from
-            Odisha, yet its people
-            remain among the poorest in the country. <strong>That ends here.</strong> 16 unbreakable pledges to build
-            the Odisha, Odias deserve.</p>
-          <div class="hero-ctas fade-in fade-in-delay-4">
-            <a href="join.html" class="btn btn-primary btn-lg">Join the Movement &rarr;</a>
-            <a href="vision.html" class="btn btn-outline btn-lg">Read the Vision</a>
-          </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <img class="hero-image" src="assets/images/hero-leader.png" alt="Hero" />
+
+      <!-- HERO HEADLINE (20% AWAY FROM LEFT) -->
+      <div class="hero-text-block">
+        <h1 class="hero-text-title">Odisha For Odias</h1>
+        <p class="hero-text-odia">ଓଡ଼ିଆଙ୍କ ପାଇଁ ଓଡ଼ିଶା</p>
+        <p class="hero-text-desc">43.7% of India's mineral wealth comes from Odisha, yet its people remain among the
+          poorest in the country. <strong>That ends here.</strong> 16 unbreakable pledges to build the Odisha, Odias
+          deserve.</p>
+        <div class="hero-buttons">
+          <a href="join.html" class="hero-btn hero-btn-primary">Join the Movement &rarr;</a>
+          <a href="vision.html" class="hero-btn hero-btn-secondary">Read the Vision</a>
         </div>
       </div>
-      <!-- Organic Hero Bottom Divider (Gold & Light) -->
-      <div class="hero-bottom-divider" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="hero-divider-svg">
-          <defs>
-            <linearGradient id="goldWhiteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#F2C911" stop-opacity="0.3" />
-              <stop offset="45%" stop-color="#F2C911" stop-opacity="0.9" />
-              <stop offset="100%" stop-color="#FF9933" stop-opacity="0.4" />
-            </linearGradient>
-            <linearGradient id="goldLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#F2C911" stop-opacity="0.5" />
-              <stop offset="50%" stop-color="#F2C911" stop-opacity="1" />
-              <stop offset="100%" stop-color="#D4A017" stop-opacity="0.8" />
-            </linearGradient>
-          </defs>
-          <path d="M 0,20 C 400,85 1000,10 1440,24 L 1440,120 L 0,120 Z" fill="url(#goldWhiteGradient)" />
-          <path d="M 0,22 C 400,87 1000,12 1440,26" fill="none" stroke="url(#goldLineGradient)" stroke-width="3"
-            stroke-linecap="round" />
-          <path d="M 0,38 C 420,92 1020,24 1440,30 L 1440,120 L 0,120 Z" fill="#F8FAFD" />
+
+      <div class="hero-curved-divider" aria-hidden="true">
+        <svg class="curved-wave-svg" viewBox="0 0 1440 90" preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,28 C360,80 1080,-18 1440,36 L1440,75 C1080,20 360,120 0,68 Z" fill="#FADE25" />
+          <path d="M0,48 C360,100 1080,2 1440,56 L1440,150 L0,150 Z" fill="#F8FAFD" />
         </svg>
       </div>
     </section>

@@ -362,35 +362,33 @@ body main>section+section::before {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* STAGGERED FADE-IN ENTRANCE ANIMATION FOR HERO CONTENT */
+/* STAGGERED FADE-IN ENTRANCE ANIMATION FOR HERO CONTENT (IDENTICAL TO ABOUT HERO) */
 .vision-hero-content .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  animation: visionHeroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: none !important;
+  will-change: opacity, transform;
+}
+
+.vision-hero-content .fade-in.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .vision-hero-content .fade-in-delay-1 {
-  animation-delay: 0.1s;
+  transition-delay: 0.08s !important;
+  animation-delay: 0s !important;
 }
 
 .vision-hero-content .fade-in-delay-2 {
-  animation-delay: 0.25s;
+  transition-delay: 0.16s !important;
+  animation-delay: 0s !important;
 }
 
 .vision-hero-content .fade-in-delay-3 {
-  animation-delay: 0.4s;
-}
-
-@keyframes visionHeroFadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transition-delay: 0.24s !important;
+  animation-delay: 0s !important;
 }
 
 /* ELEGANT ORGANIC CURVED WAVE DIVIDER (HERO TO VISION 01) */
