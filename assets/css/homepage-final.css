@@ -188,7 +188,7 @@ body.has-hero .stats-section {
     linear-gradient(180deg, var(--stats-dark-bg, #071126) 0%, var(--hero-panel-bg, #050b18) 100%) !important;
 }
 
-body.has-hero main > .stats-section:first-child,
+body.has-hero main>.stats-section:first-child,
 body.has-hero .stats-section:first-child {
   padding-top: calc(var(--nav-h, 72px) + clamp(36px, 4vw, 56px)) !important;
 }
@@ -267,12 +267,12 @@ body.has-hero .stat-label {
 body.has-hero .stat-source {
   align-self: end;
   margin-top: 22px;
-  color: rgba(255, 255, 255, 0.38) !important;
+  color: rgba(93, 102, 120, 0.7) !important;
 }
 
 body.has-hero .ideology-section {
   padding-top: 0 !important;
-  padding-bottom: clamp(50px, 6vw, 90px) !important;
+  padding-bottom: 0 !important;
   margin-top: 0 !important;
   background: #2A6DB5 !important;
 }
@@ -309,15 +309,15 @@ body.has-hero .pledges-grid-section>.container>.eyebrow {
 
 body.has-hero .pledges-trio-section,
 body.has-hero .three-fights-section {
-  padding: clamp(76px, 8vw, 108px) 0 !important;
+  padding: 32px 0 !important;
 }
 
 body.has-hero .pledges-trio-section {
-  padding-bottom: clamp(64px, 6vw, 88px) !important;
+  padding-bottom: 32px !important;
 }
 
 body.has-hero .three-fights-section {
-  padding-top: clamp(62px, 6vw, 86px) !important;
+  padding-top: 32px !important;
 }
 
 body.has-hero .trio-grid,
@@ -377,7 +377,7 @@ body.has-hero .fight-block {
 }
 
 body.has-hero .personas-section {
-  padding: clamp(82px, 8vw, 112px) 0 !important;
+  padding: 32px 0 !important;
   background:
     radial-gradient(ellipse 58% 46% at 84% 4%, rgba(var(--color-accent-rgb, 245, 166, 35), 0.06), transparent 66%),
     linear-gradient(180deg, var(--people-bg, #071126) 0%, var(--color-primary, #091735) 100%) !important;
@@ -644,7 +644,7 @@ body.has-hero .founder-section .card-reveal {
 
 /* 4. Founder */
 body.has-hero .founder-section {
-  padding: clamp(76px, 8vw, 116px) 0 !important;
+  padding: 32px 0 !important;
   background:
     radial-gradient(ellipse 52% 48% at 12% 18%, rgba(var(--color-primary-rgb, 27, 58, 140), 0.11), transparent 64%),
     linear-gradient(180deg, var(--founder-bg, #f8f5ee) 0%, #ffffff 58%, var(--editorial-paper-deep, #f5f0e6) 100%) !important;
@@ -860,7 +860,7 @@ body.has-hero .inclusion-body {
 
 /* 6. Pledges */
 body.has-hero .pledges-grid-section {
-  padding: clamp(76px, 8vw, 112px) 0 !important;
+  padding: 32px 0 !important;
   background: linear-gradient(180deg, var(--surface-cream, #fbfaf6) 0%, #ffffff 46%, var(--editorial-paper-deep, #f5f0e6) 100%) !important;
   border-top: 1px solid rgba(13, 26, 42, 0.1);
   border-bottom: 1px solid rgba(13, 26, 42, 0.1);
@@ -993,7 +993,7 @@ body.has-hero .pledges-cta {
 }
 
 body.has-hero .final-cta-section {
-  padding: clamp(86px, 9vw, 124px) 0 !important;
+  padding: 32px 0 !important;
   background:
     linear-gradient(135deg, rgba(var(--color-primary-strong-rgb, 5, 11, 24), 0.985), rgba(var(--color-primary-rgb, 7, 17, 38), 0.985)) !important;
   border-top: 1px solid rgba(var(--color-accent-rgb, 245, 166, 35), 0.2);
@@ -1268,7 +1268,7 @@ body.has-hero .final-cta-buttons .btn {
   }
 
   body.has-hero .founder-section {
-    padding: 62px 0 !important;
+    padding: 24px 0 !important;
   }
 
   body.has-hero .founder-portrait-block {

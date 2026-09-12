@@ -282,16 +282,18 @@ body.about-page .about-founder-section .founder-portrait-img:hover img {
 }
 
 body.about-page .about-founder-section .founder-name {
-  margin-top: 0;
+  margin-top: 14px;
   font-size: 20px;
   line-height: 1.2;
   color: #071126;
+  text-align: center;
 }
 
 body.about-page .about-founder-section .founder-role {
   margin-top: 7px;
   color: rgba(13, 26, 42, 0.62);
   letter-spacing: 0.12em;
+  text-align: center;
 }
 
 body.about-page .about-founder-section .founder-content-block {
@@ -666,7 +668,9 @@ body.about-page .final-cta-buttons .btn {
 
   body.about-page .about-founder-section .founder-portrait-block {
     position: static;
-    max-width: 360px;
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   body.about-page .about-founder-section .founder-content-block {
@@ -745,6 +749,8 @@ body.about-page .final-cta-buttons .btn {
 
   body.about-page .about-founder-section .founder-portrait-block {
     max-width: 292px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   body.about-page .about-founder-section .founder-portrait-img {

@@ -58,31 +58,12 @@ body.vision-page-redesign {
   background: var(--ojc-ivory);
 }
 
-/* FLOATING EDITORIAL CAPSULE SIDEBAR (DESKTOP) */
+/* FLOATING EDITORIAL CAPSULE SIDEBAR (DESKTOP) - REMOVED */
 .vision-sticky-sidebar {
-  position: fixed;
-  left: 20px;
-  top: 100px;
-  width: 60px;
-  max-height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 16px 6px;
-  border: 1px solid rgba(42, 109, 181, 0.18);
-  border-radius: 36px;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
-  background: rgba(246, 244, 238, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
-
-  /* Hidden by default, reveals on scroll or hover near left edge */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-40px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Invisible left trigger zone for easy hover detection */
@@ -201,9 +182,7 @@ body.vision-page-redesign {
    TARGETED OVERRIDE FOR HERO & VISION 01 ZERO-GAP (DEFEATING PREMIUM-REDESIGN.CSS)
    ========================================================================== */
 
-body.vision-page-redesign main>section.vision-hero-redesign,
 body.vision-page-redesign main>section.visions-feature-group,
-body main>section.vision-hero-redesign,
 body main>section.visions-feature-group,
 body main>section#feature-chapters,
 body main>section.visions-feature-group>article.feature-section:first-child,
@@ -267,12 +246,17 @@ body main>section+section::before {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 100% !important;
-  height: clamp(550px, 80vh, 760px) !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  height: clamp(500px, 62vh, 640px) !important;
+  min-height: clamp(500px, 62vh, 640px) !important;
+  margin-top: var(--nav-h, 72px) !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 50px !important;
   border: none !important;
   outline: none !important;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -593,13 +577,18 @@ body main>section+section::before {
 }
 
 /* --------------------------------------------------------------------------
-   DESKTOP COMPOSITION (VISIONS 02, 04, 09, 11 - IMAGE RIGHT / TEXT LEFT)
+   DESKTOP COMPOSITION: ALL EVEN VISIONS (02, 04, 06, 08, 10, 12, 14, 16)
+   IMAGE RIGHT / TEXT LEFT
    -------------------------------------------------------------------------- */
 
 .composition-02-wrapper,
 .composition-04-wrapper,
-.composition-09-wrapper,
-.composition-11-wrapper {
+.composition-06-wrapper,
+.composition-08-wrapper,
+.composition-10-wrapper,
+.composition-12-wrapper,
+.composition-14-wrapper,
+.composition-16-wrapper {
   position: relative;
   width: 100%;
   min-height: 480px;
@@ -611,8 +600,12 @@ body main>section+section::before {
 
 .composition-02-bg-image,
 .composition-04-bg-image,
-.composition-09-bg-image,
-.composition-11-bg-image {
+.composition-06-bg-image,
+.composition-08-bg-image,
+.composition-10-bg-image,
+.composition-12-bg-image,
+.composition-14-bg-image,
+.composition-16-bg-image {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -628,10 +621,18 @@ body main>section+section::before {
 .composition-02-bg-image img,
 .composition-03-bg-image img,
 .composition-04-bg-image img,
+.composition-05-bg-image img,
+.composition-06-bg-image img,
+.composition-07-bg-image img,
+.composition-08-bg-image img,
 .composition-09-bg-image img,
 .composition-10-bg-image img,
 .composition-11-bg-image img,
-.composition-12-bg-image img {
+.composition-12-bg-image img,
+.composition-13-bg-image img,
+.composition-14-bg-image img,
+.composition-15-bg-image img,
+.composition-16-bg-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -639,7 +640,7 @@ body main>section+section::before {
 
 /* Responsive Image Focal Point Art Direction Across All Devices */
 .composition-01-bg-image img {
-  object-position: 70% 30%;
+  object-position: 55% 22%;
 }
 
 .composition-02-bg-image img {
@@ -647,11 +648,27 @@ body main>section+section::before {
 }
 
 .composition-03-bg-image img {
-  object-position: 60% 30%;
+  object-position: center 25%;
 }
 
 .composition-04-bg-image img {
+  object-position: 45% 30%;
+}
+
+.composition-05-bg-image img {
+  object-position: 50% 25%;
+}
+
+.composition-06-bg-image img {
+  object-position: 50% 25%;
+}
+
+.composition-07-bg-image img {
   object-position: 50% 30%;
+}
+
+.composition-08-bg-image img {
+  object-position: 50% 25%;
 }
 
 .composition-09-bg-image img {
@@ -670,23 +687,51 @@ body main>section+section::before {
   object-position: 50% 30%;
 }
 
+.composition-13-bg-image img {
+  object-position: 50% 30%;
+}
+
+.composition-14-bg-image img {
+  object-position: 50% 30%;
+}
+
+.composition-15-bg-image img {
+  object-position: 50% 25%;
+}
+
+.composition-16-bg-image img {
+  object-position: 50% 30%;
+}
+
 /* DISABLE ALL UNWANTED CORNER OVERLAY BOXES */
 .composition-01-bg-image::before,
 .composition-02-bg-image::before,
 .composition-03-bg-image::before,
 .composition-04-bg-image::before,
+.composition-05-bg-image::before,
+.composition-06-bg-image::before,
+.composition-07-bg-image::before,
+.composition-08-bg-image::before,
 .composition-09-bg-image::before,
 .composition-10-bg-image::before,
 .composition-11-bg-image::before,
-.composition-12-bg-image::before {
+.composition-12-bg-image::before,
+.composition-13-bg-image::before,
+.composition-14-bg-image::before,
+.composition-15-bg-image::before,
+.composition-16-bg-image::before {
   display: none !important;
   content: none !important;
 }
 
 .composition-02-text,
 .composition-04-text,
-.composition-09-text,
-.composition-11-text {
+.composition-06-text,
+.composition-08-text,
+.composition-10-text,
+.composition-12-text,
+.composition-14-text,
+.composition-16-text {
   position: relative;
   z-index: 2;
   width: 50%;
@@ -699,13 +744,18 @@ body main>section+section::before {
 }
 
 /* --------------------------------------------------------------------------
-   DESKTOP COMPOSITION (VISIONS 01, 03, 10, 12 - IMAGE LEFT / TEXT RIGHT)
+   DESKTOP COMPOSITION: ALL ODD VISIONS (01, 03, 05, 07, 09, 11, 13, 15)
+   IMAGE LEFT / TEXT RIGHT
    -------------------------------------------------------------------------- */
 
 .composition-01-wrapper,
 .composition-03-wrapper,
-.composition-10-wrapper,
-.composition-12-wrapper {
+.composition-05-wrapper,
+.composition-07-wrapper,
+.composition-09-wrapper,
+.composition-11-wrapper,
+.composition-13-wrapper,
+.composition-15-wrapper {
   position: relative;
   width: 100%;
   min-height: 480px;
@@ -718,8 +768,12 @@ body main>section+section::before {
 
 .composition-01-bg-image,
 .composition-03-bg-image,
-.composition-10-bg-image,
-.composition-12-bg-image {
+.composition-05-bg-image,
+.composition-07-bg-image,
+.composition-09-bg-image,
+.composition-11-bg-image,
+.composition-13-bg-image,
+.composition-15-bg-image {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -733,8 +787,12 @@ body main>section+section::before {
 
 .composition-01-text,
 .composition-03-text,
-.composition-10-text,
-.composition-12-text {
+.composition-05-text,
+.composition-07-text,
+.composition-09-text,
+.composition-11-text,
+.composition-13-text,
+.composition-15-text {
   position: relative;
   z-index: 2;
   width: 48%;
@@ -1231,16 +1289,25 @@ body main>section.vision-closing-section,
 
   /* HERO SECTION RESPONSIVE ART DIRECTION (COMPACT CONTENT-DRIVEN HEIGHT) */
   .vision-hero-redesign {
+    margin-top: 58px !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
     height: auto !important;
-    min-height: auto !important;
-    padding-top: 44px !important;
-    padding-bottom: 24px !important;
+    min-height: clamp(300px, 42vh, 350px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: clamp(34px, 7vw, 44px) !important;
+    padding-bottom: clamp(74px, 15vw, 92px) !important;
     position: relative !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .hero-curved-divider {
-    height: clamp(35px, 8vw, 60px) !important;
+    height: clamp(35px, 7vw, 48px) !important;
+    bottom: -1px !important;
+    z-index: 5 !important;
   }
 
   .hero-bg-image {
@@ -1253,21 +1320,24 @@ body main>section.vision-closing-section,
 
   .vision-hero-content {
     text-align: left !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: clamp(18px, 5vw, 24px) !important;
+    padding-right: clamp(18px, 5vw, 24px) !important;
+    position: relative !important;
+    z-index: 6 !important;
   }
 
   .vision-hero-headline {
-    font-size: clamp(1.4rem, 4.8vw, 1.85rem) !important;
-    line-height: 1.25 !important;
-    margin-bottom: 10px !important;
+    font-size: clamp(1.65rem, 5.2vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
     max-width: 100% !important;
     text-align: left !important;
   }
 
   .vision-hero-sub {
-    font-size: clamp(0.85rem, 3.2vw, 0.96rem) !important;
-    line-height: 1.5 !important;
+    font-size: clamp(0.88rem, 3.2vw, 0.98rem) !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
     max-width: 100% !important;
     text-align: left !important;
   }
@@ -1296,10 +1366,18 @@ body main>section.vision-closing-section,
   .composition-02-wrapper,
   .composition-03-wrapper,
   .composition-04-wrapper,
+  .composition-05-wrapper,
+  .composition-06-wrapper,
+  .composition-07-wrapper,
+  .composition-08-wrapper,
   .composition-09-wrapper,
   .composition-10-wrapper,
   .composition-11-wrapper,
-  .composition-12-wrapper {
+  .composition-12-wrapper,
+  .composition-13-wrapper,
+  .composition-14-wrapper,
+  .composition-15-wrapper,
+  .composition-16-wrapper {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -1317,10 +1395,18 @@ body main>section.vision-closing-section,
   .composition-02-bg-image,
   .composition-03-bg-image,
   .composition-04-bg-image,
+  .composition-05-bg-image,
+  .composition-06-bg-image,
+  .composition-07-bg-image,
+  .composition-08-bg-image,
   .composition-09-bg-image,
   .composition-10-bg-image,
   .composition-11-bg-image,
-  .composition-12-bg-image {
+  .composition-12-bg-image,
+  .composition-13-bg-image,
+  .composition-14-bg-image,
+  .composition-15-bg-image,
+  .composition-16-bg-image {
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -1338,10 +1424,18 @@ body main>section.vision-closing-section,
   .composition-02-bg-image img,
   .composition-03-bg-image img,
   .composition-04-bg-image img,
+  .composition-05-bg-image img,
+  .composition-06-bg-image img,
+  .composition-07-bg-image img,
+  .composition-08-bg-image img,
   .composition-09-bg-image img,
   .composition-10-bg-image img,
   .composition-11-bg-image img,
-  .composition-12-bg-image img {
+  .composition-12-bg-image img,
+  .composition-13-bg-image img,
+  .composition-14-bg-image img,
+  .composition-15-bg-image img,
+  .composition-16-bg-image img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -1352,10 +1446,18 @@ body main>section.vision-closing-section,
   .composition-02-text,
   .composition-03-text,
   .composition-04-text,
+  .composition-05-text,
+  .composition-06-text,
+  .composition-07-text,
+  .composition-08-text,
   .composition-09-text,
   .composition-10-text,
   .composition-11-text,
-  .composition-12-text {
+  .composition-12-text,
+  .composition-13-text,
+  .composition-14-text,
+  .composition-15-text,
+  .composition-16-text {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;

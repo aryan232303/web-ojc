@@ -152,8 +152,8 @@ body main>section {
 }
 
 body main>section:not(.hero):not(.page-hero):not(.final-cta-section):not(.download-section) {
-  padding-top: clamp(72px, 8vw, 112px);
-  padding-bottom: clamp(72px, 8vw, 112px);
+  padding-top: clamp(24px, 3vw, 32px);
+  padding-bottom: clamp(24px, 3vw, 32px);
 }
 
 body :is(.section-title, .section-title--white) {

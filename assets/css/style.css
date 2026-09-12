@@ -37,8 +37,8 @@
 
   --sp-xs: 24px;
   --sp-sm: 48px;
-  --sp-md: 88px;
-  --sp-lg: 120px;
+  --sp-md: 32px;
+  --sp-lg: 48px;
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -554,7 +554,7 @@ button {
 /* ── Stats Band ─────────────────────────────────────────────── */
 .stats-section {
   background: var(--near-black);
-  padding: 80px 0;
+  padding: 32px 0;
 }
 
 .stats-header {
@@ -2362,9 +2362,9 @@ button {
 /* Spacing tokens */
 :root {
   --space-xs: 24px;
-  --space-sm: 56px;
-  --space-md: 96px;
-  --space-lg: 128px;
+  --space-sm: 48px;
+  --space-md: 32px;
+  --space-lg: 48px;
 }
 
 /* Base readability */
@@ -2532,9 +2532,9 @@ h3 {
 /* Mobile spacing — keep comfortable but tighter */
 @media (max-width: 768px) {
   :root {
-    --space-sm: 48px;
-    --space-md: 72px;
-    --space-lg: 88px;
+    --space-sm: 32px;
+    --space-md: 24px;
+    --space-lg: 32px;
   }
 
   .trio-card {
@@ -2596,9 +2596,9 @@ section+section {
 @media (max-width: 768px) {
   :root {
     --sp-xs: 20px;
-    --sp-sm: 40px;
-    --sp-md: 64px;
-    --sp-lg: 88px;
+    --sp-sm: 32px;
+    --sp-md: 24px;
+    --sp-lg: 32px;
   }
 }
 
@@ -7092,9 +7092,9 @@ textarea,
   /* ── Spacing scale — mobile rhythm ───────────────── */
   :root {
     --sp-xs: 16px;
-    --sp-sm: 40px;
-    --sp-md: 64px;
-    --sp-lg: 88px;
+    --sp-sm: 32px;
+    --sp-md: 24px;
+    --sp-lg: 32px;
     --card-pad: 24px 20px;
     --card-pad-sm: 18px 16px;
   }
@@ -9349,7 +9349,7 @@ body.has-hero .cookie-actions .btn {
 
 /* Homepage leadership credibility block */
 body.has-hero .founder-section {
-  padding: clamp(76px, 8vw, 116px) 0 !important;
+  padding: 32px 0 !important;
   background:
     radial-gradient(ellipse 52% 48% at 12% 18%, rgba(27, 58, 140, 0.11), transparent 64%),
     linear-gradient(180deg, #f8f5ee 0%, #ffffff 58%, #f5f0e6 100%) !important;
@@ -9471,7 +9471,7 @@ body.has-hero .founder-leadership-link:hover {
 
 @media (max-width: 520px) {
   body.has-hero .founder-section {
-    padding: 62px 0 !important;
+    padding: 24px 0 !important;
   }
 
   body.has-hero .founder-portrait-block {
@@ -10422,7 +10422,7 @@ html body .transformed-section,
 body .transformed-section,
 .transformed-section {
   background: #F8FAFD !important;
-  padding: 36px 0 16px 0 !important;
+  padding: 32px 0 !important;
   position: relative !important;
   overflow: hidden !important;
 }
