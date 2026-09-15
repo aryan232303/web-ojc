@@ -342,3 +342,31 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     normalizeAmpersands();
   }
 })();
+
+// ── Hover Ideology Text to Reveal Background Photo (Above 768px Only) ──
+(function initIdeologyHoverReveal() {
+  const setupHover = () => {
+    const copyArea = document.querySelector('.ideology-copy');
+    const panel = document.querySelector('.ideology-panel');
+    if (!copyArea || !panel) return;
+
+    copyArea.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 768) {
+        panel.classList.add('reveal-photo-bg');
+        copyArea.classList.add('hovered-active');
+      }
+    });
+
+    copyArea.addEventListener('mouseleave', () => {
+      panel.classList.remove('reveal-photo-bg');
+      copyArea.classList.remove('hovered-active');
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHover);
+  } else {
+    setupHover();
+  }
+})();
+

@@ -6686,7 +6686,7 @@ body .ideology-photo,
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: center !important;
+  object-position: center 72% !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
@@ -6705,6 +6705,8 @@ body .ideology-panel,
   width: 45% !important;
   background: #2A6DB5 !important;
   z-index: 2 !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 body.has-hero .ideology-copy,
@@ -6722,6 +6724,36 @@ body .ideology-copy,
   color: #ffffff !important;
   z-index: 5 !important;
   box-sizing: border-box !important;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, text-shadow 0.4s ease, box-shadow 0.4s ease !important;
+  cursor: default !important;
+}
+
+/* Hover reveal effect: background image shines through behind text (DESKTOP / TAB ABOVE 768px ONLY) */
+@media (min-width: 769px) {
+
+  body.has-hero .ideology-copy,
+  body .ideology-copy,
+  .ideology-copy {
+    cursor: pointer !important;
+  }
+
+  body.has-hero .ideology-section:has(.ideology-copy:hover) .ideology-panel,
+  body .ideology-section:has(.ideology-copy:hover) .ideology-panel,
+  .ideology-section:has(.ideology-copy:hover) .ideology-panel,
+  .ideology-panel.reveal-photo-bg {
+    opacity: 0 !important;
+  }
+
+  body.has-hero .ideology-copy:hover,
+  body .ideology-copy:hover,
+  .ideology-copy:hover,
+  .ideology-copy.hovered-active {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 }
 
 body.has-hero .ideology-headline,
@@ -6850,6 +6882,7 @@ body .ideology-callout,
     min-height: 220px !important;
     max-height: 360px !important;
     object-fit: cover !important;
+    object-position: center 72% !important;
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -8692,6 +8725,110 @@ body.contact-page .container {
   text-decoration: none !important;
 }
 
+.hq-map-quicklink {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 10px !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #2A6DB5 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.hq-map-quicklink:hover {
+  color: #1e518b !important;
+  text-decoration: underline !important;
+}
+
+/* CONTACT MAP SECTION */
+.contact-map-wrapper {
+  margin-top: 36px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(42, 109, 181, 0.16) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05) !important;
+}
+
+.contact-map-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 22px 32px !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid rgba(42, 109, 181, 0.12) !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.map-header-info {
+  flex: 1 !important;
+  min-width: 260px !important;
+}
+
+.map-eyebrow {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.8px !important;
+  color: #2A6DB5 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.map-title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 4px 0 !important;
+}
+
+.map-sub {
+  font-size: 0.92rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+.map-directions-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 20px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  color: #2A6DB5 !important;
+  border: 1.5px solid #2A6DB5 !important;
+  background: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.map-directions-btn:hover {
+  background: #2A6DB5 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(42, 109, 181, 0.2) !important;
+}
+
+.contact-map-frame-container {
+  width: 100% !important;
+  height: 420px !important;
+  position: relative !important;
+  background: #f1f5f9 !important;
+}
+
+.contact-map-frame-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block !important;
+}
+
 /* 3. BLUE DOSSIER BANNER (RESPONSE TIMES & ACCREDITATION) */
 .contact-blue-dossier-section {
   padding: 20px 0 24px !important;
@@ -8797,8 +8934,8 @@ body.contact-page .container {
 
 .contact-form-layout {
   display: grid !important;
-  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr) !important;
-  gap: 56px !important;
+  grid-template-columns: minmax(360px, 460px) minmax(0, 1fr) !important;
+  gap: 48px !important;
 }
 
 .form-eyebrow {
@@ -8813,7 +8950,7 @@ body.contact-page .container {
 
 .form-headline {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: clamp(1.65rem, 3.8vw, 3.2rem) !important;
+  font-size: clamp(2.1rem, 3.4vw, 3.5rem) !important;
   font-weight: 800 !important;
   color: #0f172a !important;
   line-height: 1.15 !important;
@@ -8981,12 +9118,20 @@ body.contact-page .container {
   }
 
   .form-headline {
-    font-size: clamp(1.4rem, 5.5vw, 2.1rem) !important;
+    font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important;
     white-space: nowrap !important;
   }
 
   .contact-blue-dossier-card {
     padding: 28px 24px !important;
+  }
+
+  .contact-map-header {
+    padding: 16px 18px !important;
+  }
+
+  .contact-map-frame-container {
+    height: 300px !important;
   }
 }
 
@@ -11217,25 +11362,132 @@ html body.about-page .media-cell-container,
 }
 
 /* ============================================================
-   JOIN PAGE — IMAGE BELOW OJC WINGS IN LEFT COLUMN
+   JOIN PAGE — WAVY FLAG BRAND BANNER IN LEFT COLUMN FREE SPACE
    ============================================================ */
-.join-wings-bottom-photo,
-body.join-page .join-wings-bottom-photo {
+.join-flag-banner,
+body.join-page .join-flag-banner {
+  position: relative !important;
   width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  border-radius: 16px !important;
-  margin-top: 40px !important;
-  object-fit: cover !important;
-  border: 1.5px solid #dbeafe !important;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+  min-height: 290px !important;
+  margin-top: 32px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  background: linear-gradient(145deg, #050b18 0%, #081636 50%, #0d2557 100%) !important;
+  border: 1.5px solid rgba(250, 222, 37, 0.45) !important;
+  box-shadow: 0 16px 40px rgba(7, 17, 38, 0.18) !important;
+  isolation: isolate !important;
+  padding: 44px 38px !important;
   box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.join-flag-bg-wrapper,
+body.join-page .join-flag-bg-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.join-flag-bg-image,
+body.join-page .join-flag-bg-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  opacity: 0.22 !important;
+  filter: brightness(0.7) contrast(1.2) !important;
+  transform: scale(1.05) !important;
+  transition: transform 6s ease !important;
+}
+
+.join-flag-banner:hover .join-flag-bg-image {
+  transform: scale(1.1) !important;
+}
+
+.join-flag-overlay,
+body.join-page .join-flag-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at 20% 30%, rgba(42, 109, 181, 0.25), transparent 70%),
+    radial-gradient(circle at 80% 80%, rgba(250, 222, 37, 0.12), transparent 60%) !important;
+  z-index: 1 !important;
+}
+
+.join-flag-content,
+body.join-page .join-flag-content {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+.join-flag-logo-badge,
+body.join-page .join-flag-logo-badge {
+  width: 72px !important;
+  height: 72px !important;
+  flex: 0 0 72px !important;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+  padding: 5px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 3.5px #FADE25 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.join-flag-emblem,
+body.join-page .join-flag-emblem {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.join-flag-text-group,
+body.join-page .join-flag-text-group {
+  flex: 1 !important;
+}
+
+.join-flag-eyebrow,
+body.join-page .join-flag-eyebrow {
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  color: #FADE25 !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+.join-flag-title,
+body.join-page .join-flag-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(1.65rem, 2.5vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin: 0 0 8px 0 !important;
+  letter-spacing: -0.5px !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.join-flag-sub,
+body.join-page .join-flag-sub {
+  font-size: 0.95rem !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
 }
 
 @media (max-width: 1024px) {
 
-  .join-wings-bottom-photo,
-  body.join-page .join-wings-bottom-photo {
+  .join-flag-banner,
+  body.join-page .join-flag-banner {
     display: none !important;
   }
 }
@@ -11277,6 +11529,33 @@ body.about-page .founder-portrait-img,
   max-width: 340px !important;
 }
 
+@media (max-width: 768px) {
+  html body.about-page .about-founder-section .founder-portrait-block,
+  body.about-page .about-founder-section .founder-portrait-block,
+  body.about-page .founder-portrait-block,
+  .about-founder-section .founder-portrait-block,
+  html body.about-page .about-founder-section .founder-portrait-img,
+  body.about-page .about-founder-section .founder-portrait-img,
+  body.about-page .founder-portrait-img,
+  .about-founder-section .founder-portrait-img {
+    max-width: 290px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body.about-page .about-founder-section .founder-portrait-block,
+  body.about-page .about-founder-section .founder-portrait-block,
+  body.about-page .founder-portrait-block,
+  .about-founder-section .founder-portrait-block,
+  html body.about-page .about-founder-section .founder-portrait-img,
+  body.about-page .about-founder-section .founder-portrait-img,
+  body.about-page .founder-portrait-img,
+  .about-founder-section .founder-portrait-img {
+    max-width: 275px !important;
+  }
+}
+
+
 html body.about-page .about-founder-section .founder-name,
 body.about-page .about-founder-section .founder-name,
 body.about-page .founder-name,
@@ -11295,4 +11574,141 @@ body.about-page .founder-role,
   margin-left: auto !important;
   margin-right: auto !important;
   width: 100% !important;
+}
+
+/* ============================================================
+   JOIN PAGE & CONTACT PAGE FORMS — MOBILE RESIZING
+   (STRICTLY TARGETING ONLY THE 2 FORMS ON JOIN & CONTACT PAGES)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* 1. JOIN PAGE FORM (#join-form & .form-card on join-page) */
+  body.join-page .form-card,
+  body.join-page #join-form-wrap,
+  html body.join-page .form-card {
+    padding: 14px 12px !important;
+    border-radius: 12px !important;
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.join-page .form-card h2,
+  html body.join-page .form-card h2 {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
+  }
+
+  body.join-page .form-card p,
+  html body.join-page .form-card p {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.join-page #join-form .form-group {
+    margin-bottom: 8px !important;
+  }
+
+  body.join-page #join-form .form-row-2 {
+    gap: 6px !important;
+    margin-bottom: 0 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.join-page #join-form .form-label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.join-page #join-form .form-input,
+  body.join-page #join-form .form-select {
+    height: 34px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    line-height: 1.3 !important;
+  }
+
+  body.join-page #join-form button[type="submit"],
+  body.join-page #join-form .btn {
+    height: 36px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    padding: 0 16px !important;
+    border-radius: 6px !important;
+    margin-top: 6px !important;
+  }
+
+  /* 2. CONTACT PAGE FORM (#contact-form & .contact-form-card on contact-page) */
+  body.contact-page .contact-form-card,
+  body.contact-page .form-card,
+  html body.contact-page .contact-form-card {
+    padding: 14px 12px !important;
+    border-radius: 12px !important;
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.contact-page .contact-form-card h2,
+  body.contact-page .form-card h2,
+  html body.contact-page .contact-form-card h2 {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
+  }
+
+  body.contact-page .contact-form-card p,
+  body.contact-page .form-card p,
+  html body.contact-page .contact-form-card p {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 10px !important;
+  }
+
+  body.contact-page #contact-form .form-group {
+    margin-bottom: 8px !important;
+  }
+
+  body.contact-page #contact-form .form-grid-2col {
+    gap: 6px !important;
+    margin-bottom: 0 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  body.contact-page #contact-form .form-label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.contact-page #contact-form .form-input,
+  body.contact-page #contact-form .form-select {
+    height: 34px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    line-height: 1.3 !important;
+  }
+
+  body.contact-page #contact-form textarea,
+  body.contact-page #contact-form .form-textarea {
+    min-height: 60px !important;
+    height: 60px !important;
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.contact-page #contact-form button[type="submit"],
+  body.contact-page #contact-form .btn {
+    height: 36px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    padding: 0 16px !important;
+    border-radius: 6px !important;
+    margin-top: 6px !important;
+  }
 }
